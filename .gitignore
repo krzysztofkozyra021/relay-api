@@ -90,3 +90,11 @@ __marimo__/
 .vscode/*
 !.vscode/extensions.json
 .copier/
+__pycache__
+app.egg-info
+*.pyc
+.mypy_cache
+.coverage
+htmlcov
+.cache
+.venv
