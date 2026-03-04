@@ -89,3 +89,4 @@ marimo/_lsp/
 __marimo__/
 .vscode/*
 !.vscode/extensions.json
+.copier/
