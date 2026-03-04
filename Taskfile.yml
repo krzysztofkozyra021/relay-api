@@ -1,0 +1,147 @@
+# https://taskfile.dev
+version: "3"
+
+env:
+  COMPOSE_DOCKER_CLI_BUILD: 1
+  DOCKER_BUILDKIT: 1
+
+vars:
+  DOCKER_EXEC: docker compose exec backend
+  DOCKER_EXEC_T: docker compose exec -T backend
+
+dotenv:
+  - .env
+
+tasks:
+  default:
+    desc: "List all available tasks"
+    cmds:
+      - task --list-all
+
+  init:
+    desc: "Initialize the project"
+    deps: [up]
+    cmds:
+      - task: prestart
+
+  up:
+    desc: "Start docker containers"
+    aliases: [start, run]
+    deps: [build]
+    preconditions:
+      - sh: test -f .env
+        msg: "Please create .env file first. Copy from .env.example"
+    cmds:
+      - docker compose up --detach
+
+  down:
+    desc: "Stop and remove docker containers"
+    cmds:
+      - docker compose down
+
+  stop:
+    desc: "Stop docker containers"
+    cmds:
+      - docker compose stop
+
+  restart:
+    desc: "Restart docker containers"
+    cmds:
+      - task: stop
+      - task: up
+
+  build:
+    desc: "Build docker containers"
+    cmds:
+      - docker compose build backend
+
+  rebuild:
+    desc: "Rebuild docker containers from scratch"
+    cmds:
+      - docker compose build --no-cache backend
+
+  status:
+    desc: "Check docker containers' status"
+    aliases: [ps]
+    cmds:
+      - docker compose ps
+
+  logs:
+    desc: "Show docker containers' logs"
+    cmds:
+      - docker compose logs --follow {{.CLI_ARGS}}
+
+  shell:
+    desc: "Enter backend shell"
+    cmds:
+      - "{{.DOCKER_EXEC}} bash"
+
+  migrate:
+    desc: "Run Alembic migrations"
+    cmds:
+      - "{{.DOCKER_EXEC}} alembic upgrade head"
+
+  migrate:revision:
+    desc: "Create a new Alembic migration revision"
+    cmds:
+      - '{{.DOCKER_EXEC}} alembic revision --autogenerate -m "{{.CLI_ARGS}}"'
+
+  migrate:downgrade:
+    desc: "Downgrade last Alembic migration"
+    cmds:
+      - "{{.DOCKER_EXEC}} alembic downgrade -1"
+
+  seed:
+    desc: "Seed initial data"
+    cmds:
+      - "{{.DOCKER_EXEC}} python app/initial_data.py"
+
+  prestart:
+    desc: "Run prestart script (wait for DB, migrate, seed)"
+    cmds:
+      - "{{.DOCKER_EXEC}} bash scripts/prestart.sh"
+
+  test:
+    desc: "Run tests with coverage"
+    cmds:
+      - docker compose run --rm -v ./backend/tests:/app/backend/tests backend bash scripts/tests-start.sh {{.CLI_ARGS}}
+
+  test:local:
+    desc: "Run tests using local docker compose stack"
+    cmds:
+      - docker compose down -v --remove-orphans
+      - docker compose build backend
+      - docker compose up -d --quiet-pull
+      - docker compose run --rm -v ./backend/tests:/app/backend/tests backend bash scripts/tests-start.sh {{.CLI_ARGS}}
+      - docker compose down -v --remove-orphans
+
+  lint:
+    desc: "Run linters (mypy, ruff check, ruff format --check)"
+    cmds:
+      - "{{.DOCKER_EXEC}} bash scripts/lint.sh"
+
+  format:
+    desc: "Run code formatters (ruff)"
+    aliases: [fix, fmt]
+    cmds:
+      - "{{.DOCKER_EXEC}} bash scripts/format.sh"
+
+  dev:
+    desc: "Start containers in watch mode for development"
+    deps: [build]
+    preconditions:
+      - sh: test -f .env
+        msg: "Please create .env file first. Copy from .env.example"
+    cmds:
+      - docker compose watch
+
+  clean:
+    desc: "Remove containers, volumes, and orphans"
+    cmds:
+      - docker compose down -v --remove-orphans
+
+  reset:
+    desc: "Full reset: clean everything and reinitialize"
+    cmds:
+      - task: clean
+      - task: init
