@@ -12,3 +12,6 @@ google-credentials.json
 /public/build/
 supervisord.pid
 .php-cs-fixer.cache
+phpunit.xml
+/storage/logs/
+
