@@ -14,4 +14,4 @@ supervisord.pid
 .php-cs-fixer.cache
 phpunit.xml
 /storage/logs/
-
+/bootstrap/cache/
