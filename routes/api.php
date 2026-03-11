@@ -20,4 +20,3 @@ Route::middleware("auth:sanctum")->group(function (): void {
 });
 
 Route::get("/hello", fn(): JsonResponse => new JsonResponse(["message" => "Hello, World!"]));
-
