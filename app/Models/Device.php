@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Relay\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Device extends Model
 {
     use HasFactory;
+    use HasUuids;
 
     protected $fillable = [
         "uuid",
@@ -22,6 +24,16 @@ class Device extends Model
         "installation_date",
         "notes",
     ];
+
+    public function uniqueIds(): array
+    {
+        return ["uuid"];
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return "uuid";
+    }
 
     protected function casts(): array
     {

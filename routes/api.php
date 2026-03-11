@@ -11,3 +11,5 @@ Route::middleware("auth:sanctum")->get("/user", fn(Request $request): JsonRespon
 Route::get("/hello", fn(): JsonResponse => new JsonResponse(["message" => "Hello, World!"]));
 
 Route::apiResource("devices", DeviceController::class);
+Route::post("/devices/with-qr", [DeviceController::class, "storeWithQrCode"])->name("devices.store_with_qr");
+Route::get("/devices/{device}/qr", [DeviceController::class, "qrCode"])->name("devices.qr");
