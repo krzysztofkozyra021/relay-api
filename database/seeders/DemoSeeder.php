@@ -7,11 +7,30 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Relay\Models\Device;
+use Relay\Models\User;
 
 class DemoSeeder extends Seeder
 {
     public function run(): void
     {
+        User::factory()->admin()->create([
+            "name" => "Administrator",
+            "email" => "admin@example.com",
+            "password" => "password",
+        ]);
+
+        User::factory()->installer()->create([
+            "name" => "Installer",
+            "email" => "installer@example.com",
+            "password" => "password",
+        ]);
+
+        User::factory()->service()->create([
+            "name" => "Service Technician",
+            "email" => "service@example.com",
+            "password" => "password",
+        ]);
+
         Device::factory()->count(50)->create();
 
         Device::create([
