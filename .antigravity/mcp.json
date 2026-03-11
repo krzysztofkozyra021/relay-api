@@ -1,0 +1,18 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/usr/bin/docker",
+            "args": [
+                "compose",
+                "--project-directory",
+                "/home/cysiu/Desktop/studia/projekty_studia/relay-api",
+                "exec",
+                "-T",
+                "app",
+                "php",
+                "artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}
