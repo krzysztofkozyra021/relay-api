@@ -16,7 +16,7 @@ class DeviceQrCodeTest extends TestCase
     {
         $device = Device::factory()->create();
 
-        $response = $this->get(route("devices.qr", $device));
+        $response = $this->get(route("devices.show_qr", $device));
 
         $response->assertStatus(200);
         $response->assertHeader("Content-Type", "image/svg+xml");
@@ -31,7 +31,7 @@ class DeviceQrCodeTest extends TestCase
             "location" => "Laboratory",
         ];
 
-        $response = $this->post(route("devices.store_with_qr"), $deviceData);
+        $response = $this->post(route("devices.generate_qr"), $deviceData);
 
         $response->assertStatus(200);
         $response->assertHeader("Content-Type", "image/svg+xml");

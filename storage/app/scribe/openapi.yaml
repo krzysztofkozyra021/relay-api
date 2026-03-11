@@ -1526,7 +1526,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-03-11T12:19:08'
+                  example: '2026-03-11T12:28:47'
                   nullable: true
                 notes:
                   type: string
@@ -1649,7 +1649,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-03-11T12:19:08'
+                  example: '2026-03-11T12:28:47'
                   nullable: true
                 notes:
                   type: string
@@ -1675,10 +1675,10 @@ paths:
         required: true
         schema:
           type: string
-  /api/devices/with-qr:
+  /api/devices/generate-qr:
     post:
       summary: ''
-      operationId: postApiDevicesWithQr
+      operationId: postApiDevicesGenerateQr
       description: ''
       parameters: []
       responses: {  }
@@ -1726,7 +1726,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-03-11T12:19:08'
+                  example: '2026-03-11T12:28:47'
                   nullable: true
                 notes:
                   type: string
@@ -1738,10 +1738,10 @@ paths:
                 - type
                 - location
       security: []
-  '/api/devices/{device_uuid}/qr':
+  '/api/devices/{device_uuid}/show-qr':
     get:
       summary: ''
-      operationId: getApiDevicesDevice_uuidQr
+      operationId: getApiDevicesDevice_uuidShowQr
       description: ''
       parameters: []
       responses:

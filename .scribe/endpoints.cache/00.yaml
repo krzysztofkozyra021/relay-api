@@ -228,7 +228,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-03-11T12:19:08'
+        example: '2026-03-11T12:28:47'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -253,7 +253,7 @@ endpoints:
       brand: i
       serial_number: 'y'
       location: v
-      installation_date: '2026-03-11T12:19:08'
+      installation_date: '2026-03-11T12:28:47'
       notes: architecto
     fileParameters: []
     responses: []
@@ -421,7 +421,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-03-11T12:19:08'
+        example: '2026-03-11T12:28:47'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -445,7 +445,7 @@ endpoints:
       brand: z
       serial_number: m
       location: i
-      installation_date: '2026-03-11T12:19:08'
+      installation_date: '2026-03-11T12:28:47'
       notes: architecto
     fileParameters: []
     responses: []
@@ -501,7 +501,7 @@ endpoints:
     custom: []
     httpMethods:
       - POST
-    uri: api/devices/with-qr
+    uri: api/devices/generate-qr
     metadata:
       custom: []
       groupName: Endpoints
@@ -602,7 +602,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-03-11T12:19:08'
+        example: '2026-03-11T12:28:47'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -627,7 +627,7 @@ endpoints:
       brand: i
       serial_number: 'y'
       location: v
-      installation_date: '2026-03-11T12:19:08'
+      installation_date: '2026-03-11T12:28:47'
       notes: architecto
     fileParameters: []
     responses: []
@@ -640,7 +640,7 @@ endpoints:
     custom: []
     httpMethods:
       - GET
-    uri: 'api/devices/{device_uuid}/qr'
+    uri: 'api/devices/{device_uuid}/show-qr'
     metadata:
       custom: []
       groupName: Endpoints

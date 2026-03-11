@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "relay-api API Documentation",
-        "_postman_id": "4dbf9bc9-9f6f-45e1-8262-1f3c6a329eab",
+        "_postman_id": "cf7cd1cf-035b-4717-a6ac-4f18aba5d539",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -185,7 +185,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-03-11T12:19:08\",\"notes\":\"architecto\"}"
+                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-03-11T12:28:47\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -280,7 +280,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"b\",\"type\":\"n\",\"model\":\"g\",\"brand\":\"z\",\"serial_number\":\"m\",\"location\":\"i\",\"installation_date\":\"2026-03-11T12:19:08\",\"notes\":\"architecto\"}"
+                            "raw": "{\"name\":\"b\",\"type\":\"n\",\"model\":\"g\",\"brand\":\"z\",\"serial_number\":\"m\",\"location\":\"i\",\"installation_date\":\"2026-03-11T12:28:47\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -326,13 +326,13 @@
                     "response": []
                 },
                 {
-                    "name": "POST api\/devices\/with-qr",
+                    "name": "POST api\/devices\/generate-qr",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/devices\/with-qr",
+                            "path": "api\/devices\/generate-qr",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/devices\/with-qr"
+                            "raw": "{{baseUrl}}\/api\/devices\/generate-qr"
                         },
                         "method": "POST",
                         "header": [
@@ -347,7 +347,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-03-11T12:19:08\",\"notes\":\"architecto\"}"
+                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-03-11T12:28:47\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -357,13 +357,13 @@
                     "response": []
                 },
                 {
-                    "name": "GET api\/devices\/{device_uuid}\/qr",
+                    "name": "GET api\/devices\/{device_uuid}\/show-qr",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/devices\/:device_uuid\/qr",
+                            "path": "api\/devices\/:device_uuid\/show-qr",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/devices\/:device_uuid\/qr",
+                            "raw": "{{baseUrl}}\/api\/devices\/:device_uuid\/show-qr",
                             "variable": [
                                 {
                                     "id": "device_uuid",

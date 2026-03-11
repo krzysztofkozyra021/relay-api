@@ -92,11 +92,11 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-devices--uuid-">
                                 <a href="#endpoints-DELETEapi-devices--uuid-">DELETE api/devices/{uuid}</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-devices-with-qr">
-                                <a href="#endpoints-POSTapi-devices-with-qr">POST api/devices/with-qr</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-devices-generate-qr">
+                                <a href="#endpoints-POSTapi-devices-generate-qr">POST api/devices/generate-qr</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--device_uuid--qr">
-                                <a href="#endpoints-GETapi-devices--device_uuid--qr">GET api/devices/{device_uuid}/qr</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--device_uuid--show-qr">
+                                <a href="#endpoints-GETapi-devices--device_uuid--show-qr">GET api/devices/{device_uuid}/show-qr</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -2006,7 +2006,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"i\",
     \"serial_number\": \"y\",
     \"location\": \"v\",
-    \"installation_date\": \"2026-03-11T12:19:08\",
+    \"installation_date\": \"2026-03-11T12:28:47\",
     \"notes\": \"architecto\"
 }"
 </code></pre></div>
@@ -2030,7 +2030,7 @@ let body = {
     "brand": "i",
     "serial_number": "y",
     "location": "v",
-    "installation_date": "2026-03-11T12:19:08",
+    "installation_date": "2026-03-11T12:28:47",
     "notes": "architecto"
 };
 
@@ -2207,10 +2207,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="installation_date"                data-endpoint="POSTapi-devices"
-               value="2026-03-11T12:19:08"
+               value="2026-03-11T12:28:47"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-03-11T12:19:08</code></p>
+<p>Must be a valid date. Example: <code>2026-03-11T12:28:47</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2400,7 +2400,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"z\",
     \"serial_number\": \"m\",
     \"location\": \"i\",
-    \"installation_date\": \"2026-03-11T12:19:08\",
+    \"installation_date\": \"2026-03-11T12:28:47\",
     \"notes\": \"architecto\"
 }"
 </code></pre></div>
@@ -2423,7 +2423,7 @@ let body = {
     "brand": "z",
     "serial_number": "m",
     "location": "i",
-    "installation_date": "2026-03-11T12:19:08",
+    "installation_date": "2026-03-11T12:28:47",
     "notes": "architecto"
 };
 
@@ -2605,10 +2605,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="installation_date"                data-endpoint="PUTapi-devices--uuid-"
-               value="2026-03-11T12:19:08"
+               value="2026-03-11T12:28:47"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-03-11T12:19:08</code></p>
+<p>Must be a valid date. Example: <code>2026-03-11T12:28:47</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2748,20 +2748,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-POSTapi-devices-with-qr">POST api/devices/with-qr</h2>
+                    <h2 id="endpoints-POSTapi-devices-generate-qr">POST api/devices/generate-qr</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-devices-with-qr">
+<span id="example-requests-POSTapi-devices-generate-qr">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://relay-api.blumilk.local.env/api/devices/with-qr" \
+    "https://relay-api.blumilk.local.env/api/devices/generate-qr" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -2772,7 +2772,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"i\",
     \"serial_number\": \"y\",
     \"location\": \"v\",
-    \"installation_date\": \"2026-03-11T12:19:08\",
+    \"installation_date\": \"2026-03-11T12:28:47\",
     \"notes\": \"architecto\"
 }"
 </code></pre></div>
@@ -2780,7 +2780,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/with-qr"
+    "https://relay-api.blumilk.local.env/api/devices/generate-qr"
 );
 
 const headers = {
@@ -2796,7 +2796,7 @@ let body = {
     "brand": "i",
     "serial_number": "y",
     "location": "v",
-    "installation_date": "2026-03-11T12:19:08",
+    "installation_date": "2026-03-11T12:28:47",
     "notes": "architecto"
 };
 
@@ -2808,45 +2808,45 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-POSTapi-devices-with-qr">
+<span id="example-responses-POSTapi-devices-generate-qr">
 </span>
-<span id="execution-results-POSTapi-devices-with-qr" hidden>
+<span id="execution-results-POSTapi-devices-generate-qr" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-devices-with-qr"></span>:
+                id="execution-response-status-POSTapi-devices-generate-qr"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-devices-with-qr"
+    <pre class="json"><code id="execution-response-content-POSTapi-devices-generate-qr"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-devices-with-qr" hidden>
+<span id="execution-error-POSTapi-devices-generate-qr" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-devices-with-qr">
+    <pre><code id="execution-error-message-POSTapi-devices-generate-qr">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-devices-with-qr" data-method="POST"
-      data-path="api/devices/with-qr"
+<form id="form-POSTapi-devices-generate-qr" data-method="POST"
+      data-path="api/devices/generate-qr"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-devices-with-qr', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-devices-generate-qr', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-devices-with-qr"
-                    onclick="tryItOut('POSTapi-devices-with-qr');">Try it out ⚡
+                    id="btn-tryout-POSTapi-devices-generate-qr"
+                    onclick="tryItOut('POSTapi-devices-generate-qr');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-devices-with-qr"
-                    onclick="cancelTryOut('POSTapi-devices-with-qr');" hidden>Cancel 🛑
+                    id="btn-canceltryout-POSTapi-devices-generate-qr"
+                    onclick="cancelTryOut('POSTapi-devices-generate-qr');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-devices-with-qr"
+                    id="btn-executetryout-POSTapi-devices-generate-qr"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -2854,7 +2854,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>api/devices/with-qr</code></b>
+            <b><code>api/devices/generate-qr</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -2863,7 +2863,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-devices-with-qr"
+                              name="Content-Type"                data-endpoint="POSTapi-devices-generate-qr"
                value="application/json"
                data-component="header">
     <br>
@@ -2875,7 +2875,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-devices-with-qr"
+                              name="Accept"                data-endpoint="POSTapi-devices-generate-qr"
                value="application/json"
                data-component="header">
     <br>
@@ -2888,7 +2888,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="uuid"                data-endpoint="POSTapi-devices-with-qr"
+                              name="uuid"                data-endpoint="POSTapi-devices-generate-qr"
                value="6ff8f7f6-1eb3-3525-be4a-3932c805afed"
                data-component="body">
     <br>
@@ -2900,7 +2900,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="name"                data-endpoint="POSTapi-devices-with-qr"
+                              name="name"                data-endpoint="POSTapi-devices-generate-qr"
                value="g"
                data-component="body">
     <br>
@@ -2912,7 +2912,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="type"                data-endpoint="POSTapi-devices-with-qr"
+                              name="type"                data-endpoint="POSTapi-devices-generate-qr"
                value="z"
                data-component="body">
     <br>
@@ -2924,7 +2924,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="model"                data-endpoint="POSTapi-devices-with-qr"
+                              name="model"                data-endpoint="POSTapi-devices-generate-qr"
                value="m"
                data-component="body">
     <br>
@@ -2936,7 +2936,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="brand"                data-endpoint="POSTapi-devices-with-qr"
+                              name="brand"                data-endpoint="POSTapi-devices-generate-qr"
                value="i"
                data-component="body">
     <br>
@@ -2948,7 +2948,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="serial_number"                data-endpoint="POSTapi-devices-with-qr"
+                              name="serial_number"                data-endpoint="POSTapi-devices-generate-qr"
                value="y"
                data-component="body">
     <br>
@@ -2960,7 +2960,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="location"                data-endpoint="POSTapi-devices-with-qr"
+                              name="location"                data-endpoint="POSTapi-devices-generate-qr"
                value="v"
                data-component="body">
     <br>
@@ -2972,11 +2972,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="installation_date"                data-endpoint="POSTapi-devices-with-qr"
-               value="2026-03-11T12:19:08"
+                              name="installation_date"                data-endpoint="POSTapi-devices-generate-qr"
+               value="2026-03-11T12:28:47"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-03-11T12:19:08</code></p>
+<p>Must be a valid date. Example: <code>2026-03-11T12:28:47</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2984,7 +2984,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="notes"                data-endpoint="POSTapi-devices-with-qr"
+                              name="notes"                data-endpoint="POSTapi-devices-generate-qr"
                value="architecto"
                data-component="body">
     <br>
@@ -2992,27 +2992,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-devices--device_uuid--qr">GET api/devices/{device_uuid}/qr</h2>
+                    <h2 id="endpoints-GETapi-devices--device_uuid--show-qr">GET api/devices/{device_uuid}/show-qr</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-devices--device_uuid--qr">
+<span id="example-requests-GETapi-devices--device_uuid--show-qr">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://relay-api.blumilk.local.env/api/devices/3eb6686f-77f5-3b9e-a230-b7916437d194/qr" \
+    --get "https://relay-api.blumilk.local.env/api/devices/3eb6686f-77f5-3b9e-a230-b7916437d194/show-qr" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/3eb6686f-77f5-3b9e-a230-b7916437d194/qr"
+    "https://relay-api.blumilk.local.env/api/devices/3eb6686f-77f5-3b9e-a230-b7916437d194/show-qr"
 );
 
 const headers = {
@@ -3028,7 +3028,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-devices--device_uuid--qr">
+<span id="example-responses-GETapi-devices--device_uuid--show-qr">
             <blockquote>
             <p>Example response (200):</p>
         </blockquote>
@@ -3046,43 +3046,43 @@ access-control-allow-origin: *
 </code>
  </pre>
     </span>
-<span id="execution-results-GETapi-devices--device_uuid--qr" hidden>
+<span id="execution-results-GETapi-devices--device_uuid--show-qr" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-devices--device_uuid--qr"></span>:
+                id="execution-response-status-GETapi-devices--device_uuid--show-qr"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-devices--device_uuid--qr"
+    <pre class="json"><code id="execution-response-content-GETapi-devices--device_uuid--show-qr"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-devices--device_uuid--qr" hidden>
+<span id="execution-error-GETapi-devices--device_uuid--show-qr" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-devices--device_uuid--qr">
+    <pre><code id="execution-error-message-GETapi-devices--device_uuid--show-qr">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-devices--device_uuid--qr" data-method="GET"
-      data-path="api/devices/{device_uuid}/qr"
+<form id="form-GETapi-devices--device_uuid--show-qr" data-method="GET"
+      data-path="api/devices/{device_uuid}/show-qr"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-devices--device_uuid--qr', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-devices--device_uuid--show-qr', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-devices--device_uuid--qr"
-                    onclick="tryItOut('GETapi-devices--device_uuid--qr');">Try it out ⚡
+                    id="btn-tryout-GETapi-devices--device_uuid--show-qr"
+                    onclick="tryItOut('GETapi-devices--device_uuid--show-qr');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-devices--device_uuid--qr"
-                    onclick="cancelTryOut('GETapi-devices--device_uuid--qr');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-devices--device_uuid--show-qr"
+                    onclick="cancelTryOut('GETapi-devices--device_uuid--show-qr');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-devices--device_uuid--qr"
+                    id="btn-executetryout-GETapi-devices--device_uuid--show-qr"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -3090,7 +3090,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/devices/{device_uuid}/qr</code></b>
+            <b><code>api/devices/{device_uuid}/show-qr</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -3099,7 +3099,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-devices--device_uuid--qr"
+                              name="Content-Type"                data-endpoint="GETapi-devices--device_uuid--show-qr"
                value="application/json"
                data-component="header">
     <br>
@@ -3111,7 +3111,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-devices--device_uuid--qr"
+                              name="Accept"                data-endpoint="GETapi-devices--device_uuid--show-qr"
                value="application/json"
                data-component="header">
     <br>
@@ -3124,7 +3124,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="device_uuid"                data-endpoint="GETapi-devices--device_uuid--qr"
+                              name="device_uuid"                data-endpoint="GETapi-devices--device_uuid--show-qr"
                value="3eb6686f-77f5-3b9e-a230-b7916437d194"
                data-component="url">
     <br>
