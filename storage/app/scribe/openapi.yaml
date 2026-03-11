@@ -1,0 +1,988 @@
+openapi: 3.0.3
+info:
+  title: 'relay-api API Documentation'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'https://relay-api.blumilk.local.env'
+tags:
+  -
+    name: Endpoints
+    description: ''
+paths:
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/hello:
+    get:
+      summary: ''
+      operationId: getApiHello
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Hello, World!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Hello, World!'
+      tags:
+        - Endpoints
+      security: []
+  /api/devices:
+    get:
+      summary: ''
+      operationId: getApiDevices
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 1
+                    uuid:
+                      type: string
+                      example: 3eb6686f-77f5-3b9e-a230-b7916437d194
+                    name:
+                      type: string
+                      example: 'Device 3799'
+                    type:
+                      type: string
+                      example: A/C
+                    model:
+                      type: string
+                      example: Model-1054
+                    brand:
+                      type: string
+                      example: 'Orn, Friesen and Ortiz'
+                    serial_number:
+                      type: string
+                      example: SN-78294004
+                    location:
+                      type: string
+                      example: "217 Crooks Isle Suite 481\nMayerfort, NJ 50977"
+                    installation_date:
+                      type: string
+                      example: '2011-06-05T00:00:00.000000Z'
+                    notes:
+                      type: string
+                      example: 'Tempora ratione voluptatem dolore distinctio quia. Non aliquam voluptas non doloribus qui. Aliquam ad possimus similique quia.'
+                    created_at:
+                      type: string
+                      example: '2026-03-11T09:16:33.000000Z'
+                    updated_at:
+                      type: string
+                      example: '2026-03-11T09:16:33.000000Z'
+                example:
+                  -
+                    id: 1
+                    uuid: 3eb6686f-77f5-3b9e-a230-b7916437d194
+                    name: 'Device 3799'
+                    type: A/C
+                    model: Model-1054
+                    brand: 'Orn, Friesen and Ortiz'
+                    serial_number: SN-78294004
+                    location: "217 Crooks Isle Suite 481\nMayerfort, NJ 50977"
+                    installation_date: '2011-06-05T00:00:00.000000Z'
+                    notes: 'Tempora ratione voluptatem dolore distinctio quia. Non aliquam voluptas non doloribus qui. Aliquam ad possimus similique quia.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 2
+                    uuid: 101cd10f-146e-39fc-ab89-d8231eced6cb
+                    name: 'Device 4174'
+                    type: Gate
+                    model: Model-9904
+                    brand: Hudson-DuBuque
+                    serial_number: SN-07639332
+                    location: "978 Fadel Locks\nVilmahaven, DC 23682-2737"
+                    installation_date: '1977-02-03T00:00:00.000000Z'
+                    notes: 'Laudantium laboriosam quae doloremque repellat eaque consequuntur. Officia adipisci eos et rerum ut unde qui vel.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 3
+                    uuid: 1059cd91-00ef-31e0-9a80-1f33dd4c4c7e
+                    name: 'Device 1397'
+                    type: Gate
+                    model: Model-7181
+                    brand: 'Ankunding, Barrows and Collins'
+                    serial_number: SN-93383906
+                    location: "83071 Nicole Meadow\nWest Elianebury, PA 32154"
+                    installation_date: '2023-12-16T00:00:00.000000Z'
+                    notes: 'Qui saepe voluptatem et. Blanditiis fugiat velit quas saepe adipisci dolor expedita. Et similique occaecati dolor minima dolore reprehenderit ad.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 4
+                    uuid: e4b19993-261c-37e3-a87b-fe8eb6631641
+                    name: 'Device 2051'
+                    type: 'Wheel Lock'
+                    model: Model-8947
+                    brand: 'Wolf Inc'
+                    serial_number: SN-10435359
+                    location: "22024 Brekke Heights\nNew Reed, MO 61159"
+                    installation_date: '2006-12-13T00:00:00.000000Z'
+                    notes: 'Aut nisi qui aut eaque. Autem quod aspernatur architecto unde velit. Omnis et officiis repudiandae at recusandae ducimus quae. Dolores alias autem laborum labore error.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 5
+                    uuid: 3d962215-bbec-3ec8-91ca-dca09548124b
+                    name: 'Device 9173'
+                    type: 'Wheel Lock'
+                    model: Model-1833
+                    brand: 'Krajcik, Kozey and Denesik'
+                    serial_number: SN-83316601
+                    location: "2444 Mayert Center Apt. 042\nHagenesfort, IN 27281-4719"
+                    installation_date: '1982-05-21T00:00:00.000000Z'
+                    notes: 'Sit est itaque adipisci nisi et maiores soluta. Nihil aut culpa corrupti ut ducimus omnis officiis eligendi. Voluptatibus deleniti eius suscipit reiciendis facere et non. Sit quia quo dolorum sint.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 6
+                    uuid: 29c649d9-b812-3349-853d-fd522d503242
+                    name: 'Device 3772'
+                    type: A/C
+                    model: Model-8517
+                    brand: 'Buckridge Inc'
+                    serial_number: SN-57625231
+                    location: "9247 Mathilde Lodge\nRaleighfort, AZ 64202"
+                    installation_date: '2010-02-28T00:00:00.000000Z'
+                    notes: 'Esse recusandae tempora aut nesciunt accusantium et. At voluptatem voluptatem blanditiis necessitatibus. Molestiae aliquid maiores harum.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 7
+                    uuid: a498e12b-6c07-33e0-885c-e7c9fa3e1281
+                    name: 'Device 6509'
+                    type: A/C
+                    model: Model-7327
+                    brand: 'Larkin, Yundt and Kirlin'
+                    serial_number: SN-17228521
+                    location: "8698 Mireya Ridge\nZackarybury, VA 53787"
+                    installation_date: '1983-04-06T00:00:00.000000Z'
+                    notes: 'Aut praesentium voluptatum iure sint in mollitia quo. At praesentium voluptas est. Quidem culpa tenetur inventore magnam voluptas quia quibusdam quo.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 8
+                    uuid: ef38dc86-076b-33bd-a9a3-5ddf2477ad53
+                    name: 'Device 4708'
+                    type: A/C
+                    model: Model-6034
+                    brand: 'Treutel, Nolan and Doyle'
+                    serial_number: SN-20195310
+                    location: "17233 Jones Locks\nSouth Alexane, TX 19071"
+                    installation_date: '2004-09-13T00:00:00.000000Z'
+                    notes: 'Temporibus eum voluptatum consequatur quia ut. Quia et eaque quia dolores aut.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 9
+                    uuid: 68309a26-e923-312b-bca8-83f2332a1831
+                    name: 'Device 2227'
+                    type: Gate
+                    model: Model-0941
+                    brand: 'Gutmann Inc'
+                    serial_number: SN-06115935
+                    location: "118 Steuber Haven Apt. 067\nSouth Nellastad, NH 27497"
+                    installation_date: '1976-01-10T00:00:00.000000Z'
+                    notes: 'Fugit voluptate nobis amet dignissimos est ipsam dolor atque. Pariatur et sint aliquam dolore aspernatur mollitia. Quia perferendis rerum perferendis et ducimus. Quia nesciunt velit dolor numquam.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 10
+                    uuid: cd878f7e-ed1b-38b2-92dd-33ec3c8278a7
+                    name: 'Device 2014'
+                    type: 'Wheel Lock'
+                    model: Model-3125
+                    brand: 'Schowalter Inc'
+                    serial_number: SN-77159879
+                    location: "4732 Mitchell Wells\nNorth Durward, ND 49470-9190"
+                    installation_date: '1999-11-02T00:00:00.000000Z'
+                    notes: 'Soluta et eum et aperiam dolores reiciendis. Facilis consequuntur ipsum aliquam. Suscipit veritatis ipsum quasi qui sit voluptas. Explicabo aut qui asperiores est perferendis voluptate voluptatem.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 11
+                    uuid: 32d07b64-702c-3393-83ae-2418fbdb3962
+                    name: 'Device 5760'
+                    type: 'Wheel Lock'
+                    model: Model-1921
+                    brand: Torp-Hegmann
+                    serial_number: SN-82253549
+                    location: "3583 Quigley Branch\nMcKenzietown, VA 69326-2150"
+                    installation_date: '1997-11-21T00:00:00.000000Z'
+                    notes: 'Velit earum nulla expedita vel sint nesciunt. Quis dicta sint deserunt doloremque similique quibusdam. Qui fugit nemo suscipit dignissimos eius amet.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 12
+                    uuid: 90043abb-01b1-3044-87d3-3b3d3c3afb75
+                    name: 'Device 4644'
+                    type: A/C
+                    model: Model-5659
+                    brand: 'Walter Inc'
+                    serial_number: SN-67600245
+                    location: "54218 Palma Islands Apt. 103\nKlingport, IA 79864"
+                    installation_date: '2017-01-03T00:00:00.000000Z'
+                    notes: 'Veritatis esse mollitia id. Veniam dolore et minus sed voluptas. Sit expedita rerum ullam fuga dolor praesentium ab. Aut et alias officiis ut dolorum debitis.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 13
+                    uuid: 597e5ce9-0504-3f02-bc72-554276479dff
+                    name: 'Device 2552'
+                    type: A/C
+                    model: Model-6605
+                    brand: 'Schiller Ltd'
+                    serial_number: SN-02537331
+                    location: "40288 Ritchie Streets\nNew Adonis, OH 37420"
+                    installation_date: '1996-12-26T00:00:00.000000Z'
+                    notes: 'Vel rerum et corporis officiis dolor sed. Laudantium temporibus quos omnis corrupti minima. Omnis aut deleniti possimus repellendus perferendis.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 14
+                    uuid: b0f2390f-e4b1-3f22-8445-7649ccf9d536
+                    name: 'Device 8935'
+                    type: A/C
+                    model: Model-2199
+                    brand: 'Jenkins, Emard and Mante'
+                    serial_number: SN-03178596
+                    location: "43713 Dan Street\nTrentonview, IN 22602"
+                    installation_date: '2024-05-29T00:00:00.000000Z'
+                    notes: 'Possimus sit et tenetur blanditiis voluptas eum. Qui aut iure quis ipsam est magnam. Ut nemo omnis in optio.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 15
+                    uuid: 9ef232ba-026a-36a2-843f-2e0dee971d88
+                    name: 'Device 4758'
+                    type: 'Wheel Lock'
+                    model: Model-3103
+                    brand: "O'Reilly Ltd"
+                    serial_number: SN-20387392
+                    location: "6289 Dovie Village Suite 592\nLuettgenville, NM 87006-8157"
+                    installation_date: '2021-03-30T00:00:00.000000Z'
+                    notes: 'Eos non laboriosam dolore ut error dolor. Officiis ea reprehenderit ut doloribus. Veniam aut eius in consequuntur a.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 16
+                    uuid: 0e783001-09dc-3afa-90af-212e68fa05d2
+                    name: 'Device 8879'
+                    type: Gate
+                    model: Model-9204
+                    brand: Funk-Ziemann
+                    serial_number: SN-28194523
+                    location: "87152 Brown Knoll\nVandervortport, NJ 08954"
+                    installation_date: '1977-10-06T00:00:00.000000Z'
+                    notes: 'Ipsam et ducimus nisi eum. Illo eos a minima nulla. Eligendi ut odit ut earum commodi cupiditate enim. Natus vero dicta et omnis. Voluptas facilis nihil libero non mollitia.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 17
+                    uuid: 87a65cdc-7ca8-346d-9346-82393e922f21
+                    name: 'Device 7985'
+                    type: 'Wheel Lock'
+                    model: Model-2655
+                    brand: 'Yost and Sons'
+                    serial_number: SN-08878954
+                    location: "7042 Miller Keys Apt. 403\nNorth Aronborough, MS 27079"
+                    installation_date: '2022-02-19T00:00:00.000000Z'
+                    notes: 'Aut enim odit nisi enim. Eos reprehenderit aspernatur quod officia deleniti. Eos tempore iste magni.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 18
+                    uuid: 85720feb-c8c3-3fcd-a3d8-7da302708628
+                    name: 'Device 7705'
+                    type: A/C
+                    model: Model-9745
+                    brand: Auer-Dickens
+                    serial_number: SN-67482893
+                    location: "502 Abshire Branch\nJuliannetown, IA 54139"
+                    installation_date: '2004-07-24T00:00:00.000000Z'
+                    notes: 'Culpa quaerat a quo et ut. Qui et tempora ut minima unde incidunt. Consequatur quisquam dolorem vitae qui dicta. Et ratione tempore facilis odio.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 19
+                    uuid: 080090f2-8ab7-3c87-9a89-6bb95c670fae
+                    name: 'Device 3254'
+                    type: Gate
+                    model: Model-4759
+                    brand: 'Lindgren, McGlynn and Wuckert'
+                    serial_number: SN-71525016
+                    location: "6316 Bernhard Tunnel Apt. 439\nMayertstad, MI 66485-4486"
+                    installation_date: '2011-05-16T00:00:00.000000Z'
+                    notes: 'Iste saepe sapiente qui. Porro cumque deserunt autem asperiores eum. Eum quia autem inventore dolor corporis neque.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 20
+                    uuid: fee94d26-0534-367f-b8b0-0e2c6cd67d37
+                    name: 'Device 1016'
+                    type: A/C
+                    model: Model-7739
+                    brand: "O'Kon-Cruickshank"
+                    serial_number: SN-42802166
+                    location: "404 Mraz Squares Suite 324\nEast D'angelochester, OH 00068-7642"
+                    installation_date: '2010-06-24T00:00:00.000000Z'
+                    notes: 'Voluptatum explicabo autem repudiandae nisi enim aut. Doloremque ut est et architecto quisquam cumque laborum ea. Quis quae omnis eius aut consequatur nulla et. Deserunt optio autem voluptatem.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 21
+                    uuid: 71bece54-f369-380d-8bce-6490a0ec5272
+                    name: 'Device 9697'
+                    type: 'Wheel Lock'
+                    model: Model-8689
+                    brand: Schowalter-Lueilwitz
+                    serial_number: SN-81462066
+                    location: "4291 Deckow Cape Suite 732\nNew Lonniehaven, MO 35969-8047"
+                    installation_date: '2026-03-09T00:00:00.000000Z'
+                    notes: 'Sunt id nihil fuga cupiditate accusantium. Praesentium voluptatem ipsa qui libero minus minus velit. Quo ut perferendis ipsam. Corrupti et sit tenetur quaerat dignissimos ut.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 22
+                    uuid: c084c9a8-c34f-3cfb-b5b4-b7b1927ccf1e
+                    name: 'Device 5181'
+                    type: A/C
+                    model: Model-6902
+                    brand: 'Bernhard Inc'
+                    serial_number: SN-77855201
+                    location: "75171 Mary Curve Suite 544\nSchaefershire, VT 82566"
+                    installation_date: '2024-12-28T00:00:00.000000Z'
+                    notes: 'Eum voluptatem quidem reprehenderit consequatur. In quasi quam eveniet quas et minima. Beatae nesciunt aut quia est id assumenda.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 23
+                    uuid: 1037bb88-5d2b-3144-938c-da50da6f99bf
+                    name: 'Device 3633'
+                    type: A/C
+                    model: Model-4010
+                    brand: 'Hahn, Hilpert and Reilly'
+                    serial_number: SN-40652360
+                    location: "40998 Eunice Circle\nWittingville, KS 51891-7498"
+                    installation_date: '2000-02-04T00:00:00.000000Z'
+                    notes: 'Deleniti quos quia maxime nisi aspernatur. Quis natus qui aut. Perferendis harum ullam totam qui. Veritatis non molestiae reprehenderit deleniti.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 24
+                    uuid: 259aabfa-d712-391c-973a-ae20725f44ff
+                    name: 'Device 5797'
+                    type: A/C
+                    model: Model-4320
+                    brand: 'Dibbert and Sons'
+                    serial_number: SN-58144080
+                    location: "832 Clement Roads\nNorth Rebecca, MO 85820-3295"
+                    installation_date: '2006-03-24T00:00:00.000000Z'
+                    notes: 'Animi voluptatum voluptas rerum voluptate sint vitae. Sunt id sequi est asperiores veritatis fuga laudantium. Eius dolores dolorem qui. Eos earum quia amet error ratione veritatis voluptas.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 25
+                    uuid: 3a5befb3-f007-3121-952e-d542ef6903a0
+                    name: 'Device 8764'
+                    type: A/C
+                    model: Model-7392
+                    brand: 'Breitenberg PLC'
+                    serial_number: SN-15425024
+                    location: "439 Marlin Row\nPort Jany, WI 66173-9947"
+                    installation_date: '1985-01-28T00:00:00.000000Z'
+                    notes: 'Nihil quo incidunt molestiae non. Voluptas laudantium fugiat eligendi ut enim expedita. Asperiores a ex eligendi.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 26
+                    uuid: bbdbdb28-9a50-3b01-a802-3844930ab0cb
+                    name: 'Device 4266'
+                    type: Gate
+                    model: Model-0759
+                    brand: Treutel-Jones
+                    serial_number: SN-12999862
+                    location: "62453 Jaskolski Terrace Suite 463\nGradyton, NM 14932"
+                    installation_date: '2005-05-27T00:00:00.000000Z'
+                    notes: 'Vitae nostrum dolorem cupiditate. Et est aut placeat iste aliquam officiis sunt. Sunt sapiente sed nihil. Aliquid nobis laboriosam et eius.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 27
+                    uuid: 9efe697c-4812-3e7c-bf7f-e6450b76b5e8
+                    name: 'Device 5579'
+                    type: A/C
+                    model: Model-1061
+                    brand: Erdman-Roob
+                    serial_number: SN-73444768
+                    location: "32082 Bernhard Stream Apt. 181\nLake Lorenza, AL 07663"
+                    installation_date: '1973-10-27T00:00:00.000000Z'
+                    notes: 'Distinctio ratione consectetur dolor minus eveniet nulla soluta minus. Quo facilis exercitationem nisi modi animi est. Enim nisi laborum excepturi et odit aut.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 28
+                    uuid: 830552c4-7ea5-36ce-a3d6-c4346a288253
+                    name: 'Device 3192'
+                    type: Gate
+                    model: Model-6915
+                    brand: 'Boyle, Maggio and Williamson'
+                    serial_number: SN-94943599
+                    location: "144 Aufderhar Ridges\nWest Paige, NY 94522-2222"
+                    installation_date: '1991-02-18T00:00:00.000000Z'
+                    notes: 'Voluptatem vero facere nostrum excepturi. Laborum dolores saepe soluta mollitia. Dolore culpa ea ducimus quibusdam accusamus. Voluptatem quae voluptas omnis quis cupiditate.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 29
+                    uuid: 629cba53-d559-34e8-b578-421f29f4b731
+                    name: 'Device 6530'
+                    type: 'Wheel Lock'
+                    model: Model-0225
+                    brand: 'Marquardt and Sons'
+                    serial_number: SN-14945276
+                    location: "154 Abernathy Meadow\nMcGlynnfurt, ME 46849-3161"
+                    installation_date: '1994-09-23T00:00:00.000000Z'
+                    notes: 'Quaerat praesentium repudiandae accusamus aut. Quasi voluptas rerum sit vel. Qui quas ut et laudantium. Qui corporis debitis ab quam delectus. Ducimus totam delectus officia minima minima eum magni.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 30
+                    uuid: cc60ed20-06cd-3534-8834-c0683572b21b
+                    name: 'Device 4825'
+                    type: Gate
+                    model: Model-5849
+                    brand: Stiedemann-Bernier
+                    serial_number: SN-38115298
+                    location: "56885 Tiffany Overpass Suite 545\nValerieside, LA 26748"
+                    installation_date: '1996-05-30T00:00:00.000000Z'
+                    notes: 'Dolorem vel doloribus quia rem. Quibusdam blanditiis quos quae libero. Quaerat sequi nobis sit dignissimos perspiciatis et dolorem qui. Nihil id nam non sunt dolorum enim in.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 31
+                    uuid: 53d48c05-480f-35ff-ad7d-ff2fe018721c
+                    name: 'Device 4692'
+                    type: Gate
+                    model: Model-2132
+                    brand: "Emmerich, D'Amore and Stanton"
+                    serial_number: SN-79190930
+                    location: "1355 Leanna Harbor\nWest Noble, OK 52572"
+                    installation_date: '2000-06-10T00:00:00.000000Z'
+                    notes: 'Non quae maxime qui est. Non eaque deleniti ipsam facilis facere adipisci molestias. Ex veniam quis quae et. Itaque quo minima ut ut excepturi sed.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 32
+                    uuid: 4c85730b-1528-3e3b-9730-ab5ca36325e4
+                    name: 'Device 0051'
+                    type: 'Wheel Lock'
+                    model: Model-2990
+                    brand: 'Cartwright, Hahn and Corkery'
+                    serial_number: SN-12551598
+                    location: "7266 Harber Parkway\nKrisburgh, MS 08608"
+                    installation_date: '1975-11-14T00:00:00.000000Z'
+                    notes: 'Molestiae esse ut voluptatem quibusdam voluptatibus. Ut ut aperiam quaerat ipsa odit dignissimos consectetur. Reprehenderit debitis omnis ut voluptatem error. Veniam odio et facere voluptas.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 33
+                    uuid: 7311f1e9-cc62-37ad-97ec-34147899d9cc
+                    name: 'Device 0405'
+                    type: 'Wheel Lock'
+                    model: Model-6719
+                    brand: Morar-Prosacco
+                    serial_number: SN-10436018
+                    location: "37062 Mercedes Ramp\nLake Lilyan, NY 97663"
+                    installation_date: '1975-07-25T00:00:00.000000Z'
+                    notes: 'Qui dolores quidem aut esse voluptates blanditiis. Eos libero omnis optio voluptas veritatis eligendi quo ratione. Possimus eum incidunt et repellat voluptatum rerum aliquid.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 34
+                    uuid: f2a578aa-efcb-30d1-89ae-5a07220bb0e8
+                    name: 'Device 0760'
+                    type: A/C
+                    model: Model-7440
+                    brand: 'Greenfelder, Runte and Conroy'
+                    serial_number: SN-67470431
+                    location: "571 Gordon Lake Apt. 016\nChelseyborough, TX 26511-9620"
+                    installation_date: '1999-07-21T00:00:00.000000Z'
+                    notes: 'Doloribus recusandae et consequatur veritatis voluptatem voluptas. Voluptatibus est similique distinctio distinctio eaque non. Ducimus cum accusamus aut qui. Rerum repudiandae quia consequatur.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 35
+                    uuid: 4cb0628e-3419-3614-9f4f-d5fa54422d51
+                    name: 'Device 4082'
+                    type: 'Wheel Lock'
+                    model: Model-2676
+                    brand: 'McCullough, Sawayn and Flatley'
+                    serial_number: SN-47758164
+                    location: "273 Lenny Green\nPort Ayanaside, AL 69908"
+                    installation_date: '1979-12-23T00:00:00.000000Z'
+                    notes: 'Voluptatibus sint sint animi occaecati vero. Voluptatem perspiciatis necessitatibus alias similique itaque. Eius quisquam hic dolorem veritatis sit nihil velit.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 36
+                    uuid: 5e6d4b58-3302-30c8-b1f0-4abeeb0e94e8
+                    name: 'Device 7491'
+                    type: Gate
+                    model: Model-4630
+                    brand: 'Wintheiser LLC'
+                    serial_number: SN-36074557
+                    location: "522 Willard Forks Apt. 871\nNew Aryanna, AK 14828-7541"
+                    installation_date: '1991-10-08T00:00:00.000000Z'
+                    notes: 'Blanditiis dignissimos architecto officia ducimus. Esse laboriosam maiores provident. Distinctio dignissimos nisi sed dolorum.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 37
+                    uuid: 14eb6ac4-2167-3577-b0a8-da60b1cdc977
+                    name: 'Device 3924'
+                    type: Gate
+                    model: Model-7613
+                    brand: Weber-Wolf
+                    serial_number: SN-36929664
+                    location: "53099 Stiedemann Mountain Suite 835\nWest Piper, MI 55690"
+                    installation_date: '2008-08-23T00:00:00.000000Z'
+                    notes: 'Et odio sed non corrupti qui in. Eius quas necessitatibus tenetur saepe ut voluptas. Inventore eos culpa facilis delectus quidem.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 38
+                    uuid: 93df113b-4ba1-3c64-9cf3-ca81479e55df
+                    name: 'Device 3073'
+                    type: A/C
+                    model: Model-4591
+                    brand: Schuppe-Turner
+                    serial_number: SN-39550502
+                    location: "23702 DuBuque Turnpike Apt. 931\nLake Eldora, AZ 15431-1293"
+                    installation_date: '2005-09-29T00:00:00.000000Z'
+                    notes: 'Odit et sed consequuntur fugit. Quis aliquam ut reprehenderit expedita ea. Et quia fugiat sunt deleniti officia et consectetur.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 39
+                    uuid: 89342624-56bb-3601-9ec0-7cc091f4e6f0
+                    name: 'Device 3399'
+                    type: Gate
+                    model: Model-7979
+                    brand: 'Heaney, Mayer and Fritsch'
+                    serial_number: SN-27401315
+                    location: "90094 Sonia Corner\nVernaside, ND 42043-9501"
+                    installation_date: '2007-10-22T00:00:00.000000Z'
+                    notes: 'Et ut est nam vel repellat ducimus aliquam. Rerum architecto placeat qui hic commodi non. Ut nostrum perspiciatis et.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 40
+                    uuid: 293efbc3-a170-3de8-9b1a-ab8dca1e0f2f
+                    name: 'Device 3378'
+                    type: Gate
+                    model: Model-1975
+                    brand: 'Rogahn, Braun and Koss'
+                    serial_number: SN-18851424
+                    location: "4470 Schaefer Tunnel Suite 915\nJaylonbury, WV 57563"
+                    installation_date: '2005-09-16T00:00:00.000000Z'
+                    notes: 'Ratione consectetur vel debitis quod voluptatem a. Voluptas iste illum harum maxime dolores eos. Non eos ab quam amet mollitia reprehenderit. Maiores veniam et et molestiae quia sit eum consequatur.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 41
+                    uuid: b40fc594-afd2-3018-b8f9-06091a461175
+                    name: 'Device 5208'
+                    type: Gate
+                    model: Model-0388
+                    brand: Kiehn-Lowe
+                    serial_number: SN-38580345
+                    location: "61195 Jo Forge\nPort Valentinaborough, ME 68136"
+                    installation_date: '2023-03-18T00:00:00.000000Z'
+                    notes: 'Reiciendis et necessitatibus sed et blanditiis fugiat assumenda. Earum ut non sint vitae quas dolorum hic tempore.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 42
+                    uuid: c3ed9089-5292-3af8-90f0-a0679b47a135
+                    name: 'Device 6069'
+                    type: Gate
+                    model: Model-8427
+                    brand: Bailey-Ryan
+                    serial_number: SN-13276879
+                    location: "20576 Triston Camp\nGillianton, MS 32821"
+                    installation_date: '1996-06-29T00:00:00.000000Z'
+                    notes: 'Id dolores et ipsam autem nesciunt mollitia non dolores. Molestias commodi quia corrupti quidem accusantium nemo rem. Amet totam reprehenderit sunt qui facilis sunt nihil beatae.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 43
+                    uuid: 935513cb-ec2e-389a-95ae-3f6d30808917
+                    name: 'Device 5916'
+                    type: Gate
+                    model: Model-9927
+                    brand: Schaden-Gutkowski
+                    serial_number: SN-48229356
+                    location: "49104 Magnus Extensions Apt. 690\nWelchville, AZ 20144-4571"
+                    installation_date: '1974-08-06T00:00:00.000000Z'
+                    notes: 'Quod animi aut et neque consequatur tempore. Laboriosam cumque recusandae a sapiente necessitatibus sit.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 44
+                    uuid: bf66f86a-9328-3cbd-a403-c93ced727fcd
+                    name: 'Device 9117'
+                    type: A/C
+                    model: Model-2217
+                    brand: 'Bins Ltd'
+                    serial_number: SN-91720830
+                    location: "145 Addison Dale\nMarquardtview, MA 94332"
+                    installation_date: '1983-05-11T00:00:00.000000Z'
+                    notes: 'At et omnis totam dolores labore. Et omnis voluptas voluptatibus officia accusamus. Corporis qui aut repellat animi in. Voluptatibus quia occaecati velit. Dolor laboriosam et nihil nesciunt.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 45
+                    uuid: aee95a5c-bb04-3c72-806b-be3fd99f8257
+                    name: 'Device 8470'
+                    type: Gate
+                    model: Model-4971
+                    brand: Ullrich-Kilback
+                    serial_number: SN-93372530
+                    location: "18476 Sharon Dale\nDevynstad, MO 09062-5298"
+                    installation_date: '2007-06-06T00:00:00.000000Z'
+                    notes: 'Aut natus sit molestiae adipisci illo fugiat ipsam. Inventore qui aliquam quisquam voluptatibus atque quia ea. Illo asperiores impedit laboriosam fuga dolores.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 46
+                    uuid: 90737903-13b9-3da6-aa0e-dd5d307de3fa
+                    name: 'Device 4206'
+                    type: Gate
+                    model: Model-2875
+                    brand: 'Weber, Wisozk and Tillman'
+                    serial_number: SN-36345908
+                    location: "754 Brown Drive\nGiamouth, NE 84105"
+                    installation_date: '2002-08-11T00:00:00.000000Z'
+                    notes: 'Non saepe iure doloribus ipsam hic accusantium deserunt. Sunt quibusdam tempore odit. Voluptas qui veritatis illo id sequi.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 47
+                    uuid: 5559a07e-7331-300f-869a-4ba023b3c071
+                    name: 'Device 5400'
+                    type: 'Wheel Lock'
+                    model: Model-2940
+                    brand: 'Williamson, Cormier and Ruecker'
+                    serial_number: SN-98241694
+                    location: "6670 Ward Wells Apt. 355\nLake Lonny, IN 81245"
+                    installation_date: '1994-07-13T00:00:00.000000Z'
+                    notes: 'Nihil et asperiores maiores quia delectus. Sapiente cumque dolor ea. Est autem quibusdam rerum et et rerum ullam.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 48
+                    uuid: 40d63b9e-f367-33b0-85ec-db6c1f61ee05
+                    name: 'Device 7922'
+                    type: 'Wheel Lock'
+                    model: Model-3649
+                    brand: Stoltenberg-Kirlin
+                    serial_number: SN-25727292
+                    location: "45187 Michelle Plains Apt. 307\nAnkundingview, KS 32141-2370"
+                    installation_date: '1994-06-01T00:00:00.000000Z'
+                    notes: 'Ut quae sed nemo iste et quisquam. Reiciendis facilis possimus aut in. Odio iure adipisci occaecati placeat accusantium. Saepe similique autem quae.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 49
+                    uuid: 3f68a478-bb65-327a-b14b-de5b3c93e230
+                    name: 'Device 6904'
+                    type: Gate
+                    model: Model-4322
+                    brand: 'Volkman LLC'
+                    serial_number: SN-13446415
+                    location: "877 West Port Suite 648\nLake Neilhaven, PA 62488-4949"
+                    installation_date: '2001-04-07T00:00:00.000000Z'
+                    notes: 'Sequi ab ut delectus ut reiciendis velit quis. Similique sint qui magni nisi ea sit ut. Asperiores placeat non illo. Fuga consequatur eum aut nihil.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 50
+                    uuid: c9f09bc1-4461-372e-ae84-cfacaca66f52
+                    name: 'Device 4926'
+                    type: 'Wheel Lock'
+                    model: Model-2977
+                    brand: Lehner-Stracke
+                    serial_number: SN-69668030
+                    location: "243 Jordon River\nRohanton, ME 89240"
+                    installation_date: '2003-07-27T00:00:00.000000Z'
+                    notes: 'Et eius eligendi aliquid sapiente. Debitis cumque quasi hic non placeat doloribus. Totam vero labore incidunt earum. Voluptatem odit repellendus ut eaque velit.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 51
+                    uuid: c36e137a-9cfc-4429-97ce-1b95a3975fb5
+                    name: 'Air Conditioner 01'
+                    type: AC
+                    model: 'Samsung WindFree'
+                    brand: Samsung
+                    serial_number: SN123456789
+                    location: 'Office Room 101'
+                    installation_date: '2024-01-15T00:00:00.000000Z'
+                    notes: 'Regular maintenance every 6 months.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+                  -
+                    id: 52
+                    uuid: d60607fd-9777-4b31-a981-e9caab0ac9a3
+                    name: 'Elevator A'
+                    type: Elevator
+                    model: 'Alpha 500'
+                    brand: Otis
+                    serial_number: SN987654321
+                    location: 'Main Lobby'
+                    installation_date: '2023-11-20T00:00:00.000000Z'
+                    notes: 'Emergency brake check completed in Feb.'
+                    created_at: '2026-03-11T09:16:33.000000Z'
+                    updated_at: '2026-03-11T09:16:33.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiDevices
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                uuid:
+                  type: string
+                  description: 'Must be a valid UUID.'
+                  example: 6ff8f7f6-1eb3-3525-be4a-3932c805afed
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: g
+                type:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: z
+                model:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: m
+                  nullable: true
+                brand:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: i
+                  nullable: true
+                serial_number:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: 'y'
+                  nullable: true
+                location:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: v
+                installation_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2026-03-11T09:52:05'
+                  nullable: true
+                notes:
+                  type: string
+                  description: ''
+                  example: architecto
+                  nullable: true
+              required:
+                - uuid
+                - name
+                - type
+                - location
+      security: []
+  '/api/devices/{id}':
+    get:
+      summary: ''
+      operationId: getApiDevicesId
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  id: 1
+                  uuid: 3eb6686f-77f5-3b9e-a230-b7916437d194
+                  name: 'Device 3799'
+                  type: A/C
+                  model: Model-1054
+                  brand: 'Orn, Friesen and Ortiz'
+                  serial_number: SN-78294004
+                  location: "217 Crooks Isle Suite 481\nMayerfort, NJ 50977"
+                  installation_date: '2011-06-05T00:00:00.000000Z'
+                  notes: 'Tempora ratione voluptatem dolore distinctio quia. Non aliquam voluptas non doloribus qui. Aliquam ad possimus similique quia.'
+                  created_at: '2026-03-11T09:16:33.000000Z'
+                  updated_at: '2026-03-11T09:16:33.000000Z'
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  uuid:
+                    type: string
+                    example: 3eb6686f-77f5-3b9e-a230-b7916437d194
+                  name:
+                    type: string
+                    example: 'Device 3799'
+                  type:
+                    type: string
+                    example: A/C
+                  model:
+                    type: string
+                    example: Model-1054
+                  brand:
+                    type: string
+                    example: 'Orn, Friesen and Ortiz'
+                  serial_number:
+                    type: string
+                    example: SN-78294004
+                  location:
+                    type: string
+                    example: "217 Crooks Isle Suite 481\nMayerfort, NJ 50977"
+                  installation_date:
+                    type: string
+                    example: '2011-06-05T00:00:00.000000Z'
+                  notes:
+                    type: string
+                    example: 'Tempora ratione voluptatem dolore distinctio quia. Non aliquam voluptas non doloribus qui. Aliquam ad possimus similique quia.'
+                  created_at:
+                    type: string
+                    example: '2026-03-11T09:16:33.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2026-03-11T09:16:33.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiDevicesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: b
+                type:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: 'n'
+                model:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: g
+                  nullable: true
+                brand:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: z
+                  nullable: true
+                serial_number:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: m
+                  nullable: true
+                location:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: i
+                installation_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2026-03-11T09:52:05'
+                  nullable: true
+                notes:
+                  type: string
+                  description: ''
+                  example: architecto
+                  nullable: true
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiDevicesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the device.'
+        example: 1
+        required: true
+        schema:
+          type: integer
