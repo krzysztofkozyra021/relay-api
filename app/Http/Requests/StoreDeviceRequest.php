@@ -16,7 +16,7 @@ class StoreDeviceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "uuid" => "required|uuid|unique:devices,uuid",
+            "uuid" => "nullable|uuid|unique:devices,uuid",
             "name" => "required|string|max:255",
             "type" => "required|string|max:255",
             "model" => "nullable|string|max:255",

@@ -19,14 +19,19 @@ RUN apt-get update \
     && curl https://nginx.org/keys/nginx_signing.key | gpg --dearmour --output /etc/apt/trusted.gpg.d/apt.nginx.org.gpg > /dev/null \
     && echo "deb https://nginx.org/packages/mainline/debian trixie nginx" | tee /etc/apt/sources.list.d/nginx.list \
     && apt-get update && apt-get install --assume-yes \
-        nginx=${NGINX_VERSION}-1~trixie \
-        zip \
-        libzip-dev \
-        supervisor \
-        libpq-dev \
+    nginx=${NGINX_VERSION}-1~trixie \
+    zip \
+    libzip-dev \
+    supervisor \
+    libpq-dev \
+    libpng-dev \
+    libfreetype6-dev \
+    libwebp-dev \
+    && docker-php-ext-configure gd --with-freetype --with-webp \
     && docker-php-ext-install \
-            pdo_pgsql \
-     && pie install phpredis/phpredis:${PHPREDIS_VERSION}
+    pdo_pgsql \
+    gd \
+    && pie install phpredis/phpredis:${PHPREDIS_VERSION}
 
 COPY ./environment/.docker/app/entrypoint.sh /entrypoint.sh
 COPY ./environment/.docker/app/nginx.conf /etc/nginx/nginx.conf
@@ -43,7 +48,7 @@ ARG INSTALL_XDEBUG=true
 
 RUN if [ ${INSTALL_XDEBUG} = true ]; then \
     pie install xdebug/xdebug:${XDEBUG_VERSION} \
-;fi
+    ;fi
 
 COPY --from=secops-tools-bin /usr/local/bin/age /usr/local/bin/age-keygen /usr/local/bin/sops /usr/local/bin/
 
@@ -54,14 +59,14 @@ ARG USER_ID=1000
 ARG PHP_FPM_GROUP=www-data
 
 RUN adduser \
-        --disabled-password \
-        --uid ${USER_ID} \
-        ${USER_NAME} \
+    --disabled-password \
+    --uid ${USER_ID} \
+    ${USER_NAME} \
     && usermod \
-        --append \
-        --groups \
-        ${PHP_FPM_GROUP} \
-        ${USER_NAME}
+    --append \
+    --groups \
+    ${PHP_FPM_GROUP} \
+    ${USER_NAME}
 
 FROM composer AS vendor-build
 
@@ -70,12 +75,12 @@ WORKDIR /app_composer_dependencies
 COPY composer.json composer.lock ./
 
 RUN composer install \
-        --no-interaction \
-        --no-plugins \
-        --no-scripts \
-        --no-dev \
-        --prefer-dist \
-        --ignore-platform-reqs
+    --no-interaction \
+    --no-plugins \
+    --no-scripts \
+    --no-dev \
+    --prefer-dist \
+    --ignore-platform-reqs
 
 
 FROM base AS production
