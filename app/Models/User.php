@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
 /**
  * @property string $name
@@ -17,8 +18,16 @@ use Laravel\Sanctum\HasApiTokens;
  * @property Carbon $email_verified_at
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ * @property ?string $provider
+ * @property ?string $provider_id
+ * @property bool $is_admin
+ * @property bool $is_installer
+ * @property bool $is_service
+ * @property ?string $two_factor_secret
+ * @property ?string $two_factor_recovery_codes
+ * @property ?Carbon $two_factor_confirmed_at
  */
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens;
     use HasFactory;
@@ -28,14 +37,31 @@ class User extends Authenticatable
         "name",
         "email",
         "password",
+        "provider",
+        "provider_id",
         "is_admin",
         "is_installer",
         "is_service",
+        "two_factor_secret",
+        "two_factor_recovery_codes",
+        "two_factor_confirmed_at",
     ];
     protected $hidden = [
         "password",
         "remember_token",
+        "two_factor_secret",
+        "two_factor_recovery_codes",
     ];
+
+    public function getJWTIdentifier(): mixed
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims(): array
+    {
+        return [];
+    }
 
     protected function casts(): array
     {
