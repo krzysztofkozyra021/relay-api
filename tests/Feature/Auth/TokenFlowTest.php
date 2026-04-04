@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests\Feature\Auth;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Laravel\Sanctum\PersonalAccessToken;
 use Relay\Models\User;
 use Tests\TestCase;
 
@@ -41,7 +40,7 @@ class TokenFlowTest extends TestCase
                 "message" => "Logged out successfully.",
             ]);
 
-        [$tokenId] = explode("|", $token, 2);
-        $this->assertNull(PersonalAccessToken::find((int)$tokenId));
+        $this->withToken($token)->getJson("/api/user")
+            ->assertStatus(401);
     }
 }

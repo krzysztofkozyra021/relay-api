@@ -14,7 +14,7 @@ use Relay\Http\Controllers\Auth\TwoFactorVerifyController;
 use Relay\Http\Controllers\DeviceController;
 
 Route::post("/register", [RegisterController::class, "register"]);
-Route::post("/login", [LoginController::class, "login"]);
+Route::post("/login", [LoginController::class, "login"])->name("login");
 Route::post("/auth/google", [GoogleAuthController::class, "handleProviderCallback"]);
 Route::post("/auth/2fa/verify", [TwoFactorVerifyController::class, "verify"]);
 
