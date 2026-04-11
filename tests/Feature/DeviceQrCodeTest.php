@@ -18,7 +18,7 @@ class DeviceQrCodeTest extends TestCase
         $user = User::factory()->create();
         $device = Device::factory()->create();
 
-        $response = $this->actingAs($user, "sanctum")
+        $response = $this->actingAs($user, "api")
             ->get(route("devices.show_qr", $device));
 
         $response->assertStatus(200);
@@ -36,7 +36,7 @@ class DeviceQrCodeTest extends TestCase
             "location" => "Laboratory",
         ];
 
-        $response = $this->actingAs($user, "sanctum")
+        $response = $this->actingAs($user, "api")
             ->post(route("devices.generate_qr"), $deviceData);
 
         $response->assertStatus(200);

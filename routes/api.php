@@ -5,18 +5,33 @@ declare(strict_types=1);
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Relay\Http\Controllers\Auth\GoogleAuthController;
 use Relay\Http\Controllers\Auth\LoginController;
+use Relay\Http\Controllers\Auth\PasswordResetController;
+use Relay\Http\Controllers\Auth\RegisterController;
+use Relay\Http\Controllers\Auth\TwoFactorSetupController;
+use Relay\Http\Controllers\Auth\TwoFactorVerifyController;
 use Relay\Http\Controllers\DeviceController;
 
-Route::post("/login", [LoginController::class, "login"]);
+Route::post("/register", [RegisterController::class, "register"]);
+Route::post("/login", [LoginController::class, "login"])->name("login");
+Route::post("/auth/google", [GoogleAuthController::class, "handleProviderCallback"]);
+Route::post("/auth/2fa/verify", [TwoFactorVerifyController::class, "verify"]);
 
-Route::middleware("auth:sanctum")->group(function (): void {
+Route::post("/password/email", [PasswordResetController::class, "sendResetLinkEmail"]);
+Route::post("/password/reset", [PasswordResetController::class, "reset"]);
+
+Route::middleware("auth:api")->group(function (): void {
     Route::get("/user", fn(Request $request): JsonResponse => new JsonResponse($request->user()));
     Route::post("/logout", [LoginController::class, "logout"]);
 
-    Route::apiResource("devices", DeviceController::class);
-    Route::post("/devices/generate-qr", [DeviceController::class, "storeWithQrCode"])->name("devices.generate_qr");
-    Route::get("/devices/{device}/show-qr", [DeviceController::class, "qrCode"])->name("devices.show_qr");
+    Route::post("/auth/2fa/setup", [TwoFactorSetupController::class, "store"]);
+
+    Route::middleware("enforce.2fa")->group(function (): void {
+        Route::apiResource("devices", DeviceController::class);
+        Route::post("/devices/generate-qr", [DeviceController::class, "storeWithQrCode"])->name("devices.generate_qr");
+        Route::get("/devices/{device}/show-qr", [DeviceController::class, "qrCode"])->name("devices.show_qr");
+    });
 });
 
 Route::get("/hello", fn(): JsonResponse => new JsonResponse(["message" => "Hello, World!"]));

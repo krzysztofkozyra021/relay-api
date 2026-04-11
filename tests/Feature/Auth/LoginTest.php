@@ -27,6 +27,7 @@ class LoginTest extends TestCase
             ->assertJsonStructure([
                 "access_token",
                 "token_type",
+                "expires_in",
                 "user",
             ]);
     }
