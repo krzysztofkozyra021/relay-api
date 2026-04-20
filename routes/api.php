@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Relay\Events\TestEvent;
 use Relay\Http\Controllers\Auth\LoginController;
 use Relay\Http\Controllers\DeviceController;
 
@@ -20,3 +21,9 @@ Route::middleware("auth:sanctum")->group(function (): void {
 });
 
 Route::get("/hello", fn(): JsonResponse => new JsonResponse(["message" => "Hello, World!"]));
+
+Route::get("/test", function () {
+    event(new TestEvent());
+
+    return "Event fired";
+});
