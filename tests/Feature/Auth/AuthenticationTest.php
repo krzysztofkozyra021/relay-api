@@ -27,11 +27,12 @@ class AuthenticationTest extends TestCase
             ->assertJsonStructure([
                 "access_token",
                 "token_type",
+                "expires_in",
                 "user",
             ]);
 
         $this->assertNotEmpty($response->json("access_token"));
-        $this->assertSame("Bearer", $response->json("token_type"));
+        $this->assertSame("bearer", $response->json("token_type"));
     }
 
     public function testUserCannotLoginWithIncorrectPassword(): void
@@ -76,7 +77,7 @@ class AuthenticationTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->actingAs($user, "sanctum")
+        $response = $this->actingAs($user, "api")
             ->getJson("/api/user");
 
         $response->assertStatus(200)
@@ -90,7 +91,7 @@ class AuthenticationTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->actingAs($user, "sanctum")
+        $response = $this->actingAs($user, "api")
             ->postJson("/api/logout");
 
         $response->assertStatus(200)
