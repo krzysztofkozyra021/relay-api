@@ -7,6 +7,7 @@ namespace Relay\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Device extends Model
 {
@@ -33,6 +34,11 @@ class Device extends Model
     public function getRouteKeyName(): string
     {
         return "uuid";
+    }
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, "device_user", "device_uuid", "user_id", "uuid", "id");
     }
 
     protected function casts(): array

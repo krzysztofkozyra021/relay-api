@@ -13,19 +13,19 @@ class DemoSeeder extends Seeder
 {
     public function run(): void
     {
-        User::factory()->admin()->create([
+        $admin = User::factory()->admin()->create([
             "name" => "Administrator",
             "email" => "admin@example.com",
             "password" => "password",
         ]);
 
-        User::factory()->installer()->create([
+        $installer = User::factory()->installer()->create([
             "name" => "Installer",
             "email" => "installer@example.com",
             "password" => "password",
         ]);
 
-        User::factory()->service()->create([
+        $service = User::factory()->service()->create([
             "name" => "Service Technician",
             "email" => "service@example.com",
             "password" => "password",
@@ -56,5 +56,22 @@ class DemoSeeder extends Seeder
             "installation_date" => "2023-11-20",
             "notes" => "Emergency brake check completed in Feb.",
         ]);
+
+        $devices = Device::all();
+
+        // Installer gets first 25 devices
+        $installer->devices()->attach(
+            $devices->slice(0, 25)->pluck("uuid")->toArray(),
+        );
+
+        // Service gets next 20 devices
+        $service->devices()->attach(
+            $devices->slice(25, 20)->pluck("uuid")->toArray(),
+        );
+
+        // Last 7 devices are shared between installer and service
+        $shared = $devices->slice(45)->pluck("uuid")->toArray();
+        $installer->devices()->syncWithoutDetaching($shared);
+        $service->devices()->syncWithoutDetaching($shared);
     }
 }

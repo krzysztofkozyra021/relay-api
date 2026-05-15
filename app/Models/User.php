@@ -6,6 +6,7 @@ namespace Relay\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -52,6 +53,11 @@ class User extends Authenticatable implements JWTSubject
         "two_factor_secret",
         "two_factor_recovery_codes",
     ];
+
+    public function devices(): BelongsToMany
+    {
+        return $this->belongsToMany(Device::class, "device_user", "user_id", "device_uuid", "id", "uuid");
+    }
 
     public function getJWTIdentifier(): mixed
     {
