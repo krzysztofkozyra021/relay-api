@@ -13,6 +13,7 @@ use Relay\Http\Controllers\Auth\TwoFactorSetupController;
 use Relay\Http\Controllers\Auth\TwoFactorVerifyController;
 use Relay\Http\Controllers\DeviceAssignmentController;
 use Relay\Http\Controllers\DeviceController;
+use Relay\Http\Controllers\FaultReportController;
 
 Route::post("/register", [RegisterController::class, "register"]);
 Route::post("/login", [LoginController::class, "login"])->name("login");
@@ -21,6 +22,11 @@ Route::post("/auth/2fa/verify", [TwoFactorVerifyController::class, "verify"]);
 
 Route::post("/password/email", [PasswordResetController::class, "sendResetLinkEmail"]);
 Route::post("/password/reset", [PasswordResetController::class, "reset"]);
+
+Route::prefix("public")->group(function (): void {
+    Route::get("/devices/{uuid}", [FaultReportController::class, "deviceInfo"]);
+    Route::post("/devices/{uuid}/faults", [FaultReportController::class, "store"]);
+});
 
 Route::middleware("auth:api")->group(function (): void {
     Route::get("/user", fn(Request $request): JsonResponse => new JsonResponse($request->user()));
@@ -37,6 +43,11 @@ Route::middleware("auth:api")->group(function (): void {
         Route::delete("/devices/{device}/assign/{user}", [DeviceAssignmentController::class, "unassign"])->name("devices.unassign");
         Route::get("/devices/{device}/users", [DeviceAssignmentController::class, "deviceUsers"])->name("devices.users");
         Route::get("/users/{user}/devices", [DeviceAssignmentController::class, "userDevices"])->name("users.devices");
+
+        Route::get("/faults", [FaultReportController::class, "index"]);
+        Route::get("/faults/{fault}", [FaultReportController::class, "show"]);
+        Route::patch("/faults/{fault}", [FaultReportController::class, "update"]);
+        Route::get("/devices/{device}/faults", [FaultReportController::class, "deviceFaults"]);
     });
 });
 

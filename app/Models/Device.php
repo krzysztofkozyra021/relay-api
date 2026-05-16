@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Device extends Model
 {
@@ -39,6 +40,11 @@ class Device extends Model
     public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class, "device_user", "device_uuid", "user_id", "uuid", "id");
+    }
+
+    public function faultReports(): HasMany
+    {
+        return $this->hasMany(FaultReport::class, "device_uuid", "uuid");
     }
 
     protected function casts(): array

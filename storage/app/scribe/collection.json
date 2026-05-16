@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "relay-api API Documentation",
-        "_postman_id": "28319525-48c8-4451-b850-c69afd78ae8d",
+        "_postman_id": "5e0071a2-9963-462c-b1e4-a53c717f9b59",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -19,6 +19,37 @@
             "name": "Endpoints",
             "description": "",
             "item": [
+                {
+                    "name": "POST api\/register",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"b\",\"email\":\"zbailey@example.net\",\"password\":\"architecto\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
                 {
                     "name": "POST api\/login",
                     "request": {
@@ -42,6 +73,225 @@
                         "body": {
                             "mode": "raw",
                             "raw": "{\"email\":\"gbailey@example.net\",\"password\":\"|]|{+-\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/google",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/google",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/google"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"provider_token\":\"architecto\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/2fa\/verify",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/2fa\/verify",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/2fa\/verify"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"intermediate_token\":\"architecto\",\"code\":\"architecto\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/password\/email",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/password\/email",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/password\/email"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"gbailey@example.net\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/password\/reset",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/password\/reset",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/password\/reset"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"token\":\"architecto\",\"email\":\"zbailey@example.net\",\"password\":\"-0pBNvYgxw\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/public\/devices\/{uuid}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/public\/devices\/:uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/public\/devices\/:uuid",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "6ff8f7f6-1eb3-3525-be4a-3932c805afed",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"No query results for model [Relay\\\\Models\\\\Device].\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/public\/devices\/{uuid}\/faults",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/public\/devices\/:uuid\/faults",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/public\/devices\/:uuid\/faults",
+                            "variable": [
+                                {
+                                    "id": "uuid",
+                                    "key": "uuid",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"b\",\"description\":\"Eius et animi quos velit et.\",\"reported_by\":\"v\",\"contact\":\"d\"}"
                         },
                         "description": "",
                         "auth": {
@@ -106,6 +356,34 @@
                             "path": "api\/logout",
                             "query": [],
                             "raw": "{{baseUrl}}\/api\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/2fa\/setup",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/2fa\/setup",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/2fa\/setup"
                         },
                         "method": "POST",
                         "header": [
@@ -196,7 +474,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-03-11T13:51:29\",\"notes\":\"architecto\"}"
+                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-16T11:16:36\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -217,7 +495,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "3eb6686f-77f5-3b9e-a230-b7916437d194",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
                                     "description": ""
                                 }
                             ]
@@ -273,7 +551,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "3eb6686f-77f5-3b9e-a230-b7916437d194",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
                                     "description": ""
                                 }
                             ]
@@ -291,7 +569,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"b\",\"type\":\"n\",\"model\":\"g\",\"brand\":\"z\",\"serial_number\":\"m\",\"location\":\"i\",\"installation_date\":\"2026-03-11T13:51:30\",\"notes\":\"architecto\"}"
+                            "raw": "{\"name\":\"b\",\"type\":\"n\",\"model\":\"g\",\"brand\":\"z\",\"serial_number\":\"m\",\"location\":\"i\",\"installation_date\":\"2026-05-16T11:16:37\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -312,7 +590,7 @@
                                 {
                                     "id": "uuid",
                                     "key": "uuid",
-                                    "value": "3eb6686f-77f5-3b9e-a230-b7916437d194",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
                                     "description": ""
                                 }
                             ]
@@ -358,7 +636,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-03-11T13:51:30\",\"notes\":\"architecto\"}"
+                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-16T11:16:37\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -379,7 +657,399 @@
                                 {
                                     "id": "device_uuid",
                                     "key": "device_uuid",
-                                    "value": "3eb6686f-77f5-3b9e-a230-b7916437d194",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/devices\/{device_uuid}\/assign",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices\/:device_uuid\/assign",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices\/:device_uuid\/assign",
+                            "variable": [
+                                {
+                                    "id": "device_uuid",
+                                    "key": "device_uuid",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_id\":16}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/devices\/{device_uuid}\/assign\/{user_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices\/:device_uuid\/assign\/:user_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices\/:device_uuid\/assign\/:user_id",
+                            "variable": [
+                                {
+                                    "id": "device_uuid",
+                                    "key": "device_uuid",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "user_id",
+                                    "key": "user_id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/devices\/{device_uuid}\/users",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices\/:device_uuid\/users",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices\/:device_uuid\/users",
+                            "variable": [
+                                {
+                                    "id": "device_uuid",
+                                    "key": "device_uuid",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/users\/{user_id}\/devices",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:user_id\/devices",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:user_id\/devices",
+                            "variable": [
+                                {
+                                    "id": "user_id",
+                                    "key": "user_id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/faults",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/faults",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/faults"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/faults\/{fault_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/faults\/:fault_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/faults\/:fault_id",
+                            "variable": [
+                                {
+                                    "id": "fault_id",
+                                    "key": "fault_id",
+                                    "value": "3",
+                                    "description": "The ID of the fault."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PATCH api\/faults\/{fault_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/faults\/:fault_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/faults\/:fault_id",
+                            "variable": [
+                                {
+                                    "id": "fault_id",
+                                    "key": "fault_id",
+                                    "value": "3",
+                                    "description": "The ID of the fault."
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"status\":\"in_progress\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/devices\/{device_uuid}\/faults",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices\/:device_uuid\/faults",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices\/:device_uuid\/faults",
+                            "variable": [
+                                {
+                                    "id": "device_uuid",
+                                    "key": "device_uuid",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
                                     "description": ""
                                 }
                             ]
