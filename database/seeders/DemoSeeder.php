@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Relay\Models\Device;
+use Relay\Models\FaultReport;
 use Relay\Models\User;
 
 class DemoSeeder extends Seeder
@@ -70,5 +71,62 @@ class DemoSeeder extends Seeder
         $shared = $devices->slice(45)->pluck("uuid")->toArray();
         $installer->devices()->syncWithoutDetaching($shared);
         $service->devices()->syncWithoutDetaching($shared);
+
+        $installerDevices = $installer->devices()->get();
+        $serviceDevices = $service->devices()->get();
+
+        FaultReport::factory()->pending()->create([
+            "device_uuid" => $installerDevices->first()->uuid,
+            "title" => "Urządzenie nie odpowiada",
+            "description" => "Po włączeniu zasilania urządzenie nie reaguje na komendy.",
+            "reported_by" => "Jan Kowalski",
+            "contact" => "jan.kowalski@firma.pl",
+        ]);
+
+        FaultReport::factory()->inProgress()->create([
+            "device_uuid" => $installerDevices->get(1)->uuid,
+            "title" => "Nadmierne wibracje",
+            "description" => "Podczas pracy słychać nienaturalne wibracje.",
+            "reported_by" => "Anna Nowak",
+            "contact" => "501 234 567",
+        ]);
+
+        FaultReport::factory()->resolved()->create([
+            "device_uuid" => $installerDevices->get(2)->uuid,
+            "title" => "Wyciek płynu chłodzącego",
+            "reported_by" => "Piotr Wiśniewski",
+        ]);
+
+        FaultReport::factory()->pending()->create([
+            "device_uuid" => $serviceDevices->first()->uuid,
+            "title" => "Błąd wyświetlacza",
+            "description" => "Ekran pokazuje kod błędu E04.",
+        ]);
+
+        FaultReport::factory()->pending()->create([
+            "device_uuid" => $serviceDevices->get(1)->uuid,
+            "title" => "Awaria czujnika temperatury",
+            "reported_by" => "Krzysztof Zając",
+            "contact" => "k.zajac@kontakt.pl",
+        ]);
+
+        FaultReport::factory()->inProgress()->create([
+            "device_uuid" => $serviceDevices->get(2)->uuid,
+            "title" => "Hałas podczas pracy",
+            "description" => "Urządzenie wydaje głośne dźwięki w trybie nocnym.",
+        ]);
+
+        FaultReport::factory()->resolved()->create([
+            "device_uuid" => $devices->last()->uuid,
+            "title" => "Przegrzewanie się urządzenia",
+            "reported_by" => "Maria Kaczmarek",
+            "contact" => "maria@example.com",
+        ]);
+
+        FaultReport::factory()->pending()->create([
+            "device_uuid" => $devices->last()->uuid,
+            "title" => "Nieprawidłowe wskazania",
+            "description" => "Czujnik pokazuje wartości poza zakresem normy.",
+        ]);
     }
 }

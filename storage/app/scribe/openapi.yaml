@@ -11,6 +11,39 @@ tags:
     name: Endpoints
     description: ''
 paths:
+  /api/register:
+    post:
+      summary: ''
+      operationId: postApiRegister
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: b
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: zbailey@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: architecto
+              required:
+                - name
+                - email
+                - password
+      security: []
   /api/login:
     post:
       summary: ''
@@ -29,7 +62,7 @@ paths:
               properties:
                 email:
                   type: string
-                  description: 'Must be a valid email address.'
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
                   example: gbailey@example.net
                 password:
                   type: string
@@ -39,6 +72,191 @@ paths:
                 - email
                 - password
       security: []
+  /api/auth/google:
+    post:
+      summary: ''
+      operationId: postApiAuthGoogle
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                provider_token:
+                  type: string
+                  description: ''
+                  example: architecto
+              required:
+                - provider_token
+      security: []
+  /api/auth/2fa/verify:
+    post:
+      summary: ''
+      operationId: postApiAuth2faVerify
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                intermediate_token:
+                  type: string
+                  description: ''
+                  example: architecto
+                code:
+                  type: string
+                  description: ''
+                  example: architecto
+              required:
+                - intermediate_token
+                - code
+      security: []
+  /api/password/email:
+    post:
+      summary: ''
+      operationId: postApiPasswordEmail
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: gbailey@example.net
+              required:
+                - email
+      security: []
+  /api/password/reset:
+    post:
+      summary: ''
+      operationId: postApiPasswordReset
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: ''
+                  example: architecto
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: zbailey@example.net
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: '-0pBNvYgxw'
+              required:
+                - token
+                - email
+                - password
+      security: []
+  '/api/public/devices/{uuid}':
+    get:
+      summary: ''
+      operationId: getApiPublicDevicesUuid
+      description: ''
+      parameters: []
+      responses:
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'No query results for model [Relay\Models\Device].'
+                properties:
+                  message:
+                    type: string
+                    example: 'No query results for model [Relay\Models\Device].'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 6ff8f7f6-1eb3-3525-be4a-3932c805afed
+        required: true
+        schema:
+          type: string
+  '/api/public/devices/{uuid}/faults':
+    post:
+      summary: ''
+      operationId: postApiPublicDevicesUuidFaults
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: b
+                description:
+                  type: string
+                  description: ''
+                  example: 'Eius et animi quos velit et.'
+                  nullable: true
+                reported_by:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: v
+                  nullable: true
+                contact:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: d
+                  nullable: true
+              required:
+                - title
+      security: []
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        required: true
+        schema:
+          type: string
   /api/user:
     get:
       summary: ''
@@ -65,6 +283,16 @@ paths:
     post:
       summary: ''
       operationId: postApiLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/auth/2fa/setup:
+    post:
+      summary: ''
+      operationId: postApiAuth2faSetup
       description: ''
       parameters: []
       responses: {  }
@@ -143,7 +371,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-03-11T13:51:29'
+                  example: '2026-05-16T11:16:36'
                   nullable: true
                 notes:
                   type: string
@@ -222,7 +450,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-03-11T13:51:30'
+                  example: '2026-05-16T11:16:37'
                   nullable: true
                 notes:
                   type: string
@@ -244,7 +472,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: 3eb6686f-77f5-3b9e-a230-b7916437d194
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
         required: true
         schema:
           type: string
@@ -299,7 +527,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-03-11T13:51:30'
+                  example: '2026-05-16T11:16:37'
                   nullable: true
                 notes:
                   type: string
@@ -338,7 +566,238 @@ paths:
         in: path
         name: device_uuid
         description: ''
-        example: 3eb6686f-77f5-3b9e-a230-b7916437d194
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        required: true
+        schema:
+          type: string
+  '/api/devices/{device_uuid}/assign':
+    post:
+      summary: ''
+      operationId: postApiDevicesDevice_uuidAssign
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: 'The <code>id</code> of an existing record in the users table.'
+                  example: 16
+              required:
+                - user_id
+      security: []
+    parameters:
+      -
+        in: path
+        name: device_uuid
+        description: ''
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        required: true
+        schema:
+          type: string
+  '/api/devices/{device_uuid}/assign/{user_id}':
+    delete:
+      summary: ''
+      operationId: deleteApiDevicesDevice_uuidAssignUser_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: device_uuid
+        description: ''
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: user_id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/devices/{device_uuid}/users':
+    get:
+      summary: ''
+      operationId: getApiDevicesDevice_uuidUsers
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: device_uuid
+        description: ''
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        required: true
+        schema:
+          type: string
+  '/api/users/{user_id}/devices':
+    get:
+      summary: ''
+      operationId: getApiUsersUser_idDevices
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: user_id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/faults:
+    get:
+      summary: ''
+      operationId: getApiFaults
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/faults/{fault_id}':
+    get:
+      summary: ''
+      operationId: getApiFaultsFault_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    patch:
+      summary: ''
+      operationId: patchApiFaultsFault_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  description: ''
+                  example: in_progress
+                  enum:
+                    - pending
+                    - in_progress
+                    - resolved
+              required:
+                - status
+      security: []
+    parameters:
+      -
+        in: path
+        name: fault_id
+        description: 'The ID of the fault.'
+        example: 3
+        required: true
+        schema:
+          type: integer
+  '/api/devices/{device_uuid}/faults':
+    get:
+      summary: ''
+      operationId: getApiDevicesDevice_uuidFaults
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: device_uuid
+        description: ''
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
         required: true
         schema:
           type: string
