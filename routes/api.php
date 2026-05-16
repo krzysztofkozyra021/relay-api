@@ -11,6 +11,7 @@ use Relay\Http\Controllers\Auth\PasswordResetController;
 use Relay\Http\Controllers\Auth\RegisterController;
 use Relay\Http\Controllers\Auth\TwoFactorSetupController;
 use Relay\Http\Controllers\Auth\TwoFactorVerifyController;
+use Relay\Http\Controllers\DeviceAssignmentController;
 use Relay\Http\Controllers\DeviceController;
 
 Route::post("/register", [RegisterController::class, "register"]);
@@ -31,6 +32,11 @@ Route::middleware("auth:api")->group(function (): void {
         Route::apiResource("devices", DeviceController::class);
         Route::post("/devices/generate-qr", [DeviceController::class, "storeWithQrCode"])->name("devices.generate_qr");
         Route::get("/devices/{device}/show-qr", [DeviceController::class, "qrCode"])->name("devices.show_qr");
+
+        Route::post("/devices/{device}/assign", [DeviceAssignmentController::class, "assign"])->name("devices.assign");
+        Route::delete("/devices/{device}/assign/{user}", [DeviceAssignmentController::class, "unassign"])->name("devices.unassign");
+        Route::get("/devices/{device}/users", [DeviceAssignmentController::class, "deviceUsers"])->name("devices.users");
+        Route::get("/users/{user}/devices", [DeviceAssignmentController::class, "userDevices"])->name("users.devices");
     });
 });
 
