@@ -33,7 +33,6 @@ Route::middleware("auth:api")->group(function (): void {
         Route::post("/devices/generate-qr", [DeviceController::class, "storeWithQrCode"])->name("devices.generate_qr");
         Route::get("/devices/{device}/show-qr", [DeviceController::class, "qrCode"])->name("devices.show_qr");
 
-        // Device assignment management (admin only)
         Route::post("/devices/{device}/assign", [DeviceAssignmentController::class, "assign"])->name("devices.assign");
         Route::delete("/devices/{device}/assign/{user}", [DeviceAssignmentController::class, "unassign"])->name("devices.unassign");
         Route::get("/devices/{device}/users", [DeviceAssignmentController::class, "deviceUsers"])->name("devices.users");

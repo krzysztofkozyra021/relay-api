@@ -59,17 +59,14 @@ class DemoSeeder extends Seeder
 
         $devices = Device::all();
 
-        // Installer gets first 25 devices
         $installer->devices()->attach(
             $devices->slice(0, 25)->pluck("uuid")->toArray(),
         );
 
-        // Service gets next 20 devices
         $service->devices()->attach(
             $devices->slice(25, 20)->pluck("uuid")->toArray(),
         );
 
-        // Last 7 devices are shared between installer and service
         $shared = $devices->slice(45)->pluck("uuid")->toArray();
         $installer->devices()->syncWithoutDetaching($shared);
         $service->devices()->syncWithoutDetaching($shared);
