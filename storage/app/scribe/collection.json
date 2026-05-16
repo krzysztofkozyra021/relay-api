@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "relay-api API Documentation",
-        "_postman_id": "5e0071a2-9963-462c-b1e4-a53c717f9b59",
+        "_postman_id": "413d16b3-112d-4687-ad47-72ac4701c702",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -474,7 +474,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-16T11:16:36\",\"notes\":\"architecto\"}"
+                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-16T11:25:05\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -569,7 +569,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"b\",\"type\":\"n\",\"model\":\"g\",\"brand\":\"z\",\"serial_number\":\"m\",\"location\":\"i\",\"installation_date\":\"2026-05-16T11:16:37\",\"notes\":\"architecto\"}"
+                            "raw": "{\"name\":\"b\",\"type\":\"n\",\"model\":\"g\",\"brand\":\"z\",\"serial_number\":\"m\",\"location\":\"i\",\"installation_date\":\"2026-05-16T11:25:05\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -636,7 +636,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-16T11:16:37\",\"notes\":\"architecto\"}"
+                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-16T11:25:05\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {

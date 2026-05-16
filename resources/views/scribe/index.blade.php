@@ -1889,7 +1889,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"i\",
     \"serial_number\": \"y\",
     \"location\": \"v\",
-    \"installation_date\": \"2026-05-16T11:16:36\",
+    \"installation_date\": \"2026-05-16T11:25:05\",
     \"notes\": \"architecto\"
 }"
 </code></pre></div>
@@ -1913,7 +1913,7 @@ let body = {
     "brand": "i",
     "serial_number": "y",
     "location": "v",
-    "installation_date": "2026-05-16T11:16:36",
+    "installation_date": "2026-05-16T11:25:05",
     "notes": "architecto"
 };
 
@@ -2090,10 +2090,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="installation_date"                data-endpoint="POSTapi-devices"
-               value="2026-05-16T11:16:36"
+               value="2026-05-16T11:25:05"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-16T11:16:36</code></p>
+<p>Must be a valid date. Example: <code>2026-05-16T11:25:05</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2272,7 +2272,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"z\",
     \"serial_number\": \"m\",
     \"location\": \"i\",
-    \"installation_date\": \"2026-05-16T11:16:37\",
+    \"installation_date\": \"2026-05-16T11:25:05\",
     \"notes\": \"architecto\"
 }"
 </code></pre></div>
@@ -2295,7 +2295,7 @@ let body = {
     "brand": "z",
     "serial_number": "m",
     "location": "i",
-    "installation_date": "2026-05-16T11:16:37",
+    "installation_date": "2026-05-16T11:25:05",
     "notes": "architecto"
 };
 
@@ -2477,10 +2477,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="installation_date"                data-endpoint="PUTapi-devices--uuid-"
-               value="2026-05-16T11:16:37"
+               value="2026-05-16T11:25:05"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-16T11:16:37</code></p>
+<p>Must be a valid date. Example: <code>2026-05-16T11:25:05</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2644,7 +2644,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"i\",
     \"serial_number\": \"y\",
     \"location\": \"v\",
-    \"installation_date\": \"2026-05-16T11:16:37\",
+    \"installation_date\": \"2026-05-16T11:25:05\",
     \"notes\": \"architecto\"
 }"
 </code></pre></div>
@@ -2668,7 +2668,7 @@ let body = {
     "brand": "i",
     "serial_number": "y",
     "location": "v",
-    "installation_date": "2026-05-16T11:16:37",
+    "installation_date": "2026-05-16T11:25:05",
     "notes": "architecto"
 };
 
@@ -2845,10 +2845,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="installation_date"                data-endpoint="POSTapi-devices-generate-qr"
-               value="2026-05-16T11:16:37"
+               value="2026-05-16T11:25:05"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-16T11:16:37</code></p>
+<p>Must be a valid date. Example: <code>2026-05-16T11:25:05</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;

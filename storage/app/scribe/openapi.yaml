@@ -371,7 +371,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-16T11:16:36'
+                  example: '2026-05-16T11:25:05'
                   nullable: true
                 notes:
                   type: string
@@ -450,7 +450,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-16T11:16:37'
+                  example: '2026-05-16T11:25:05'
                   nullable: true
                 notes:
                   type: string
@@ -527,7 +527,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-16T11:16:37'
+                  example: '2026-05-16T11:25:05'
                   nullable: true
                 notes:
                   type: string

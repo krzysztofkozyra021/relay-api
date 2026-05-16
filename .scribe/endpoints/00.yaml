@@ -724,7 +724,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-16T11:16:36'
+        example: '2026-05-16T11:25:05'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -749,7 +749,7 @@ endpoints:
       brand: i
       serial_number: 'y'
       location: v
-      installation_date: '2026-05-16T11:16:36'
+      installation_date: '2026-05-16T11:25:05'
       notes: architecto
     fileParameters: []
     responses: []
@@ -917,7 +917,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-16T11:16:37'
+        example: '2026-05-16T11:25:05'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -941,7 +941,7 @@ endpoints:
       brand: z
       serial_number: m
       location: i
-      installation_date: '2026-05-16T11:16:37'
+      installation_date: '2026-05-16T11:25:05'
       notes: architecto
     fileParameters: []
     responses: []
@@ -1098,7 +1098,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-16T11:16:37'
+        example: '2026-05-16T11:25:05'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1123,7 +1123,7 @@ endpoints:
       brand: i
       serial_number: 'y'
       location: v
-      installation_date: '2026-05-16T11:16:37'
+      installation_date: '2026-05-16T11:25:05'
       notes: architecto
     fileParameters: []
     responses: []
