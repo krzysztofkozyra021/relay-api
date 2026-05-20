@@ -7,6 +7,10 @@ namespace Relay\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Log;
+use Kreait\Firebase\Contract\Messaging;
+use Kreait\Firebase\Messaging\CloudMessage;
+use Kreait\Firebase\Messaging\Notification as FirebaseNotification;
 use Relay\Models\Device;
 use Relay\Models\FaultReport;
 
@@ -21,7 +25,33 @@ class FaultReportedNotification extends Notification
 
     public function via(mixed $notifiable): array
     {
-        return ["mail"];
+        $channels = ["mail"];
+
+        if (!empty($notifiable->fcm_token)) {
+            try {
+                /** @var Messaging $messaging */
+                $messaging = app(Messaging::class);
+
+                $message = CloudMessage::fromArray([
+                    'token' => $notifiable->fcm_token,
+                    'notification' => [
+                        'title' => 'Nowe zgłoszenie usterki!',
+                        'body' => "Urządzenie: {$this->device->name}\nUsterka: {$this->faultReport->title}",
+                    ],
+                    'data' => [
+                        'fault_id' => (string) $this->faultReport->id,
+                        'device_uuid' => (string) $this->device->uuid,
+                    ],
+                ]);
+
+                $messaging->send($message);
+                Log::info("Powiadomienie Push wysłane pomyślnie do użytkownika ID: {$notifiable->id}");
+            } catch (\Exception $e) {
+                Log::error("Błąd wysyłania powiadomienia Push przez Firebase SDK: " . $e->getMessage());
+            }
+        }
+
+        return $channels;
     }
 
     public function toMail(mixed $notifiable): MailMessage

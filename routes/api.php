@@ -40,6 +40,17 @@ Route::middleware("auth:api")->group(function (): void {
     Route::get("/user", fn(Request $request): JsonResponse => new JsonResponse($request->user()));
     Route::post("/logout", [LoginController::class, "logout"]);
     Route::put("/user/password", [PasswordUpdateController::class, "update"]);
+    Route::post('/user/fcm-token', function (Request $request) {
+        $validated = $request->validate([
+            'fcm_token' => ['required', 'string'],
+        ]);
+
+        $request->user()->update([
+            'fcm_token' => $validated['fcm_token']
+        ]);
+
+        return response()->json(['message' => 'FCM token updated successfully.']);
+    });
 
     Route::post("/auth/2fa/setup", [TwoFactorSetupController::class, "store"]);
 
