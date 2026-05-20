@@ -16,6 +16,7 @@ use Relay\Http\Controllers\DeviceController;
 use Relay\Http\Controllers\FaultReportController;
 use Relay\Http\Controllers\Auth\PasswordUpdateController;
 use Relay\Http\Controllers\Auth\MobilePasswordResetController;
+use Relay\Http\Controllers\DeviceEventController;
 
 Route::post("/register", [RegisterController::class, "register"]);
 Route::post("/login", [LoginController::class, "login"])->name("login");
@@ -40,7 +41,7 @@ Route::middleware("auth:api")->group(function (): void {
     Route::get("/user", fn(Request $request): JsonResponse => new JsonResponse($request->user()));
     Route::post("/logout", [LoginController::class, "logout"]);
     Route::put("/user/password", [PasswordUpdateController::class, "update"]);
-    Route::post('/user/fcm-token', function (Request $request) {
+    Route::post("/user/fcm-token", function (Request $request) {
         $validated = $request->validate([
             'fcm_token' => ['required', 'string'],
         ]);
@@ -70,5 +71,7 @@ Route::middleware("auth:api")->group(function (): void {
         Route::get("/devices/{device}/faults", [FaultReportController::class, "deviceFaults"]);
     });
 });
+
+Route::get("/devices/{uuid}/events", [DeviceEventController::class, "__invoke"]);
 
 Route::get("/hello", fn(): JsonResponse => new JsonResponse(["message" => "Hello, World!"]));
