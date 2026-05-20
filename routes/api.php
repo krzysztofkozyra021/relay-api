@@ -14,6 +14,8 @@ use Relay\Http\Controllers\Auth\TwoFactorVerifyController;
 use Relay\Http\Controllers\DeviceAssignmentController;
 use Relay\Http\Controllers\DeviceController;
 use Relay\Http\Controllers\FaultReportController;
+use Relay\Http\Controllers\Auth\PasswordUpdateController;
+use Relay\Http\Controllers\Auth\MobilePasswordResetController;
 
 Route::post("/register", [RegisterController::class, "register"]);
 Route::post("/login", [LoginController::class, "login"])->name("login");
@@ -26,11 +28,18 @@ Route::post("/password/reset", [PasswordResetController::class, "reset"]);
 Route::prefix("public")->group(function (): void {
     Route::get("/devices/{uuid}", [FaultReportController::class, "deviceInfo"]);
     Route::post("/devices/{uuid}/faults", [FaultReportController::class, "store"]);
+
+    Route::post("/mobile/password/email", [MobilePasswordResetController::class, "sendPin"])
+        ->middleware('throttle:3,1'); 
+        
+    Route::post("/mobile/password/reset", [MobilePasswordResetController::class, "reset"])
+        ->middleware('throttle:5,1');
 });
 
 Route::middleware("auth:api")->group(function (): void {
     Route::get("/user", fn(Request $request): JsonResponse => new JsonResponse($request->user()));
     Route::post("/logout", [LoginController::class, "logout"]);
+    Route::put("/user/password", [PasswordUpdateController::class, "update"]);
 
     Route::post("/auth/2fa/setup", [TwoFactorSetupController::class, "store"]);
 
