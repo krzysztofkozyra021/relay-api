@@ -57,7 +57,6 @@ class DeviceController extends Controller
 
     public function show(Request $request, Device $device): Device
     {
-        $this->authorizeAccess($request->user(), $device);
 
         return $device;
     }
@@ -92,10 +91,13 @@ class DeviceController extends Controller
             return;
         }
 
-        $assigned = $user->devices()->where("devices.uuid", $device->uuid)->exists();
+        $assigned = DB::table('device_user')
+            ->where('user_id', $user->id)
+            ->where('device_uuid', $device->uuid)
+            ->exists();
 
         if (!$assigned) {
-            abort(403, "You do not have access to this device.");
+            abort(403, "Nie masz dostępu do tego urządzenia.");
         }
     }
 }
