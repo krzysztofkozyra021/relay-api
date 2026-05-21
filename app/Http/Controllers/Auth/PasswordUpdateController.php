@@ -5,24 +5,17 @@ declare(strict_types=1);
 namespace Relay\Http\Controllers\Auth;
 
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules\Password;
+use Relay\Http\Requests\Auth\UpdatePasswordRequest;
 
 class PasswordUpdateController extends Controller
 {
-    public function update(Request $request): JsonResponse
+    public function update(UpdatePasswordRequest $request): JsonResponse
     {
-        $request->validate([
-            'current_password' => ['required', 'current_password'],
-            'password' => ['required', 'confirmed', Password::defaults()],
-        ]);
-
         $request->user()->update([
-            'password' => Hash::make($request->password),
+            "password" => $request->validated()["password"],
         ]);
 
-        return new JsonResponse(['message' => 'Hasło zostało pomyślnie zmienione.']);
+        return new JsonResponse(["message" => "Hasło zostało pomyślnie zmienione."]);
     }
 }

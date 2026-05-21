@@ -57,7 +57,6 @@ class DeviceController extends Controller
 
     public function show(Request $request, Device $device): Device
     {
-
         return $device;
     }
 
@@ -91,10 +90,7 @@ class DeviceController extends Controller
             return;
         }
 
-        $assigned = DB::table('device_user')
-            ->where('user_id', $user->id)
-            ->where('device_uuid', $device->uuid)
-            ->exists();
+        $assigned = $user->devices()->where("uuid", $device->uuid)->exists();
 
         if (!$assigned) {
             abort(403, "Nie masz dostępu do tego urządzenia.");

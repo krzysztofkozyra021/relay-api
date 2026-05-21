@@ -12,23 +12,24 @@ use Illuminate\Queue\SerializesModels;
 
 class MobileResetPinMail extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     public function __construct(
-        public readonly string $pin
+        public readonly string $pin,
     ) {}
 
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Kod PIN do resetu hasła',
+            subject: "Kod PIN do resetu hasła",
         );
     }
 
     public function content(): Content
     {
         return new Content(
-            htmlString: "<h1>Twój kod resetu hasła</h1><p>Twój jednorazowy 6-cyfrowy kod PIN to: <strong>{$this->pin}</strong></p><p>Kod jest ważny przez 15 minut.</p>"
+            htmlString: "<h1>Twój kod resetu hasła</h1><p>Twój jednorazowy 6-cyfrowy kod PIN to: <strong>{$this->pin}</strong></p><p>Kod jest ważny przez 15 minut.</p>",
         );
     }
 }

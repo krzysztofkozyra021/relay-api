@@ -13,17 +13,13 @@ use Relay\Notifications\FaultReportedNotification;
 
 class FaultReportController
 {
-    public function deviceInfo(string $uuid): JsonResponse
+    public function deviceInfo(Device $device): JsonResponse
     {
-        $device = Device::where("uuid", $uuid)->firstOrFail();
-
         return new JsonResponse($device->only(["uuid", "name", "type", "model", "brand", "location"]));
     }
 
-    public function store(StoreFaultReportRequest $request, string $uuid): JsonResponse
+    public function store(StoreFaultReportRequest $request, Device $device): JsonResponse
     {
-        $device = Device::where("uuid", $uuid)->firstOrFail();
-
         $fault = $device->faultReports()->create($request->validated());
 
         $device->users->each(fn($user) => $user->notify(new FaultReportedNotification($fault, $device)));
