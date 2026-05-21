@@ -85,7 +85,7 @@ RUN composer install \
 
 FROM base AS production
 
-ARG ENVIRONMENT_ARG
+ARG ENVIRONMENT_ARG=production
 ENV ENVIRONMENT=${ENVIRONMENT_ARG}
 
 RUN mv "${PHP_INI_DIR}/php.ini-production" "${PHP_INI_DIR}/php.ini"
