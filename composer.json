@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.11.1",
         "php-open-source-saver/jwt-auth": "^2.9",
         "pragmarx/google2fa": "^9.0",
+        "sentry/sentry-laravel": "^4.25",
         "simplesoftwareio/simple-qrcode": "^4.2"
     },
     "require-dev": {
