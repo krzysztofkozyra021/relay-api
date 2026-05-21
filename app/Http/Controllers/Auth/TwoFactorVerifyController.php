@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Cache;
 use PragmaRX\Google2FA\Google2FA;
 use Relay\Http\Controllers\Controller;
 use Relay\Models\User;
+use Relay\Services\AuditLogger;
 
 class TwoFactorVerifyController extends Controller
 {
@@ -37,6 +38,14 @@ class TwoFactorVerifyController extends Controller
             $codeIndex = array_search($validated["code"], $recoveryCodes, true);
 
             if ($codeIndex === false) {
+                AuditLogger::log(
+                    action: "login_2fa_failed",
+                    description: "Nieudane logowanie 2FA dla e-maila: " . $user->email,
+                    modelType: User::class,
+                    modelId: $user->id,
+                    userId: $user->id,
+                );
+
                 return new JsonResponse(["message" => "Invalid 2FA code or recovery code."], 401);
             }
 
@@ -53,6 +62,15 @@ class TwoFactorVerifyController extends Controller
         }
 
         $token = auth("api")->login($user);
+
+        AuditLogger::log(
+            action: "login_success",
+            description: "Użytkownik zalogował się pomyślnie z użyciem 2FA: " . $user->email,
+            modelType: User::class,
+            modelId: $user->id,
+            payload: ["method" => "credentials_2fa"],
+            userId: $user->id,
+        );
 
         return new JsonResponse([
             "access_token" => $token,

@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Relay\Models\Concerns\LogsActivity;
 
 /**
  * @property int $id
@@ -24,6 +25,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class FaultReport extends Model
 {
     use HasFactory;
+    use LogsActivity;
 
     protected $fillable = [
         "device_uuid",

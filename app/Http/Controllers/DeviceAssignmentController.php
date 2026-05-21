@@ -9,6 +9,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Relay\Models\Device;
 use Relay\Models\User;
+use Relay\Services\AuditLogger;
 
 class DeviceAssignmentController extends Controller
 {
@@ -20,7 +21,17 @@ class DeviceAssignmentController extends Controller
             "user_id" => "required|integer|exists:users,id",
         ]);
 
-        $device->users()->syncWithoutDetaching([$request->integer("user_id")]);
+        $userId = $request->integer("user_id");
+        $device->users()->syncWithoutDetaching([$userId]);
+
+        $assignedUser = User::find($userId);
+        AuditLogger::log(
+            action: "assign_device",
+            description: "Przypisano urządzenie {$device->name} (UUID: {$device->uuid}) do użytkownika {$assignedUser?->email}",
+            modelType: Device::class,
+            modelId: $device->uuid,
+            payload: ["user_id" => $userId, "user_email" => $assignedUser?->email],
+        );
 
         return new JsonResponse(["message" => "Device assigned successfully."]);
     }
@@ -30,6 +41,14 @@ class DeviceAssignmentController extends Controller
         $this->requireAdmin($request);
 
         $device->users()->detach($user->id);
+
+        AuditLogger::log(
+            action: "unassign_device",
+            description: "Odpięto urządzenie {$device->name} (UUID: {$device->uuid}) od użytkownika {$user->email}",
+            modelType: Device::class,
+            modelId: $device->uuid,
+            payload: ["user_id" => $user->id, "user_email" => $user->email],
+        );
 
         return new JsonResponse(["message" => "Device unassigned successfully."]);
     }

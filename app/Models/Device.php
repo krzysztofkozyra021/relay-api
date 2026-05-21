@@ -9,11 +9,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Relay\Models\Concerns\LogsActivity;
 
 class Device extends Model
 {
     use HasFactory;
     use HasUuids;
+    use LogsActivity;
 
     protected $fillable = [
         "uuid",

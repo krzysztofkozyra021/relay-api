@@ -76,6 +76,10 @@ return [
             "driver" => "monolog",
             "handler" => NullHandler::class,
         ],
+        "sentry_logs" => [
+            "driver" => "sentry_logs",
+            "level" => env("LOG_LEVEL", "info"),
+        ],
         "emergency" => [
             "path" => storage_path("logs/laravel.log"),
         ],
