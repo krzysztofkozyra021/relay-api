@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(declare_types=1);
 
 namespace Relay\Http\Controllers\Auth;
 
@@ -38,8 +38,18 @@ class GoogleAuthController extends Controller
                 "provider" => "google",
                 "provider_id" => $googleUser->getId(),
                 "password" => null,
+                "is_admin" => false,
+                "is_installer" => false,
+                "is_service" => false,
             ],
         );
+
+        if (empty($user->provider_id)) {
+            $user->update([
+                "provider" => "google",
+                "provider_id" => $googleUser->getId(),
+            ]);
+        }
 
         return $this->loginController->processUserAuth($user);
     }
