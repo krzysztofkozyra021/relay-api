@@ -467,14 +467,14 @@ endpoints:
         name: device_uuid
         description: ''
         required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+      device_uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -484,12 +484,12 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"id":1,"uuid":"fc9ee2de-e9ba-36cb-8e18-b0472fdd1478","name":"Device 8173","type":"Wheel Lock","model":"Model-6001","brand":"Jaskolski, Kautzer and Kerluke","serial_number":"SN-75456812","location":"474 Winfield Square Suite 270\nJarrettmouth, SC 13837-9372","installation_date":"1991-04-24T00:00:00.000000Z","notes":"Quisquam consequatur voluptatum tempora odio magnam incidunt. Voluptas cum minus quidem maxime est. Debitis voluptas et est. In et ea doloremque unde voluptatem officia.","created_at":"2026-05-16T11:06:47.000000Z","updated_at":"2026-05-16T11:06:47.000000Z"}'
+        content: '{"id":2,"uuid":"f92b0ee1-d31c-3b96-bd76-0f1840d8d289","name":"Device 0678","type":"A\/C","model":"Model-5040","brand":"Boyle, Zulauf and Glover","serial_number":"SN-23782372","location":"348 Kaylah Cove Suite 376\nLake Opalshire, DE 77841-5195","installation_date":"2022-11-09T00:00:00.000000Z","notes":"Culpa earum neque similique quia qui vitae consequatur tenetur. Cum eligendi rerum autem molestias ullam et. Occaecati nihil placeat libero.","created_at":"2026-05-16T11:06:47.000000Z","updated_at":"2026-05-16T11:06:47.000000Z","instruction_url":null}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
+          x-ratelimit-remaining: '55'
           access-control-allow-origin: '*'
           x-frame-options: DENY
           x-content-type-options: nosniff
@@ -528,14 +528,14 @@ endpoints:
         name: device_uuid
         description: ''
         required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+      device_uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -545,12 +545,12 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '[{"date":"2026-05-16 11:15:05","type":"fixed","title":"Naprawiono usterk\u0119","description":"Zg\u0142oszenie zosta\u0142o pomy\u015blnie zamkni\u0119te i oznaczone jako rozwi\u0105zane.","user":"Serwisant"},{"date":"2026-05-16 11:07:12","type":"fault","title":"Zg\u0142oszono usterk\u0119","description":"Test usterki","user":"Jan Kowalski"},{"date":"2026-05-16 11:06:47","type":"install","title":"Instalacja urz\u0105dzenia","description":"Pierwszy monta\u017c i uruchomienie w systemie.","user":"System"},{"date":"2026-05-16 11:06:47","type":"fault","title":"Zg\u0142oszono usterk\u0119","description":"Urz\u0105dzenie nie odpowiada","user":"Jan Kowalski"}]'
+        content: '[{"date":"2026-05-16 11:15:30","type":"fixed","title":"Naprawiono usterk\u0119","description":"Zg\u0142oszenie zosta\u0142o pomy\u015blnie zamkni\u0119te i oznaczone jako rozwi\u0105zane.","user":"Serwisant"},{"date":"2026-05-16 11:06:47","type":"install","title":"Instalacja urz\u0105dzenia","description":"Pierwszy monta\u017c i uruchomienie w systemie.","user":"System"},{"date":"2026-05-16 11:06:47","type":"fault","title":"Zg\u0142oszono usterk\u0119","description":"Nadmierne wibracje","user":"Anna Nowak"}]'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '58'
+          x-ratelimit-remaining: '54'
           access-control-allow-origin: '*'
           x-frame-options: DENY
           x-content-type-options: nosniff
@@ -589,14 +589,14 @@ endpoints:
         name: device_uuid
         description: ''
         required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+      device_uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -935,7 +935,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: in_progress
+        example: resolved
         type: string
         enumValues:
           - pending
@@ -945,7 +945,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanBodyParameters:
-      status: in_progress
+      status: resolved
     fileParameters: []
     responses: []
     responseFields: []
@@ -977,14 +977,14 @@ endpoints:
         name: device_uuid
         description: ''
         required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+      device_uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1257,7 +1257,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-22T17:06:01'
+        example: '2026-05-22T20:53:28'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1274,6 +1274,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: true
         deprecated: false
+      instruction_url:
+        custom: []
+        name: instruction_url
+        description: 'Must be a valid URL. Must not be greater than 2048 characters.'
+        required: false
+        example: 'http://bailey.com/'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
     cleanBodyParameters:
       uuid: 6ff8f7f6-1eb3-3525-be4a-3932c805afed
       name: g
@@ -1282,8 +1293,9 @@ endpoints:
       brand: i
       serial_number: 'y'
       location: v
-      installation_date: '2026-05-22T17:06:01'
+      installation_date: '2026-05-22T20:53:28'
       notes: architecto
+      instruction_url: 'http://bailey.com/'
     fileParameters: []
     responses: []
     responseFields: []
@@ -1316,14 +1328,14 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+      uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1398,7 +1410,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-22T17:06:01'
+        example: '2026-05-22T20:53:28'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1415,6 +1427,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: true
         deprecated: false
+      instruction_url:
+        custom: []
+        name: instruction_url
+        description: 'Must be a valid URL. Must not be greater than 2048 characters.'
+        required: false
+        example: 'http://bailey.com/'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
     cleanBodyParameters:
       name: b
       type: 'n'
@@ -1422,8 +1445,9 @@ endpoints:
       brand: z
       serial_number: m
       location: i
-      installation_date: '2026-05-22T17:06:01'
+      installation_date: '2026-05-22T20:53:28'
       notes: architecto
+      instruction_url: 'http://bailey.com/'
     fileParameters: []
     responses: []
     responseFields: []
@@ -1455,14 +1479,14 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+      uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1579,7 +1603,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-22T17:06:01'
+        example: '2026-05-22T20:53:28'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1596,6 +1620,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: true
         deprecated: false
+      instruction_url:
+        custom: []
+        name: instruction_url
+        description: 'Must be a valid URL. Must not be greater than 2048 characters.'
+        required: false
+        example: 'http://bailey.com/'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
     cleanBodyParameters:
       uuid: 6ff8f7f6-1eb3-3525-be4a-3932c805afed
       name: g
@@ -1604,8 +1639,9 @@ endpoints:
       brand: i
       serial_number: 'y'
       location: v
-      installation_date: '2026-05-22T17:06:01'
+      installation_date: '2026-05-22T20:53:28'
       notes: architecto
+      instruction_url: 'http://bailey.com/'
     fileParameters: []
     responses: []
     responseFields: []
@@ -1637,14 +1673,14 @@ endpoints:
         name: device_uuid
         description: ''
         required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+      device_uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -1675,6 +1711,61 @@ endpoints:
   -
     custom: []
     httpMethods:
+      - PATCH
+    uri: 'api/devices/{device_uuid}/instruction'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      device_uuid:
+        custom: []
+        name: device_uuid
+        description: ''
+        required: true
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      device_uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      instruction_url:
+        custom: []
+        name: instruction_url
+        description: 'Must be a valid URL. Must not be greater than 2048 characters.'
+        required: false
+        example: 'http://www.bailey.biz/quos-velit-et-fugiat-sunt-nihil-accusantium-harum.html'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      instruction_url: 'http://www.bailey.biz/quos-velit-et-fugiat-sunt-nihil-accusantium-harum.html'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
       - POST
     uri: 'api/devices/{device_uuid}/assign'
     metadata:
@@ -1696,14 +1787,14 @@ endpoints:
         name: device_uuid
         description: ''
         required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+      device_uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -1751,7 +1842,7 @@ endpoints:
         name: device_uuid
         description: ''
         required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1769,7 +1860,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+      device_uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
       user_id: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -1806,14 +1897,14 @@ endpoints:
         name: device_uuid
         description: ''
         required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+      device_uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2020,7 +2111,7 @@ endpoints:
         name: is_admin
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -2031,7 +2122,7 @@ endpoints:
         name: is_installer
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -2042,7 +2133,7 @@ endpoints:
         name: is_service
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -2051,9 +2142,9 @@ endpoints:
     cleanBodyParameters:
       name: b
       email: zbailey@example.net
-      is_admin: true
-      is_installer: false
-      is_service: false
+      is_admin: false
+      is_installer: true
+      is_service: true
     fileParameters: []
     responses: []
     responseFields: []
@@ -2138,7 +2229,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '57'
+          x-ratelimit-remaining: '53'
           access-control-allow-origin: '*'
           x-frame-options: DENY
           x-content-type-options: nosniff
@@ -2187,7 +2278,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
+          x-ratelimit-remaining: '52'
           access-control-allow-origin: '*'
           x-frame-options: DENY
           x-content-type-options: nosniff

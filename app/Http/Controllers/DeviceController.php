@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Relay\Http\Requests\StoreDeviceRequest;
+use Relay\Http\Requests\UpdateDeviceInstructionRequest;
 use Relay\Http\Requests\UpdateDeviceRequest;
 use Relay\Models\Device;
 use Relay\Models\User;
@@ -61,6 +62,14 @@ class DeviceController extends Controller
     }
 
     public function update(UpdateDeviceRequest $request, Device $device): Device
+    {
+        $this->authorizeAccess($request->user(), $device);
+        $device->update($request->validated());
+
+        return $device;
+    }
+
+    public function updateInstruction(UpdateDeviceInstructionRequest $request, Device $device): Device
     {
         $this->authorizeAccess($request->user(), $device);
         $device->update($request->validated());

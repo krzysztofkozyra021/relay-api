@@ -152,6 +152,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--device_uuid--show-qr">
                                 <a href="#endpoints-GETapi-devices--device_uuid--show-qr">GET api/devices/{device_uuid}/show-qr</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PATCHapi-devices--device_uuid--instruction">
+                                <a href="#endpoints-PATCHapi-devices--device_uuid--instruction">PATCH api/devices/{device_uuid}/instruction</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-devices--device_uuid--assign">
                                 <a href="#endpoints-POSTapi-devices--device_uuid--assign">POST api/devices/{device_uuid}/assign</a>
                             </li>
@@ -1394,14 +1397,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478" \
+    --get "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
 );
 
 const headers = {
@@ -1428,7 +1431,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
+x-ratelimit-remaining: 55
 access-control-allow-origin: *
 x-frame-options: DENY
 x-content-type-options: nosniff
@@ -1440,18 +1443,19 @@ permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;id&quot;: 1,
-    &quot;uuid&quot;: &quot;fc9ee2de-e9ba-36cb-8e18-b0472fdd1478&quot;,
-    &quot;name&quot;: &quot;Device 8173&quot;,
-    &quot;type&quot;: &quot;Wheel Lock&quot;,
-    &quot;model&quot;: &quot;Model-6001&quot;,
-    &quot;brand&quot;: &quot;Jaskolski, Kautzer and Kerluke&quot;,
-    &quot;serial_number&quot;: &quot;SN-75456812&quot;,
-    &quot;location&quot;: &quot;474 Winfield Square Suite 270\nJarrettmouth, SC 13837-9372&quot;,
-    &quot;installation_date&quot;: &quot;1991-04-24T00:00:00.000000Z&quot;,
-    &quot;notes&quot;: &quot;Quisquam consequatur voluptatum tempora odio magnam incidunt. Voluptas cum minus quidem maxime est. Debitis voluptas et est. In et ea doloremque unde voluptatem officia.&quot;,
+    &quot;id&quot;: 2,
+    &quot;uuid&quot;: &quot;f92b0ee1-d31c-3b96-bd76-0f1840d8d289&quot;,
+    &quot;name&quot;: &quot;Device 0678&quot;,
+    &quot;type&quot;: &quot;A/C&quot;,
+    &quot;model&quot;: &quot;Model-5040&quot;,
+    &quot;brand&quot;: &quot;Boyle, Zulauf and Glover&quot;,
+    &quot;serial_number&quot;: &quot;SN-23782372&quot;,
+    &quot;location&quot;: &quot;348 Kaylah Cove Suite 376\nLake Opalshire, DE 77841-5195&quot;,
+    &quot;installation_date&quot;: &quot;2022-11-09T00:00:00.000000Z&quot;,
+    &quot;notes&quot;: &quot;Culpa earum neque similique quia qui vitae consequatur tenetur. Cum eligendi rerum autem molestias ullam et. Occaecati nihil placeat libero.&quot;,
     &quot;created_at&quot;: &quot;2026-05-16T11:06:47.000000Z&quot;,
-    &quot;updated_at&quot;: &quot;2026-05-16T11:06:47.000000Z&quot;
+    &quot;updated_at&quot;: &quot;2026-05-16T11:06:47.000000Z&quot;,
+    &quot;instruction_url&quot;: null
 }</code>
  </pre>
     </span>
@@ -1534,10 +1538,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device_uuid"                data-endpoint="GETapi-devices--device_uuid-"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               value="f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
                data-component="url">
     <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+<p>Example: <code>f92b0ee1-d31c-3b96-bd76-0f1840d8d289</code></p>
             </div>
                     </form>
 
@@ -1554,14 +1558,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/events" \
+    --get "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/events" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/events"
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/events"
 );
 
 const headers = {
@@ -1588,7 +1592,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 54
 access-control-allow-origin: *
 x-frame-options: DENY
 x-content-type-options: nosniff
@@ -1601,18 +1605,11 @@ permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
 
 <code class="language-json" style="max-height: 300px;">[
     {
-        &quot;date&quot;: &quot;2026-05-16 11:15:05&quot;,
+        &quot;date&quot;: &quot;2026-05-16 11:15:30&quot;,
         &quot;type&quot;: &quot;fixed&quot;,
         &quot;title&quot;: &quot;Naprawiono usterkę&quot;,
         &quot;description&quot;: &quot;Zgłoszenie zostało pomyślnie zamknięte i oznaczone jako rozwiązane.&quot;,
         &quot;user&quot;: &quot;Serwisant&quot;
-    },
-    {
-        &quot;date&quot;: &quot;2026-05-16 11:07:12&quot;,
-        &quot;type&quot;: &quot;fault&quot;,
-        &quot;title&quot;: &quot;Zgłoszono usterkę&quot;,
-        &quot;description&quot;: &quot;Test usterki&quot;,
-        &quot;user&quot;: &quot;Jan Kowalski&quot;
     },
     {
         &quot;date&quot;: &quot;2026-05-16 11:06:47&quot;,
@@ -1625,8 +1622,8 @@ permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
         &quot;date&quot;: &quot;2026-05-16 11:06:47&quot;,
         &quot;type&quot;: &quot;fault&quot;,
         &quot;title&quot;: &quot;Zgłoszono usterkę&quot;,
-        &quot;description&quot;: &quot;Urządzenie nie odpowiada&quot;,
-        &quot;user&quot;: &quot;Jan Kowalski&quot;
+        &quot;description&quot;: &quot;Nadmierne wibracje&quot;,
+        &quot;user&quot;: &quot;Anna Nowak&quot;
     }
 ]</code>
  </pre>
@@ -1710,10 +1707,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device_uuid"                data-endpoint="GETapi-devices--device_uuid--events"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               value="f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
                data-component="url">
     <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+<p>Example: <code>f92b0ee1-d31c-3b96-bd76-0f1840d8d289</code></p>
             </div>
                     </form>
 
@@ -1730,7 +1727,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults" \
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/faults" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1744,7 +1741,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults"
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/faults"
 );
 
 const headers = {
@@ -1848,10 +1845,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device_uuid"                data-endpoint="POSTapi-devices--device_uuid--faults"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               value="f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
                data-component="url">
     <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+<p>Example: <code>f92b0ee1-d31c-3b96-bd76-0f1840d8d289</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2593,7 +2590,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"status\": \"in_progress\"
+    \"status\": \"resolved\"
 }"
 </code></pre></div>
 
@@ -2609,7 +2606,7 @@ const headers = {
 };
 
 let body = {
-    "status": "in_progress"
+    "status": "resolved"
 };
 
 fetch(url, {
@@ -2714,10 +2711,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="PATCHapi-faults--fault_id-"
-               value="in_progress"
+               value="resolved"
                data-component="body">
     <br>
-<p>Example: <code>in_progress</code></p>
+<p>Example: <code>resolved</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>in_progress</code></li> <li><code>resolved</code></li></ul>
         </div>
@@ -2736,14 +2733,14 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults" \
+    --get "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/faults" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults"
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/faults"
 );
 
 const headers = {
@@ -2863,10 +2860,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device_uuid"                data-endpoint="GETapi-devices--device_uuid--faults"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               value="f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
                data-component="url">
     <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+<p>Example: <code>f92b0ee1-d31c-3b96-bd76-0f1840d8d289</code></p>
             </div>
                     </form>
 
@@ -3361,8 +3358,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"i\",
     \"serial_number\": \"y\",
     \"location\": \"v\",
-    \"installation_date\": \"2026-05-22T17:06:01\",
-    \"notes\": \"architecto\"
+    \"installation_date\": \"2026-05-22T20:53:28\",
+    \"notes\": \"architecto\",
+    \"instruction_url\": \"http:\\/\\/bailey.com\\/\"
 }"
 </code></pre></div>
 
@@ -3385,8 +3383,9 @@ let body = {
     "brand": "i",
     "serial_number": "y",
     "location": "v",
-    "installation_date": "2026-05-22T17:06:01",
-    "notes": "architecto"
+    "installation_date": "2026-05-22T20:53:28",
+    "notes": "architecto",
+    "instruction_url": "http:\/\/bailey.com\/"
 };
 
 fetch(url, {
@@ -3562,10 +3561,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="installation_date"                data-endpoint="POSTapi-devices"
-               value="2026-05-22T17:06:01"
+               value="2026-05-22T20:53:28"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-22T17:06:01</code></p>
+<p>Must be a valid date. Example: <code>2026-05-22T20:53:28</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -3578,6 +3577,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Example: <code>architecto</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>instruction_url</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="instruction_url"                data-endpoint="POSTapi-devices"
+               value="http://bailey.com/"
+               data-component="body">
+    <br>
+<p>Must be a valid URL. Must not be greater than 2048 characters. Example: <code>http://bailey.com/</code></p>
         </div>
         </form>
 
@@ -3594,7 +3605,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478" \
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -3604,15 +3615,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"z\",
     \"serial_number\": \"m\",
     \"location\": \"i\",
-    \"installation_date\": \"2026-05-22T17:06:01\",
-    \"notes\": \"architecto\"
+    \"installation_date\": \"2026-05-22T20:53:28\",
+    \"notes\": \"architecto\",
+    \"instruction_url\": \"http:\\/\\/bailey.com\\/\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
 );
 
 const headers = {
@@ -3627,8 +3639,9 @@ let body = {
     "brand": "z",
     "serial_number": "m",
     "location": "i",
-    "installation_date": "2026-05-22T17:06:01",
-    "notes": "architecto"
+    "installation_date": "2026-05-22T20:53:28",
+    "notes": "architecto",
+    "instruction_url": "http:\/\/bailey.com\/"
 };
 
 fetch(url, {
@@ -3724,10 +3737,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="uuid"                data-endpoint="PUTapi-devices--uuid-"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               value="f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
                data-component="url">
     <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+<p>Example: <code>f92b0ee1-d31c-3b96-bd76-0f1840d8d289</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3809,10 +3822,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="installation_date"                data-endpoint="PUTapi-devices--uuid-"
-               value="2026-05-22T17:06:01"
+               value="2026-05-22T20:53:28"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-22T17:06:01</code></p>
+<p>Must be a valid date. Example: <code>2026-05-22T20:53:28</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -3825,6 +3838,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Example: <code>architecto</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>instruction_url</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="instruction_url"                data-endpoint="PUTapi-devices--uuid-"
+               value="http://bailey.com/"
+               data-component="body">
+    <br>
+<p>Must be a valid URL. Must not be greater than 2048 characters. Example: <code>http://bailey.com/</code></p>
         </div>
         </form>
 
@@ -3841,14 +3866,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478" \
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
 );
 
 const headers = {
@@ -3945,10 +3970,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="uuid"                data-endpoint="DELETEapi-devices--uuid-"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               value="f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
                data-component="url">
     <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+<p>Example: <code>f92b0ee1-d31c-3b96-bd76-0f1840d8d289</code></p>
             </div>
                     </form>
 
@@ -3976,8 +4001,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"i\",
     \"serial_number\": \"y\",
     \"location\": \"v\",
-    \"installation_date\": \"2026-05-22T17:06:01\",
-    \"notes\": \"architecto\"
+    \"installation_date\": \"2026-05-22T20:53:28\",
+    \"notes\": \"architecto\",
+    \"instruction_url\": \"http:\\/\\/bailey.com\\/\"
 }"
 </code></pre></div>
 
@@ -4000,8 +4026,9 @@ let body = {
     "brand": "i",
     "serial_number": "y",
     "location": "v",
-    "installation_date": "2026-05-22T17:06:01",
-    "notes": "architecto"
+    "installation_date": "2026-05-22T20:53:28",
+    "notes": "architecto",
+    "instruction_url": "http:\/\/bailey.com\/"
 };
 
 fetch(url, {
@@ -4177,10 +4204,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="installation_date"                data-endpoint="POSTapi-devices-generate-qr"
-               value="2026-05-22T17:06:01"
+               value="2026-05-22T20:53:28"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-22T17:06:01</code></p>
+<p>Must be a valid date. Example: <code>2026-05-22T20:53:28</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -4193,6 +4220,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Example: <code>architecto</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>instruction_url</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="instruction_url"                data-endpoint="POSTapi-devices-generate-qr"
+               value="http://bailey.com/"
+               data-component="body">
+    <br>
+<p>Must be a valid URL. Must not be greater than 2048 characters. Example: <code>http://bailey.com/</code></p>
         </div>
         </form>
 
@@ -4209,14 +4248,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/show-qr" \
+    --get "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/show-qr" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/show-qr"
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/show-qr"
 );
 
 const headers = {
@@ -4336,12 +4375,157 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device_uuid"                data-endpoint="GETapi-devices--device_uuid--show-qr"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               value="f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
                data-component="url">
     <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+<p>Example: <code>f92b0ee1-d31c-3b96-bd76-0f1840d8d289</code></p>
             </div>
                     </form>
+
+                    <h2 id="endpoints-PATCHapi-devices--device_uuid--instruction">PATCH api/devices/{device_uuid}/instruction</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-devices--device_uuid--instruction">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/instruction" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"instruction_url\": \"http:\\/\\/www.bailey.biz\\/quos-velit-et-fugiat-sunt-nihil-accusantium-harum.html\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/instruction"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "instruction_url": "http:\/\/www.bailey.biz\/quos-velit-et-fugiat-sunt-nihil-accusantium-harum.html"
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PATCHapi-devices--device_uuid--instruction">
+</span>
+<span id="execution-results-PATCHapi-devices--device_uuid--instruction" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-devices--device_uuid--instruction"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-devices--device_uuid--instruction"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-devices--device_uuid--instruction" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-devices--device_uuid--instruction">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PATCHapi-devices--device_uuid--instruction" data-method="PATCH"
+      data-path="api/devices/{device_uuid}/instruction"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-devices--device_uuid--instruction', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-devices--device_uuid--instruction"
+                    onclick="tryItOut('PATCHapi-devices--device_uuid--instruction');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-devices--device_uuid--instruction"
+                    onclick="cancelTryOut('PATCHapi-devices--device_uuid--instruction');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-devices--device_uuid--instruction"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/devices/{device_uuid}/instruction</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PATCHapi-devices--device_uuid--instruction"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PATCHapi-devices--device_uuid--instruction"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>device_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="device_uuid"                data-endpoint="PATCHapi-devices--device_uuid--instruction"
+               value="f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
+               data-component="url">
+    <br>
+<p>Example: <code>f92b0ee1-d31c-3b96-bd76-0f1840d8d289</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>instruction_url</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="instruction_url"                data-endpoint="PATCHapi-devices--device_uuid--instruction"
+               value="http://www.bailey.biz/quos-velit-et-fugiat-sunt-nihil-accusantium-harum.html"
+               data-component="body">
+    <br>
+<p>Must be a valid URL. Must not be greater than 2048 characters. Example: <code>http://www.bailey.biz/quos-velit-et-fugiat-sunt-nihil-accusantium-harum.html</code></p>
+        </div>
+        </form>
 
                     <h2 id="endpoints-POSTapi-devices--device_uuid--assign">POST api/devices/{device_uuid}/assign</h2>
 
@@ -4356,7 +4540,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/assign" \
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/assign" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -4367,7 +4551,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/assign"
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/assign"
 );
 
 const headers = {
@@ -4468,10 +4652,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device_uuid"                data-endpoint="POSTapi-devices--device_uuid--assign"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               value="f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
                data-component="url">
     <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+<p>Example: <code>f92b0ee1-d31c-3b96-bd76-0f1840d8d289</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -4501,14 +4685,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/assign/1" \
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/assign/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/assign/1"
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/assign/1"
 );
 
 const headers = {
@@ -4605,10 +4789,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device_uuid"                data-endpoint="DELETEapi-devices--device_uuid--assign--user_id-"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               value="f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
                data-component="url">
     <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+<p>Example: <code>f92b0ee1-d31c-3b96-bd76-0f1840d8d289</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>user_id</code></b>&nbsp;&nbsp;
@@ -4637,14 +4821,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/users" \
+    --get "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/users" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/users"
+    "https://relay-api.blumilk.local.env/api/devices/f92b0ee1-d31c-3b96-bd76-0f1840d8d289/users"
 );
 
 const headers = {
@@ -4764,10 +4948,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="device_uuid"                data-endpoint="GETapi-devices--device_uuid--users"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               value="f92b0ee1-d31c-3b96-bd76-0f1840d8d289"
                data-component="url">
     <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+<p>Example: <code>f92b0ee1-d31c-3b96-bd76-0f1840d8d289</code></p>
             </div>
                     </form>
 
@@ -5071,9 +5255,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"name\": \"b\",
     \"email\": \"zbailey@example.net\",
-    \"is_admin\": true,
-    \"is_installer\": false,
-    \"is_service\": false
+    \"is_admin\": false,
+    \"is_installer\": true,
+    \"is_service\": true
 }"
 </code></pre></div>
 
@@ -5091,9 +5275,9 @@ const headers = {
 let body = {
     "name": "b",
     "email": "zbailey@example.net",
-    "is_admin": true,
-    "is_installer": false,
-    "is_service": false
+    "is_admin": false,
+    "is_installer": true,
+    "is_service": true
 };
 
 fetch(url, {
@@ -5247,7 +5431,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>is_installer</code></b>&nbsp;&nbsp;
@@ -5269,7 +5453,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>is_service</code></b>&nbsp;&nbsp;
@@ -5291,7 +5475,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
         </form>
 
@@ -5466,7 +5650,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
+x-ratelimit-remaining: 53
 access-control-allow-origin: *
 x-frame-options: DENY
 x-content-type-options: nosniff
@@ -5603,7 +5787,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
+x-ratelimit-remaining: 52
 access-control-allow-origin: *
 x-frame-options: DENY
 x-content-type-options: nosniff

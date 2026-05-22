@@ -249,55 +249,60 @@ paths:
               schema:
                 type: object
                 example:
-                  id: 1
-                  uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
-                  name: 'Device 8173'
-                  type: 'Wheel Lock'
-                  model: Model-6001
-                  brand: 'Jaskolski, Kautzer and Kerluke'
-                  serial_number: SN-75456812
-                  location: "474 Winfield Square Suite 270\nJarrettmouth, SC 13837-9372"
-                  installation_date: '1991-04-24T00:00:00.000000Z'
-                  notes: 'Quisquam consequatur voluptatum tempora odio magnam incidunt. Voluptas cum minus quidem maxime est. Debitis voluptas et est. In et ea doloremque unde voluptatem officia.'
+                  id: 2
+                  uuid: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
+                  name: 'Device 0678'
+                  type: A/C
+                  model: Model-5040
+                  brand: 'Boyle, Zulauf and Glover'
+                  serial_number: SN-23782372
+                  location: "348 Kaylah Cove Suite 376\nLake Opalshire, DE 77841-5195"
+                  installation_date: '2022-11-09T00:00:00.000000Z'
+                  notes: 'Culpa earum neque similique quia qui vitae consequatur tenetur. Cum eligendi rerum autem molestias ullam et. Occaecati nihil placeat libero.'
                   created_at: '2026-05-16T11:06:47.000000Z'
                   updated_at: '2026-05-16T11:06:47.000000Z'
+                  instruction_url: null
                 properties:
                   id:
                     type: integer
-                    example: 1
+                    example: 2
                   uuid:
                     type: string
-                    example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+                    example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
                   name:
                     type: string
-                    example: 'Device 8173'
+                    example: 'Device 0678'
                   type:
                     type: string
-                    example: 'Wheel Lock'
+                    example: A/C
                   model:
                     type: string
-                    example: Model-6001
+                    example: Model-5040
                   brand:
                     type: string
-                    example: 'Jaskolski, Kautzer and Kerluke'
+                    example: 'Boyle, Zulauf and Glover'
                   serial_number:
                     type: string
-                    example: SN-75456812
+                    example: SN-23782372
                   location:
                     type: string
-                    example: "474 Winfield Square Suite 270\nJarrettmouth, SC 13837-9372"
+                    example: "348 Kaylah Cove Suite 376\nLake Opalshire, DE 77841-5195"
                   installation_date:
                     type: string
-                    example: '1991-04-24T00:00:00.000000Z'
+                    example: '2022-11-09T00:00:00.000000Z'
                   notes:
                     type: string
-                    example: 'Quisquam consequatur voluptatum tempora odio magnam incidunt. Voluptas cum minus quidem maxime est. Debitis voluptas et est. In et ea doloremque unde voluptatem officia.'
+                    example: 'Culpa earum neque similique quia qui vitae consequatur tenetur. Cum eligendi rerum autem molestias ullam et. Occaecati nihil placeat libero.'
                   created_at:
                     type: string
                     example: '2026-05-16T11:06:47.000000Z'
                   updated_at:
                     type: string
                     example: '2026-05-16T11:06:47.000000Z'
+                  instruction_url:
+                    type: string
+                    example: null
+                    nullable: true
       tags:
         - Endpoints
       security: []
@@ -306,7 +311,7 @@ paths:
         in: path
         name: device_uuid
         description: ''
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         required: true
         schema:
           type: string
@@ -328,7 +333,7 @@ paths:
                   properties:
                     date:
                       type: string
-                      example: '2026-05-16 11:15:05'
+                      example: '2026-05-16 11:15:30'
                     type:
                       type: string
                       example: fixed
@@ -343,17 +348,11 @@ paths:
                       example: Serwisant
                 example:
                   -
-                    date: '2026-05-16 11:15:05'
+                    date: '2026-05-16 11:15:30'
                     type: fixed
                     title: 'Naprawiono usterkę'
                     description: 'Zgłoszenie zostało pomyślnie zamknięte i oznaczone jako rozwiązane.'
                     user: Serwisant
-                  -
-                    date: '2026-05-16 11:07:12'
-                    type: fault
-                    title: 'Zgłoszono usterkę'
-                    description: 'Test usterki'
-                    user: 'Jan Kowalski'
                   -
                     date: '2026-05-16 11:06:47'
                     type: install
@@ -364,8 +363,8 @@ paths:
                     date: '2026-05-16 11:06:47'
                     type: fault
                     title: 'Zgłoszono usterkę'
-                    description: 'Urządzenie nie odpowiada'
-                    user: 'Jan Kowalski'
+                    description: 'Nadmierne wibracje'
+                    user: 'Anna Nowak'
       tags:
         - Endpoints
       security: []
@@ -374,7 +373,7 @@ paths:
         in: path
         name: device_uuid
         description: ''
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         required: true
         schema:
           type: string
@@ -442,7 +441,7 @@ paths:
         in: path
         name: device_uuid
         description: ''
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         required: true
         schema:
           type: string
@@ -568,7 +567,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: in_progress
+                  example: resolved
                   enum:
                     - pending
                     - in_progress
@@ -687,12 +686,17 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-22T17:06:01'
+                  example: '2026-05-22T20:53:28'
                   nullable: true
                 notes:
                   type: string
                   description: ''
                   example: architecto
+                  nullable: true
+                instruction_url:
+                  type: string
+                  description: 'Must be a valid URL. Must not be greater than 2048 characters.'
+                  example: 'http://bailey.com/'
                   nullable: true
               required:
                 - name
@@ -745,12 +749,17 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-22T17:06:01'
+                  example: '2026-05-22T20:53:28'
                   nullable: true
                 notes:
                   type: string
                   description: ''
                   example: architecto
+                  nullable: true
+                instruction_url:
+                  type: string
+                  description: 'Must be a valid URL. Must not be greater than 2048 characters.'
+                  example: 'http://bailey.com/'
                   nullable: true
       security: []
     delete:
@@ -767,7 +776,7 @@ paths:
         in: path
         name: uuid
         description: ''
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         required: true
         schema:
           type: string
@@ -822,12 +831,17 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-22T17:06:01'
+                  example: '2026-05-22T20:53:28'
                   nullable: true
                 notes:
                   type: string
                   description: ''
                   example: architecto
+                  nullable: true
+                instruction_url:
+                  type: string
+                  description: 'Must be a valid URL. Must not be greater than 2048 characters.'
+                  example: 'http://bailey.com/'
                   nullable: true
               required:
                 - name
@@ -861,7 +875,38 @@ paths:
         in: path
         name: device_uuid
         description: ''
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
+        required: true
+        schema:
+          type: string
+  '/api/devices/{device_uuid}/instruction':
+    patch:
+      summary: ''
+      operationId: patchApiDevicesDevice_uuidInstruction
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                instruction_url:
+                  type: string
+                  description: 'Must be a valid URL. Must not be greater than 2048 characters.'
+                  example: 'http://www.bailey.biz/quos-velit-et-fugiat-sunt-nihil-accusantium-harum.html'
+                  nullable: true
+      security: []
+    parameters:
+      -
+        in: path
+        name: device_uuid
+        description: ''
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         required: true
         schema:
           type: string
@@ -893,7 +938,7 @@ paths:
         in: path
         name: device_uuid
         description: ''
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         required: true
         schema:
           type: string
@@ -912,7 +957,7 @@ paths:
         in: path
         name: device_uuid
         description: ''
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         required: true
         schema:
           type: string
@@ -951,7 +996,7 @@ paths:
         in: path
         name: device_uuid
         description: ''
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        example: f92b0ee1-d31c-3b96-bd76-0f1840d8d289
         required: true
         schema:
           type: string
@@ -1040,15 +1085,15 @@ paths:
                 is_admin:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
                 is_installer:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 is_service:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
       security: []
     delete:
       summary: ''

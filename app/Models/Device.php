@@ -27,6 +27,7 @@ class Device extends Model
         "location",
         "installation_date",
         "notes",
+        "instruction_url",
     ];
 
     public function uniqueIds(): array

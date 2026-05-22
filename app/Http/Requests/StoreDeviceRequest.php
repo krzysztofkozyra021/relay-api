@@ -25,6 +25,7 @@ class StoreDeviceRequest extends FormRequest
             "location" => "required|string|max:255",
             "installation_date" => "nullable|date",
             "notes" => "nullable|string",
+            "instruction_url" => "nullable|url|max:2048",
         ];
     }
 }
