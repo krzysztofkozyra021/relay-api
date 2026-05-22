@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "relay-api API Documentation",
-        "_postman_id": "5e0071a2-9963-462c-b1e4-a53c717f9b59",
+        "_postman_id": "f032c77e-5d7a-4abd-afba-7ccbedcae619",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -206,18 +206,80 @@
                     "response": []
                 },
                 {
-                    "name": "GET api\/public\/devices\/{uuid}",
+                    "name": "POST api\/public\/mobile\/password\/email",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/public\/devices\/:uuid",
+                            "path": "api\/public\/mobile\/password\/email",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/public\/devices\/:uuid",
+                            "raw": "{{baseUrl}}\/api\/public\/mobile\/password\/email"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"gbailey@example.net\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/public\/mobile\/password\/reset",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/public\/mobile\/password\/reset",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/public\/mobile\/password\/reset"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"gbailey@example.net\",\"pin\":\"569775\",\"password\":\"architecto\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/devices\/{device_uuid}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices\/:device_uuid",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices\/:device_uuid",
                             "variable": [
                                 {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "6ff8f7f6-1eb3-3525-be4a-3932c805afed",
+                                    "id": "device_uuid",
+                                    "key": "device_uuid",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
                                     "description": ""
                                 }
                             ]
@@ -251,28 +313,156 @@
                                     "value": "application\/json"
                                 },
                                 {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
                                     "key": "access-control-allow-origin",
                                     "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
                                 }
                             ],
-                            "code": 404,
-                            "body": "{\n    \"message\": \"No query results for model [Relay\\\\Models\\\\Device].\"\n}",
+                            "code": 200,
+                            "body": "{\"id\":1,\"uuid\":\"fc9ee2de-e9ba-36cb-8e18-b0472fdd1478\",\"name\":\"Device 8173\",\"type\":\"Wheel Lock\",\"model\":\"Model-6001\",\"brand\":\"Jaskolski, Kautzer and Kerluke\",\"serial_number\":\"SN-75456812\",\"location\":\"474 Winfield Square Suite 270\\nJarrettmouth, SC 13837-9372\",\"installation_date\":\"1991-04-24T00:00:00.000000Z\",\"notes\":\"Quisquam consequatur voluptatum tempora odio magnam incidunt. Voluptas cum minus quidem maxime est. Debitis voluptas et est. In et ea doloremque unde voluptatem officia.\",\"created_at\":\"2026-05-16T11:06:47.000000Z\",\"updated_at\":\"2026-05-16T11:06:47.000000Z\"}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "POST api\/public\/devices\/{uuid}\/faults",
+                    "name": "GET api\/devices\/{device_uuid}\/events",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/public\/devices\/:uuid\/faults",
+                            "path": "api\/devices\/:device_uuid\/events",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/public\/devices\/:uuid\/faults",
+                            "raw": "{{baseUrl}}\/api\/devices\/:device_uuid\/events",
                             "variable": [
                                 {
-                                    "id": "uuid",
-                                    "key": "uuid",
+                                    "id": "device_uuid",
+                                    "key": "device_uuid",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "58"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "[{\"date\":\"2026-05-16 11:15:05\",\"type\":\"fixed\",\"title\":\"Naprawiono usterk\\u0119\",\"description\":\"Zg\\u0142oszenie zosta\\u0142o pomy\\u015blnie zamkni\\u0119te i oznaczone jako rozwi\\u0105zane.\",\"user\":\"Serwisant\"},{\"date\":\"2026-05-16 11:07:12\",\"type\":\"fault\",\"title\":\"Zg\\u0142oszono usterk\\u0119\",\"description\":\"Test usterki\",\"user\":\"Jan Kowalski\"},{\"date\":\"2026-05-16 11:06:47\",\"type\":\"install\",\"title\":\"Instalacja urz\\u0105dzenia\",\"description\":\"Pierwszy monta\\u017c i uruchomienie w systemie.\",\"user\":\"System\"},{\"date\":\"2026-05-16 11:06:47\",\"type\":\"fault\",\"title\":\"Zg\\u0142oszono usterk\\u0119\",\"description\":\"Urz\\u0105dzenie nie odpowiada\",\"user\":\"Jan Kowalski\"}]",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/devices\/{device_uuid}\/faults",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices\/:device_uuid\/faults",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices\/:device_uuid\/faults",
+                            "variable": [
+                                {
+                                    "id": "device_uuid",
+                                    "key": "device_uuid",
                                     "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
                                     "description": ""
                                 }
@@ -340,6 +530,34 @@
                                 {
                                     "key": "access-control-allow-origin",
                                     "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
                                 }
                             ],
                             "code": 401,
@@ -356,6 +574,348 @@
                             "path": "api\/logout",
                             "query": [],
                             "raw": "{{baseUrl}}\/api\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/user\/password",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/password"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"current_password\":\"architecto\",\"password\":\"architecto\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/faults",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/faults",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/faults"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/faults\/{fault_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/faults\/:fault_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/faults\/:fault_id",
+                            "variable": [
+                                {
+                                    "id": "fault_id",
+                                    "key": "fault_id",
+                                    "value": "3",
+                                    "description": "The ID of the fault."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PATCH api\/faults\/{fault_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/faults\/:fault_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/faults\/:fault_id",
+                            "variable": [
+                                {
+                                    "id": "fault_id",
+                                    "key": "fault_id",
+                                    "value": "3",
+                                    "description": "The ID of the fault."
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"status\":\"resolved\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/devices\/{device_uuid}\/faults",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/devices\/:device_uuid\/faults",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/devices\/:device_uuid\/faults",
+                            "variable": [
+                                {
+                                    "id": "device_uuid",
+                                    "key": "device_uuid",
+                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/user\/fcm-token",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user\/fcm-token",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/user\/fcm-token"
                         },
                         "method": "POST",
                         "header": [
@@ -444,6 +1004,34 @@
                                 {
                                     "key": "access-control-allow-origin",
                                     "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
                                 }
                             ],
                             "code": 401,
@@ -474,7 +1062,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-16T11:16:36\",\"notes\":\"architecto\"}"
+                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-22T15:18:02\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -482,62 +1070,6 @@
                         }
                     },
                     "response": []
-                },
-                {
-                    "name": "GET api\/devices\/{uuid}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/devices\/:uuid",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/devices\/:uuid",
-                            "variable": [
-                                {
-                                    "id": "uuid",
-                                    "key": "uuid",
-                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
                 },
                 {
                     "name": "PUT api\/devices\/{uuid}",
@@ -569,7 +1101,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"b\",\"type\":\"n\",\"model\":\"g\",\"brand\":\"z\",\"serial_number\":\"m\",\"location\":\"i\",\"installation_date\":\"2026-05-16T11:16:37\",\"notes\":\"architecto\"}"
+                            "raw": "{\"name\":\"b\",\"type\":\"n\",\"model\":\"g\",\"brand\":\"z\",\"serial_number\":\"m\",\"location\":\"i\",\"installation_date\":\"2026-05-22T15:18:02\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -636,7 +1168,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-16T11:16:37\",\"notes\":\"architecto\"}"
+                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-22T15:18:02\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -693,6 +1225,34 @@
                                 {
                                     "key": "access-control-allow-origin",
                                     "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
                                 }
                             ],
                             "code": 401,
@@ -830,6 +1390,34 @@
                                 {
                                     "key": "access-control-allow-origin",
                                     "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
                                 }
                             ],
                             "code": 401,
@@ -886,6 +1474,34 @@
                                 {
                                     "key": "access-control-allow-origin",
                                     "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
                                 }
                             ],
                             "code": 401,
@@ -895,13 +1511,13 @@
                     ]
                 },
                 {
-                    "name": "GET api\/faults",
+                    "name": "GET api\/users",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/faults",
+                            "path": "api\/users",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/faults"
+                            "raw": "{{baseUrl}}\/api\/users"
                         },
                         "method": "GET",
                         "header": [
@@ -934,157 +1550,34 @@
                                 {
                                     "key": "access-control-allow-origin",
                                     "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "GET api\/faults\/{fault_id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/faults\/:fault_id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/faults\/:fault_id",
-                            "variable": [
-                                {
-                                    "id": "fault_id",
-                                    "key": "fault_id",
-                                    "value": "3",
-                                    "description": "The ID of the fault."
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
                                 },
                                 {
-                                    "key": "content-type",
-                                    "value": "application\/json"
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
                                 },
                                 {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "PATCH api\/faults\/{fault_id}",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/faults\/:fault_id",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/faults\/:fault_id",
-                            "variable": [
-                                {
-                                    "id": "fault_id",
-                                    "key": "fault_id",
-                                    "value": "3",
-                                    "description": "The ID of the fault."
-                                }
-                            ]
-                        },
-                        "method": "PATCH",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"status\":\"in_progress\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET api\/devices\/{device_uuid}\/faults",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/devices\/:device_uuid\/faults",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/devices\/:device_uuid\/faults",
-                            "variable": [
-                                {
-                                    "id": "device_uuid",
-                                    "key": "device_uuid",
-                                    "value": "fc9ee2de-e9ba-36cb-8e18-b0472fdd1478",
-                                    "description": ""
-                                }
-                            ]
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
                                 },
                                 {
-                                    "key": "content-type",
-                                    "value": "application\/json"
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
                                 },
                                 {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
                                 }
                             ],
                             "code": 401,
@@ -1131,8 +1624,44 @@
                                     "value": "application\/json"
                                 },
                                 {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "57"
+                                },
+                                {
                                     "key": "access-control-allow-origin",
                                     "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
                                 }
                             ],
                             "code": 200,

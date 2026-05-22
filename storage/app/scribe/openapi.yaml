@@ -179,41 +179,209 @@ paths:
                 - email
                 - password
       security: []
-  '/api/public/devices/{uuid}':
+  /api/public/mobile/password/email:
+    post:
+      summary: ''
+      operationId: postApiPublicMobilePasswordEmail
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address. The <code>email</code> of an existing record in the users table.'
+                  example: gbailey@example.net
+              required:
+                - email
+      security: []
+  /api/public/mobile/password/reset:
+    post:
+      summary: ''
+      operationId: postApiPublicMobilePasswordReset
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address. The <code>email</code> of an existing record in the users table.'
+                  example: gbailey@example.net
+                pin:
+                  type: string
+                  description: 'Must be 6 digits.'
+                  example: '569775'
+                password:
+                  type: string
+                  description: ''
+                  example: architecto
+              required:
+                - email
+                - pin
+                - password
+      security: []
+  '/api/devices/{device_uuid}':
     get:
       summary: ''
-      operationId: getApiPublicDevicesUuid
+      operationId: getApiDevicesDevice_uuid
       description: ''
       parameters: []
       responses:
-        404:
+        200:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'No query results for model [Relay\Models\Device].'
+                  id: 1
+                  uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+                  name: 'Device 8173'
+                  type: 'Wheel Lock'
+                  model: Model-6001
+                  brand: 'Jaskolski, Kautzer and Kerluke'
+                  serial_number: SN-75456812
+                  location: "474 Winfield Square Suite 270\nJarrettmouth, SC 13837-9372"
+                  installation_date: '1991-04-24T00:00:00.000000Z'
+                  notes: 'Quisquam consequatur voluptatum tempora odio magnam incidunt. Voluptas cum minus quidem maxime est. Debitis voluptas et est. In et ea doloremque unde voluptatem officia.'
+                  created_at: '2026-05-16T11:06:47.000000Z'
+                  updated_at: '2026-05-16T11:06:47.000000Z'
                 properties:
-                  message:
+                  id:
+                    type: integer
+                    example: 1
+                  uuid:
                     type: string
-                    example: 'No query results for model [Relay\Models\Device].'
+                    example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+                  name:
+                    type: string
+                    example: 'Device 8173'
+                  type:
+                    type: string
+                    example: 'Wheel Lock'
+                  model:
+                    type: string
+                    example: Model-6001
+                  brand:
+                    type: string
+                    example: 'Jaskolski, Kautzer and Kerluke'
+                  serial_number:
+                    type: string
+                    example: SN-75456812
+                  location:
+                    type: string
+                    example: "474 Winfield Square Suite 270\nJarrettmouth, SC 13837-9372"
+                  installation_date:
+                    type: string
+                    example: '1991-04-24T00:00:00.000000Z'
+                  notes:
+                    type: string
+                    example: 'Quisquam consequatur voluptatum tempora odio magnam incidunt. Voluptas cum minus quidem maxime est. Debitis voluptas et est. In et ea doloremque unde voluptatem officia.'
+                  created_at:
+                    type: string
+                    example: '2026-05-16T11:06:47.000000Z'
+                  updated_at:
+                    type: string
+                    example: '2026-05-16T11:06:47.000000Z'
       tags:
         - Endpoints
       security: []
     parameters:
       -
         in: path
-        name: uuid
+        name: device_uuid
         description: ''
-        example: 6ff8f7f6-1eb3-3525-be4a-3932c805afed
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
         required: true
         schema:
           type: string
-  '/api/public/devices/{uuid}/faults':
+  '/api/devices/{device_uuid}/events':
+    get:
+      summary: ''
+      operationId: getApiDevicesDevice_uuidEvents
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    date:
+                      type: string
+                      example: '2026-05-16 11:15:05'
+                    type:
+                      type: string
+                      example: fixed
+                    title:
+                      type: string
+                      example: 'Naprawiono usterkę'
+                    description:
+                      type: string
+                      example: 'Zgłoszenie zostało pomyślnie zamknięte i oznaczone jako rozwiązane.'
+                    user:
+                      type: string
+                      example: Serwisant
+                example:
+                  -
+                    date: '2026-05-16 11:15:05'
+                    type: fixed
+                    title: 'Naprawiono usterkę'
+                    description: 'Zgłoszenie zostało pomyślnie zamknięte i oznaczone jako rozwiązane.'
+                    user: Serwisant
+                  -
+                    date: '2026-05-16 11:07:12'
+                    type: fault
+                    title: 'Zgłoszono usterkę'
+                    description: 'Test usterki'
+                    user: 'Jan Kowalski'
+                  -
+                    date: '2026-05-16 11:06:47'
+                    type: install
+                    title: 'Instalacja urządzenia'
+                    description: 'Pierwszy montaż i uruchomienie w systemie.'
+                    user: System
+                  -
+                    date: '2026-05-16 11:06:47'
+                    type: fault
+                    title: 'Zgłoszono usterkę'
+                    description: 'Urządzenie nie odpowiada'
+                    user: 'Jan Kowalski'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: device_uuid
+        description: ''
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        required: true
+        schema:
+          type: string
+  '/api/devices/{device_uuid}/faults':
     post:
       summary: ''
-      operationId: postApiPublicDevicesUuidFaults
+      operationId: postApiDevicesDevice_uuidFaults
       description: ''
       parameters: []
       responses: {  }
@@ -248,10 +416,31 @@ paths:
               required:
                 - title
       security: []
+    get:
+      summary: ''
+      operationId: getApiDevicesDevice_uuidFaults
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
     parameters:
       -
         in: path
-        name: uuid
+        name: device_uuid
         description: ''
         example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
         required: true
@@ -283,6 +472,123 @@ paths:
     post:
       summary: ''
       operationId: postApiLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/user/password:
+    put:
+      summary: ''
+      operationId: putApiUserPassword
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  type: string
+                  description: ''
+                  example: architecto
+                password:
+                  type: string
+                  description: ''
+                  example: architecto
+              required:
+                - current_password
+                - password
+      security: []
+  /api/faults:
+    get:
+      summary: ''
+      operationId: getApiFaults
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/faults/{fault_id}':
+    get:
+      summary: ''
+      operationId: getApiFaultsFault_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    patch:
+      summary: ''
+      operationId: patchApiFaultsFault_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  description: ''
+                  example: resolved
+                  enum:
+                    - pending
+                    - in_progress
+                    - resolved
+              required:
+                - status
+      security: []
+    parameters:
+      -
+        in: path
+        name: fault_id
+        description: 'The ID of the fault.'
+        example: 3
+        required: true
+        schema:
+          type: integer
+  /api/user/fcm-token:
+    post:
+      summary: ''
+      operationId: postApiUserFcmToken
       description: ''
       parameters: []
       responses: {  }
@@ -371,7 +677,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-16T11:16:36'
+                  example: '2026-05-22T15:18:02'
                   nullable: true
                 notes:
                   type: string
@@ -384,27 +690,6 @@ paths:
                 - location
       security: []
   '/api/devices/{uuid}':
-    get:
-      summary: ''
-      operationId: getApiDevicesUuid
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
     put:
       summary: ''
       operationId: putApiDevicesUuid
@@ -450,7 +735,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-16T11:16:37'
+                  example: '2026-05-22T15:18:02'
                   nullable: true
                 notes:
                   type: string
@@ -527,7 +812,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-16T11:16:37'
+                  example: '2026-05-22T15:18:02'
                   nullable: true
                 notes:
                   type: string
@@ -691,10 +976,10 @@ paths:
         required: true
         schema:
           type: integer
-  /api/faults:
+  /api/users:
     get:
       summary: ''
-      operationId: getApiFaults
+      operationId: getApiUsers
       description: ''
       parameters: []
       responses:
@@ -713,94 +998,6 @@ paths:
       tags:
         - Endpoints
       security: []
-  '/api/faults/{fault_id}':
-    get:
-      summary: ''
-      operationId: getApiFaultsFault_id
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-    patch:
-      summary: ''
-      operationId: patchApiFaultsFault_id
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                status:
-                  type: string
-                  description: ''
-                  example: in_progress
-                  enum:
-                    - pending
-                    - in_progress
-                    - resolved
-              required:
-                - status
-      security: []
-    parameters:
-      -
-        in: path
-        name: fault_id
-        description: 'The ID of the fault.'
-        example: 3
-        required: true
-        schema:
-          type: integer
-  '/api/devices/{device_uuid}/faults':
-    get:
-      summary: ''
-      operationId: getApiDevicesDevice_uuidFaults
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
-      security: []
-    parameters:
-      -
-        in: path
-        name: device_uuid
-        description: ''
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
-        required: true
-        schema:
-          type: string
   /api/hello:
     get:
       summary: ''

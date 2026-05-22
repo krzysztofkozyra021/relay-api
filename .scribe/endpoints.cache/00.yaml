@@ -336,8 +336,118 @@ endpoints:
   -
     custom: []
     httpMethods:
+      - POST
+    uri: api/public/mobile/password/email
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        custom: []
+        name: email
+        description: 'Must be a valid email address. The <code>email</code> of an existing record in the users table.'
+        required: true
+        example: gbailey@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      email: gbailey@example.net
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/public/mobile/password/reset
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        custom: []
+        name: email
+        description: 'Must be a valid email address. The <code>email</code> of an existing record in the users table.'
+        required: true
+        example: gbailey@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      pin:
+        custom: []
+        name: pin
+        description: 'Must be 6 digits.'
+        required: true
+        example: '569775'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: ''
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      email: gbailey@example.net
+      pin: '569775'
+      password: architecto
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
       - GET
-    uri: 'api/public/devices/{uuid}'
+    uri: 'api/devices/{device_uuid}'
     metadata:
       custom: []
       groupName: Endpoints
@@ -352,19 +462,19 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      uuid:
+      device_uuid:
         custom: []
-        name: uuid
+        name: device_uuid
         description: ''
         required: true
-        example: 6ff8f7f6-1eb3-3525-be4a-3932c805afed
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      uuid: 6ff8f7f6-1eb3-3525-be4a-3932c805afed
+      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -373,15 +483,82 @@ endpoints:
     responses:
       -
         custom: []
-        status: 404
-        content: |-
-          {
-              "message": "No query results for model [Relay\\Models\\Device]."
-          }
+        status: 200
+        content: '{"id":1,"uuid":"fc9ee2de-e9ba-36cb-8e18-b0472fdd1478","name":"Device 8173","type":"Wheel Lock","model":"Model-6001","brand":"Jaskolski, Kautzer and Kerluke","serial_number":"SN-75456812","location":"474 Winfield Square Suite 270\nJarrettmouth, SC 13837-9372","installation_date":"1991-04-24T00:00:00.000000Z","notes":"Quisquam consequatur voluptatum tempora odio magnam incidunt. Voluptas cum minus quidem maxime est. Debitis voluptas et est. In et ea doloremque unde voluptatem officia.","created_at":"2026-05-16T11:06:47.000000Z","updated_at":"2026-05-16T11:06:47.000000Z"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
           access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/devices/{device_uuid}/events'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      device_uuid:
+        custom: []
+        name: device_uuid
+        description: ''
+        required: true
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '[{"date":"2026-05-16 11:15:05","type":"fixed","title":"Naprawiono usterk\u0119","description":"Zg\u0142oszenie zosta\u0142o pomy\u015blnie zamkni\u0119te i oznaczone jako rozwi\u0105zane.","user":"Serwisant"},{"date":"2026-05-16 11:07:12","type":"fault","title":"Zg\u0142oszono usterk\u0119","description":"Test usterki","user":"Jan Kowalski"},{"date":"2026-05-16 11:06:47","type":"install","title":"Instalacja urz\u0105dzenia","description":"Pierwszy monta\u017c i uruchomienie w systemie.","user":"System"},{"date":"2026-05-16 11:06:47","type":"fault","title":"Zg\u0142oszono usterk\u0119","description":"Urz\u0105dzenie nie odpowiada","user":"Jan Kowalski"}]'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
+          access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
         description: null
     responseFields: []
     auth: []
@@ -392,7 +569,7 @@ endpoints:
     custom: []
     httpMethods:
       - POST
-    uri: 'api/public/devices/{uuid}/faults'
+    uri: 'api/devices/{device_uuid}/faults'
     metadata:
       custom: []
       groupName: Endpoints
@@ -407,9 +584,9 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      uuid:
+      device_uuid:
         custom: []
-        name: uuid
+        name: device_uuid
         description: ''
         required: true
         example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
@@ -419,7 +596,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -513,6 +690,13 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
         description: null
     responseFields: []
     auth: []
@@ -524,6 +708,315 @@ endpoints:
     httpMethods:
       - POST
     uri: api/logout
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: api/user/password
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      current_password:
+        custom: []
+        name: current_password
+        description: ''
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: ''
+        required: true
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      current_password: architecto
+      password: architecto
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/faults
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/faults/{fault_id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      fault_id:
+        custom: []
+        name: fault_id
+        description: 'The ID of the fault.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      fault_id: 3
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PATCH
+    uri: 'api/faults/{fault_id}'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      fault_id:
+        custom: []
+        name: fault_id
+        description: 'The ID of the fault.'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      fault_id: 3
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      status:
+        custom: []
+        name: status
+        description: ''
+        required: true
+        example: resolved
+        type: string
+        enumValues:
+          - pending
+          - in_progress
+          - resolved
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      status: resolved
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/devices/{device_uuid}/faults'
+    metadata:
+      custom: []
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      device_uuid:
+        custom: []
+        name: device_uuid
+        description: ''
+        required: true
+        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/user/fcm-token
     metadata:
       custom: []
       groupName: Endpoints
@@ -615,6 +1108,13 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
         description: null
     responseFields: []
     auth: []
@@ -726,7 +1226,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-16T11:25:05'
+        example: '2026-05-22T15:18:02'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -751,62 +1251,10 @@ endpoints:
       brand: i
       serial_number: 'y'
       location: v
-      installation_date: '2026-05-16T11:25:05'
+      installation_date: '2026-05-22T15:18:02'
       notes: architecto
     fileParameters: []
     responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: 'api/devices/{uuid}'
-    metadata:
-      custom: []
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      uuid:
-        custom: []
-        name: uuid
-        description: ''
-        required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
     responseFields: []
     auth: []
     controller: null
@@ -919,7 +1367,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-16T11:25:05'
+        example: '2026-05-22T15:18:02'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -943,7 +1391,7 @@ endpoints:
       brand: z
       serial_number: m
       location: i
-      installation_date: '2026-05-16T11:25:05'
+      installation_date: '2026-05-22T15:18:02'
       notes: architecto
     fileParameters: []
     responses: []
@@ -1100,7 +1548,7 @@ endpoints:
         name: installation_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-16T11:25:05'
+        example: '2026-05-22T15:18:02'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1125,7 +1573,7 @@ endpoints:
       brand: i
       serial_number: 'y'
       location: v
-      installation_date: '2026-05-16T11:25:05'
+      installation_date: '2026-05-22T15:18:02'
       notes: architecto
     fileParameters: []
     responses: []
@@ -1180,6 +1628,13 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
         description: null
     responseFields: []
     auth: []
@@ -1342,6 +1797,13 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
         description: null
     responseFields: []
     auth: []
@@ -1394,6 +1856,13 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
         description: null
     responseFields: []
     auth: []
@@ -1404,7 +1873,7 @@ endpoints:
     custom: []
     httpMethods:
       - GET
-    uri: api/faults
+    uri: api/users
     metadata:
       custom: []
       groupName: Endpoints
@@ -1434,168 +1903,13 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
-        description: null
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: 'api/faults/{fault_id}'
-    metadata:
-      custom: []
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      fault_id:
-        custom: []
-        name: fault_id
-        description: 'The ID of the fault.'
-        required: true
-        example: 3
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      fault_id: 3
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - PATCH
-    uri: 'api/faults/{fault_id}'
-    metadata:
-      custom: []
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      fault_id:
-        custom: []
-        name: fault_id
-        description: 'The ID of the fault.'
-        required: true
-        example: 3
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      fault_id: 3
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      status:
-        custom: []
-        name: status
-        description: ''
-        required: true
-        example: in_progress
-        type: string
-        enumValues:
-          - pending
-          - in_progress
-          - resolved
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanBodyParameters:
-      status: in_progress
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: 'api/devices/{device_uuid}/faults'
-    metadata:
-      custom: []
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      device_uuid:
-        custom: []
-        name: device_uuid
-        description: ''
-        required: true
-        example: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      device_uuid: fc9ee2de-e9ba-36cb-8e18-b0472fdd1478
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
         description: null
     responseFields: []
     auth: []
@@ -1635,7 +1949,16 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
           access-control-allow-origin: '*'
+          x-frame-options: DENY
+          x-content-type-options: nosniff
+          x-xss-protection: '1; mode=block'
+          referrer-policy: no-referrer-when-downgrade
+          content-security-policy: "default-src 'none'; frame-ancestors 'none'; sandbox"
+          strict-transport-security: 'max-age=31536000; includeSubDomains; preload'
+          permissions-policy: 'geolocation=(), microphone=(), camera=(), interest-cohort=()'
         description: null
     responseFields: []
     auth: []

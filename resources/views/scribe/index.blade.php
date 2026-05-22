@@ -30,9 +30,9 @@
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
-    <script src="{{ asset("/vendor/scribe/js/tryitout-5.9.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/tryitout-5.8.0.js") }}"></script>
 
-    <script src="{{ asset("/vendor/scribe/js/theme-default-5.9.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/theme-default-5.8.0.js") }}"></script>
 
 </head>
 
@@ -89,17 +89,44 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-password-reset">
                                 <a href="#endpoints-POSTapi-password-reset">POST api/password/reset</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-public-devices--uuid-">
-                                <a href="#endpoints-GETapi-public-devices--uuid-">GET api/public/devices/{uuid}</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-public-mobile-password-email">
+                                <a href="#endpoints-POSTapi-public-mobile-password-email">POST api/public/mobile/password/email</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-public-devices--uuid--faults">
-                                <a href="#endpoints-POSTapi-public-devices--uuid--faults">POST api/public/devices/{uuid}/faults</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-public-mobile-password-reset">
+                                <a href="#endpoints-POSTapi-public-mobile-password-reset">POST api/public/mobile/password/reset</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--device_uuid-">
+                                <a href="#endpoints-GETapi-devices--device_uuid-">GET api/devices/{device_uuid}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--device_uuid--events">
+                                <a href="#endpoints-GETapi-devices--device_uuid--events">GET api/devices/{device_uuid}/events</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-devices--device_uuid--faults">
+                                <a href="#endpoints-POSTapi-devices--device_uuid--faults">POST api/devices/{device_uuid}/faults</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-logout">
                                 <a href="#endpoints-POSTapi-logout">POST api/logout</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-user-password">
+                                <a href="#endpoints-PUTapi-user-password">PUT api/user/password</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-faults">
+                                <a href="#endpoints-GETapi-faults">GET api/faults</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-faults--fault_id-">
+                                <a href="#endpoints-GETapi-faults--fault_id-">GET api/faults/{fault_id}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PATCHapi-faults--fault_id-">
+                                <a href="#endpoints-PATCHapi-faults--fault_id-">PATCH api/faults/{fault_id}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--device_uuid--faults">
+                                <a href="#endpoints-GETapi-devices--device_uuid--faults">GET api/devices/{device_uuid}/faults</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-user-fcm-token">
+                                <a href="#endpoints-POSTapi-user-fcm-token">POST api/user/fcm-token</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-auth-2fa-setup">
                                 <a href="#endpoints-POSTapi-auth-2fa-setup">POST api/auth/2fa/setup</a>
@@ -109,9 +136,6 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-devices">
                                 <a href="#endpoints-POSTapi-devices">POST api/devices</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--uuid-">
-                                <a href="#endpoints-GETapi-devices--uuid-">GET api/devices/{uuid}</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-PUTapi-devices--uuid-">
                                 <a href="#endpoints-PUTapi-devices--uuid-">PUT api/devices/{uuid}</a>
@@ -137,17 +161,8 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-users--user_id--devices">
                                 <a href="#endpoints-GETapi-users--user_id--devices">GET api/users/{user_id}/devices</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-faults">
-                                <a href="#endpoints-GETapi-faults">GET api/faults</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-faults--fault_id-">
-                                <a href="#endpoints-GETapi-faults--fault_id-">GET api/faults/{fault_id}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PATCHapi-faults--fault_id-">
-                                <a href="#endpoints-PATCHapi-faults--fault_id-">PATCH api/faults/{fault_id}</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-devices--device_uuid--faults">
-                                <a href="#endpoints-GETapi-devices--device_uuid--faults">GET api/devices/{device_uuid}/faults</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-users">
+                                <a href="#endpoints-GETapi-users">GET api/users</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-hello">
                                 <a href="#endpoints-GETapi-hello">GET api/hello</a>
@@ -163,7 +178,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: May 16, 2026</li>
+        <li>Last updated: May 22, 2026</li>
     </ul>
 </div>
 
@@ -1062,27 +1077,319 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-public-devices--uuid-">GET api/public/devices/{uuid}</h2>
+                    <h2 id="endpoints-POSTapi-public-mobile-password-email">POST api/public/mobile/password/email</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-public-devices--uuid-">
+<span id="example-requests-POSTapi-public-mobile-password-email">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://relay-api.blumilk.local.env/api/public/mobile/password/email" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"gbailey@example.net\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://relay-api.blumilk.local.env/api/public/mobile/password/email"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "gbailey@example.net"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-public-mobile-password-email">
+</span>
+<span id="execution-results-POSTapi-public-mobile-password-email" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-public-mobile-password-email"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-public-mobile-password-email"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-public-mobile-password-email" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-public-mobile-password-email">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-public-mobile-password-email" data-method="POST"
+      data-path="api/public/mobile/password/email"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-public-mobile-password-email', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-public-mobile-password-email"
+                    onclick="tryItOut('POSTapi-public-mobile-password-email');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-public-mobile-password-email"
+                    onclick="cancelTryOut('POSTapi-public-mobile-password-email');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-public-mobile-password-email"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/public/mobile/password/email</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-public-mobile-password-email"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-public-mobile-password-email"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-public-mobile-password-email"
+               value="gbailey@example.net"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. The <code>email</code> of an existing record in the users table. Example: <code>gbailey@example.net</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-POSTapi-public-mobile-password-reset">POST api/public/mobile/password/reset</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-public-mobile-password-reset">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://relay-api.blumilk.local.env/api/public/mobile/password/reset" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"gbailey@example.net\",
+    \"pin\": \"569775\",
+    \"password\": \"architecto\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://relay-api.blumilk.local.env/api/public/mobile/password/reset"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "gbailey@example.net",
+    "pin": "569775",
+    "password": "architecto"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-public-mobile-password-reset">
+</span>
+<span id="execution-results-POSTapi-public-mobile-password-reset" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-public-mobile-password-reset"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-public-mobile-password-reset"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-public-mobile-password-reset" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-public-mobile-password-reset">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-public-mobile-password-reset" data-method="POST"
+      data-path="api/public/mobile/password/reset"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-public-mobile-password-reset', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-public-mobile-password-reset"
+                    onclick="tryItOut('POSTapi-public-mobile-password-reset');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-public-mobile-password-reset"
+                    onclick="cancelTryOut('POSTapi-public-mobile-password-reset');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-public-mobile-password-reset"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/public/mobile/password/reset</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-public-mobile-password-reset"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-public-mobile-password-reset"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-public-mobile-password-reset"
+               value="gbailey@example.net"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. The <code>email</code> of an existing record in the users table. Example: <code>gbailey@example.net</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pin</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pin"                data-endpoint="POSTapi-public-mobile-password-reset"
+               value="569775"
+               data-component="body">
+    <br>
+<p>Must be 6 digits. Example: <code>569775</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-public-mobile-password-reset"
+               value="architecto"
+               data-component="body">
+    <br>
+<p>Example: <code>architecto</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-devices--device_uuid-">GET api/devices/{device_uuid}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-devices--device_uuid-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://relay-api.blumilk.local.env/api/public/devices/6ff8f7f6-1eb3-3525-be4a-3932c805afed" \
+    --get "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/public/devices/6ff8f7f6-1eb3-3525-be4a-3932c805afed"
+    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
 );
 
 const headers = {
@@ -1098,9 +1405,9 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-public-devices--uuid-">
+<span id="example-responses-GETapi-devices--device_uuid-">
             <blockquote>
-            <p>Example response (404):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -1108,51 +1415,71 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
 access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;No query results for model [Relay\\Models\\Device].&quot;
+    &quot;id&quot;: 1,
+    &quot;uuid&quot;: &quot;fc9ee2de-e9ba-36cb-8e18-b0472fdd1478&quot;,
+    &quot;name&quot;: &quot;Device 8173&quot;,
+    &quot;type&quot;: &quot;Wheel Lock&quot;,
+    &quot;model&quot;: &quot;Model-6001&quot;,
+    &quot;brand&quot;: &quot;Jaskolski, Kautzer and Kerluke&quot;,
+    &quot;serial_number&quot;: &quot;SN-75456812&quot;,
+    &quot;location&quot;: &quot;474 Winfield Square Suite 270\nJarrettmouth, SC 13837-9372&quot;,
+    &quot;installation_date&quot;: &quot;1991-04-24T00:00:00.000000Z&quot;,
+    &quot;notes&quot;: &quot;Quisquam consequatur voluptatum tempora odio magnam incidunt. Voluptas cum minus quidem maxime est. Debitis voluptas et est. In et ea doloremque unde voluptatem officia.&quot;,
+    &quot;created_at&quot;: &quot;2026-05-16T11:06:47.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2026-05-16T11:06:47.000000Z&quot;
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-public-devices--uuid-" hidden>
+<span id="execution-results-GETapi-devices--device_uuid-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-public-devices--uuid-"></span>:
+                id="execution-response-status-GETapi-devices--device_uuid-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-public-devices--uuid-"
+    <pre class="json"><code id="execution-response-content-GETapi-devices--device_uuid-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-public-devices--uuid-" hidden>
+<span id="execution-error-GETapi-devices--device_uuid-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-public-devices--uuid-">
+    <pre><code id="execution-error-message-GETapi-devices--device_uuid-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-public-devices--uuid-" data-method="GET"
-      data-path="api/public/devices/{uuid}"
+<form id="form-GETapi-devices--device_uuid-" data-method="GET"
+      data-path="api/devices/{device_uuid}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-public-devices--uuid-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-devices--device_uuid-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-public-devices--uuid-"
-                    onclick="tryItOut('GETapi-public-devices--uuid-');">Try it out ⚡
+                    id="btn-tryout-GETapi-devices--device_uuid-"
+                    onclick="tryItOut('GETapi-devices--device_uuid-');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-public-devices--uuid-"
-                    onclick="cancelTryOut('GETapi-public-devices--uuid-');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-devices--device_uuid-"
+                    onclick="cancelTryOut('GETapi-devices--device_uuid-');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-public-devices--uuid-"
+                    id="btn-executetryout-GETapi-devices--device_uuid-"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1160,7 +1487,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/public/devices/{uuid}</code></b>
+            <b><code>api/devices/{device_uuid}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1169,7 +1496,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-public-devices--uuid-"
+                              name="Content-Type"                data-endpoint="GETapi-devices--device_uuid-"
                value="application/json"
                data-component="header">
     <br>
@@ -1181,7 +1508,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-public-devices--uuid-"
+                              name="Accept"                data-endpoint="GETapi-devices--device_uuid-"
                value="application/json"
                data-component="header">
     <br>
@@ -1189,33 +1516,209 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>device_uuid</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="uuid"                data-endpoint="GETapi-public-devices--uuid-"
-               value="6ff8f7f6-1eb3-3525-be4a-3932c805afed"
+                              name="device_uuid"                data-endpoint="GETapi-devices--device_uuid-"
+               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
                data-component="url">
     <br>
-<p>Example: <code>6ff8f7f6-1eb3-3525-be4a-3932c805afed</code></p>
+<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
             </div>
                     </form>
 
-                    <h2 id="endpoints-POSTapi-public-devices--uuid--faults">POST api/public/devices/{uuid}/faults</h2>
+                    <h2 id="endpoints-GETapi-devices--device_uuid--events">GET api/devices/{device_uuid}/events</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-POSTapi-public-devices--uuid--faults">
+<span id="example-requests-GETapi-devices--device_uuid--events">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/events" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/events"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-devices--device_uuid--events">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;date&quot;: &quot;2026-05-16 11:15:05&quot;,
+        &quot;type&quot;: &quot;fixed&quot;,
+        &quot;title&quot;: &quot;Naprawiono usterkę&quot;,
+        &quot;description&quot;: &quot;Zgłoszenie zostało pomyślnie zamknięte i oznaczone jako rozwiązane.&quot;,
+        &quot;user&quot;: &quot;Serwisant&quot;
+    },
+    {
+        &quot;date&quot;: &quot;2026-05-16 11:07:12&quot;,
+        &quot;type&quot;: &quot;fault&quot;,
+        &quot;title&quot;: &quot;Zgłoszono usterkę&quot;,
+        &quot;description&quot;: &quot;Test usterki&quot;,
+        &quot;user&quot;: &quot;Jan Kowalski&quot;
+    },
+    {
+        &quot;date&quot;: &quot;2026-05-16 11:06:47&quot;,
+        &quot;type&quot;: &quot;install&quot;,
+        &quot;title&quot;: &quot;Instalacja urządzenia&quot;,
+        &quot;description&quot;: &quot;Pierwszy montaż i uruchomienie w systemie.&quot;,
+        &quot;user&quot;: &quot;System&quot;
+    },
+    {
+        &quot;date&quot;: &quot;2026-05-16 11:06:47&quot;,
+        &quot;type&quot;: &quot;fault&quot;,
+        &quot;title&quot;: &quot;Zgłoszono usterkę&quot;,
+        &quot;description&quot;: &quot;Urządzenie nie odpowiada&quot;,
+        &quot;user&quot;: &quot;Jan Kowalski&quot;
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-devices--device_uuid--events" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-devices--device_uuid--events"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-devices--device_uuid--events"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-devices--device_uuid--events" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-devices--device_uuid--events">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-devices--device_uuid--events" data-method="GET"
+      data-path="api/devices/{device_uuid}/events"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-devices--device_uuid--events', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-devices--device_uuid--events"
+                    onclick="tryItOut('GETapi-devices--device_uuid--events');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-devices--device_uuid--events"
+                    onclick="cancelTryOut('GETapi-devices--device_uuid--events');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-devices--device_uuid--events"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/devices/{device_uuid}/events</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-devices--device_uuid--events"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-devices--device_uuid--events"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>device_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="device_uuid"                data-endpoint="GETapi-devices--device_uuid--events"
+               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               data-component="url">
+    <br>
+<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-POSTapi-devices--device_uuid--faults">POST api/devices/{device_uuid}/faults</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-devices--device_uuid--faults">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "https://relay-api.blumilk.local.env/api/public/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults" \
+    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -1229,7 +1732,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/public/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults"
+    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults"
 );
 
 const headers = {
@@ -1252,45 +1755,45 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-POSTapi-public-devices--uuid--faults">
+<span id="example-responses-POSTapi-devices--device_uuid--faults">
 </span>
-<span id="execution-results-POSTapi-public-devices--uuid--faults" hidden>
+<span id="execution-results-POSTapi-devices--device_uuid--faults" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-public-devices--uuid--faults"></span>:
+                id="execution-response-status-POSTapi-devices--device_uuid--faults"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-public-devices--uuid--faults"
+    <pre class="json"><code id="execution-response-content-POSTapi-devices--device_uuid--faults"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-public-devices--uuid--faults" hidden>
+<span id="execution-error-POSTapi-devices--device_uuid--faults" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-public-devices--uuid--faults">
+    <pre><code id="execution-error-message-POSTapi-devices--device_uuid--faults">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-POSTapi-public-devices--uuid--faults" data-method="POST"
-      data-path="api/public/devices/{uuid}/faults"
+<form id="form-POSTapi-devices--device_uuid--faults" data-method="POST"
+      data-path="api/devices/{device_uuid}/faults"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-public-devices--uuid--faults', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-devices--device_uuid--faults', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-public-devices--uuid--faults"
-                    onclick="tryItOut('POSTapi-public-devices--uuid--faults');">Try it out ⚡
+                    id="btn-tryout-POSTapi-devices--device_uuid--faults"
+                    onclick="tryItOut('POSTapi-devices--device_uuid--faults');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-public-devices--uuid--faults"
-                    onclick="cancelTryOut('POSTapi-public-devices--uuid--faults');" hidden>Cancel 🛑
+                    id="btn-canceltryout-POSTapi-devices--device_uuid--faults"
+                    onclick="cancelTryOut('POSTapi-devices--device_uuid--faults');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-public-devices--uuid--faults"
+                    id="btn-executetryout-POSTapi-devices--device_uuid--faults"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -1298,7 +1801,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>api/public/devices/{uuid}/faults</code></b>
+            <b><code>api/devices/{device_uuid}/faults</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -1307,7 +1810,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-public-devices--uuid--faults"
+                              name="Content-Type"                data-endpoint="POSTapi-devices--device_uuid--faults"
                value="application/json"
                data-component="header">
     <br>
@@ -1319,7 +1822,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-public-devices--uuid--faults"
+                              name="Accept"                data-endpoint="POSTapi-devices--device_uuid--faults"
                value="application/json"
                data-component="header">
     <br>
@@ -1327,12 +1830,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>device_uuid</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="uuid"                data-endpoint="POSTapi-public-devices--uuid--faults"
+                              name="device_uuid"                data-endpoint="POSTapi-devices--device_uuid--faults"
                value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
                data-component="url">
     <br>
@@ -1345,7 +1848,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="title"                data-endpoint="POSTapi-public-devices--uuid--faults"
+                              name="title"                data-endpoint="POSTapi-devices--device_uuid--faults"
                value="b"
                data-component="body">
     <br>
@@ -1357,7 +1860,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="description"                data-endpoint="POSTapi-public-devices--uuid--faults"
+                              name="description"                data-endpoint="POSTapi-devices--device_uuid--faults"
                value="Eius et animi quos velit et."
                data-component="body">
     <br>
@@ -1369,7 +1872,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="reported_by"                data-endpoint="POSTapi-public-devices--uuid--faults"
+                              name="reported_by"                data-endpoint="POSTapi-devices--device_uuid--faults"
                value="v"
                data-component="body">
     <br>
@@ -1381,7 +1884,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="contact"                data-endpoint="POSTapi-public-devices--uuid--faults"
+                              name="contact"                data-endpoint="POSTapi-devices--device_uuid--faults"
                value="d"
                data-component="body">
     <br>
@@ -1436,6 +1939,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1627,6 +2137,838 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
+                    <h2 id="endpoints-PUTapi-user-password">PUT api/user/password</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-user-password">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://relay-api.blumilk.local.env/api/user/password" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"current_password\": \"architecto\",
+    \"password\": \"architecto\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://relay-api.blumilk.local.env/api/user/password"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "current_password": "architecto",
+    "password": "architecto"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-user-password">
+</span>
+<span id="execution-results-PUTapi-user-password" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-user-password"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-user-password"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-user-password" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-user-password">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-user-password" data-method="PUT"
+      data-path="api/user/password"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-user-password', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-user-password"
+                    onclick="tryItOut('PUTapi-user-password');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-user-password"
+                    onclick="cancelTryOut('PUTapi-user-password');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-user-password"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/user/password</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-user-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-user-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>current_password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="current_password"                data-endpoint="PUTapi-user-password"
+               value="architecto"
+               data-component="body">
+    <br>
+<p>Example: <code>architecto</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="PUTapi-user-password"
+               value="architecto"
+               data-component="body">
+    <br>
+<p>Example: <code>architecto</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-faults">GET api/faults</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-faults">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://relay-api.blumilk.local.env/api/faults" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://relay-api.blumilk.local.env/api/faults"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-faults">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-faults" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-faults"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-faults"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-faults" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-faults">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-faults" data-method="GET"
+      data-path="api/faults"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-faults', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-faults"
+                    onclick="tryItOut('GETapi-faults');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-faults"
+                    onclick="cancelTryOut('GETapi-faults');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-faults"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/faults</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-faults"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-faults"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-faults--fault_id-">GET api/faults/{fault_id}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-faults--fault_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://relay-api.blumilk.local.env/api/faults/3" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://relay-api.blumilk.local.env/api/faults/3"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-faults--fault_id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-faults--fault_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-faults--fault_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-faults--fault_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-faults--fault_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-faults--fault_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-faults--fault_id-" data-method="GET"
+      data-path="api/faults/{fault_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-faults--fault_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-faults--fault_id-"
+                    onclick="tryItOut('GETapi-faults--fault_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-faults--fault_id-"
+                    onclick="cancelTryOut('GETapi-faults--fault_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-faults--fault_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/faults/{fault_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-faults--fault_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-faults--fault_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>fault_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="fault_id"                data-endpoint="GETapi-faults--fault_id-"
+               value="3"
+               data-component="url">
+    <br>
+<p>The ID of the fault. Example: <code>3</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-PATCHapi-faults--fault_id-">PATCH api/faults/{fault_id}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-faults--fault_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "https://relay-api.blumilk.local.env/api/faults/3" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"status\": \"resolved\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://relay-api.blumilk.local.env/api/faults/3"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "status": "resolved"
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PATCHapi-faults--fault_id-">
+</span>
+<span id="execution-results-PATCHapi-faults--fault_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-faults--fault_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-faults--fault_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-faults--fault_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-faults--fault_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PATCHapi-faults--fault_id-" data-method="PATCH"
+      data-path="api/faults/{fault_id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-faults--fault_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-faults--fault_id-"
+                    onclick="tryItOut('PATCHapi-faults--fault_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-faults--fault_id-"
+                    onclick="cancelTryOut('PATCHapi-faults--fault_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-faults--fault_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/faults/{fault_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PATCHapi-faults--fault_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PATCHapi-faults--fault_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>fault_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="fault_id"                data-endpoint="PATCHapi-faults--fault_id-"
+               value="3"
+               data-component="url">
+    <br>
+<p>The ID of the fault. Example: <code>3</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="PATCHapi-faults--fault_id-"
+               value="resolved"
+               data-component="body">
+    <br>
+<p>Example: <code>resolved</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>in_progress</code></li> <li><code>resolved</code></li></ul>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-GETapi-devices--device_uuid--faults">GET api/devices/{device_uuid}/faults</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-devices--device_uuid--faults">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-devices--device_uuid--faults">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-devices--device_uuid--faults" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-devices--device_uuid--faults"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-devices--device_uuid--faults"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-devices--device_uuid--faults" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-devices--device_uuid--faults">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-devices--device_uuid--faults" data-method="GET"
+      data-path="api/devices/{device_uuid}/faults"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-devices--device_uuid--faults', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-devices--device_uuid--faults"
+                    onclick="tryItOut('GETapi-devices--device_uuid--faults');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-devices--device_uuid--faults"
+                    onclick="cancelTryOut('GETapi-devices--device_uuid--faults');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-devices--device_uuid--faults"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/devices/{device_uuid}/faults</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-devices--device_uuid--faults"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-devices--device_uuid--faults"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>device_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="device_uuid"                data-endpoint="GETapi-devices--device_uuid--faults"
+               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
+               data-component="url">
+    <br>
+<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-POSTapi-user-fcm-token">POST api/user/fcm-token</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-user-fcm-token">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://relay-api.blumilk.local.env/api/user/fcm-token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://relay-api.blumilk.local.env/api/user/fcm-token"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-user-fcm-token">
+</span>
+<span id="execution-results-POSTapi-user-fcm-token" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-user-fcm-token"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-user-fcm-token"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-user-fcm-token" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-user-fcm-token">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-user-fcm-token" data-method="POST"
+      data-path="api/user/fcm-token"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-user-fcm-token', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-user-fcm-token"
+                    onclick="tryItOut('POSTapi-user-fcm-token');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-user-fcm-token"
+                    onclick="cancelTryOut('POSTapi-user-fcm-token');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-user-fcm-token"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/user/fcm-token</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-user-fcm-token"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-user-fcm-token"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
                     <h2 id="endpoints-POSTapi-auth-2fa-setup">POST api/auth/2fa/setup</h2>
 
 <p>
@@ -1785,6 +3127,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1889,7 +3238,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"i\",
     \"serial_number\": \"y\",
     \"location\": \"v\",
-    \"installation_date\": \"2026-05-16T11:16:36\",
+    \"installation_date\": \"2026-05-22T15:18:02\",
     \"notes\": \"architecto\"
 }"
 </code></pre></div>
@@ -1913,7 +3262,7 @@ let body = {
     "brand": "i",
     "serial_number": "y",
     "location": "v",
-    "installation_date": "2026-05-16T11:16:36",
+    "installation_date": "2026-05-22T15:18:02",
     "notes": "architecto"
 };
 
@@ -2090,10 +3439,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="installation_date"                data-endpoint="POSTapi-devices"
-               value="2026-05-16T11:16:36"
+               value="2026-05-22T15:18:02"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-16T11:16:36</code></p>
+<p>Must be a valid date. Example: <code>2026-05-22T15:18:02</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2108,146 +3457,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>architecto</code></p>
         </div>
         </form>
-
-                    <h2 id="endpoints-GETapi-devices--uuid-">GET api/devices/{uuid}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-devices--uuid-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-devices--uuid-">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-devices--uuid-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-devices--uuid-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-devices--uuid-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-devices--uuid-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-devices--uuid-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-devices--uuid-" data-method="GET"
-      data-path="api/devices/{uuid}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-devices--uuid-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-devices--uuid-"
-                    onclick="tryItOut('GETapi-devices--uuid-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-devices--uuid-"
-                    onclick="cancelTryOut('GETapi-devices--uuid-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-devices--uuid-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/devices/{uuid}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-devices--uuid-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-devices--uuid-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="uuid"                data-endpoint="GETapi-devices--uuid-"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
-               data-component="url">
-    <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
-            </div>
-                    </form>
 
                     <h2 id="endpoints-PUTapi-devices--uuid-">PUT api/devices/{uuid}</h2>
 
@@ -2272,7 +3481,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"z\",
     \"serial_number\": \"m\",
     \"location\": \"i\",
-    \"installation_date\": \"2026-05-16T11:16:37\",
+    \"installation_date\": \"2026-05-22T15:18:02\",
     \"notes\": \"architecto\"
 }"
 </code></pre></div>
@@ -2295,7 +3504,7 @@ let body = {
     "brand": "z",
     "serial_number": "m",
     "location": "i",
-    "installation_date": "2026-05-16T11:16:37",
+    "installation_date": "2026-05-22T15:18:02",
     "notes": "architecto"
 };
 
@@ -2477,10 +3686,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="installation_date"                data-endpoint="PUTapi-devices--uuid-"
-               value="2026-05-16T11:16:37"
+               value="2026-05-22T15:18:02"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-16T11:16:37</code></p>
+<p>Must be a valid date. Example: <code>2026-05-22T15:18:02</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2644,7 +3853,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"brand\": \"i\",
     \"serial_number\": \"y\",
     \"location\": \"v\",
-    \"installation_date\": \"2026-05-16T11:16:37\",
+    \"installation_date\": \"2026-05-22T15:18:02\",
     \"notes\": \"architecto\"
 }"
 </code></pre></div>
@@ -2668,7 +3877,7 @@ let body = {
     "brand": "i",
     "serial_number": "y",
     "location": "v",
-    "installation_date": "2026-05-16T11:16:37",
+    "installation_date": "2026-05-22T15:18:02",
     "notes": "architecto"
 };
 
@@ -2845,10 +4054,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="installation_date"                data-endpoint="POSTapi-devices-generate-qr"
-               value="2026-05-16T11:16:37"
+               value="2026-05-22T15:18:02"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-16T11:16:37</code></p>
+<p>Must be a valid date. Example: <code>2026-05-22T15:18:02</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2911,6 +4120,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3332,6 +4548,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3472,6 +4695,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3565,27 +4795,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-GETapi-faults">GET api/faults</h2>
+                    <h2 id="endpoints-GETapi-users">GET api/users</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-faults">
+<span id="example-requests-GETapi-users">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://relay-api.blumilk.local.env/api/faults" \
+    --get "https://relay-api.blumilk.local.env/api/users" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/faults"
+    "https://relay-api.blumilk.local.env/api/users"
 );
 
 const headers = {
@@ -3601,7 +4831,7 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-faults">
+<span id="example-responses-GETapi-users">
             <blockquote>
             <p>Example response (401):</p>
         </blockquote>
@@ -3612,6 +4842,13 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -3619,43 +4856,43 @@ access-control-allow-origin: *
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-faults" hidden>
+<span id="execution-results-GETapi-users" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-faults"></span>:
+                id="execution-response-status-GETapi-users"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-faults"
+    <pre class="json"><code id="execution-response-content-GETapi-users"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-faults" hidden>
+<span id="execution-error-GETapi-users" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-faults">
+    <pre><code id="execution-error-message-GETapi-users">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-faults" data-method="GET"
-      data-path="api/faults"
+<form id="form-GETapi-users" data-method="GET"
+      data-path="api/users"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-faults', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-users', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-faults"
-                    onclick="tryItOut('GETapi-faults');">Try it out ⚡
+                    id="btn-tryout-GETapi-users"
+                    onclick="tryItOut('GETapi-users');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-faults"
-                    onclick="cancelTryOut('GETapi-faults');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-users"
+                    onclick="cancelTryOut('GETapi-users');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-faults"
+                    id="btn-executetryout-GETapi-users"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -3663,7 +4900,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/faults</code></b>
+            <b><code>api/users</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -3672,7 +4909,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-faults"
+                              name="Content-Type"                data-endpoint="GETapi-users"
                value="application/json"
                data-component="header">
     <br>
@@ -3684,440 +4921,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-faults"
+                              name="Accept"                data-endpoint="GETapi-users"
                value="application/json"
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
-
-                    <h2 id="endpoints-GETapi-faults--fault_id-">GET api/faults/{fault_id}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-faults--fault_id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "https://relay-api.blumilk.local.env/api/faults/3" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/faults/3"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-faults--fault_id-">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-faults--fault_id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-faults--fault_id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-faults--fault_id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-faults--fault_id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-faults--fault_id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-faults--fault_id-" data-method="GET"
-      data-path="api/faults/{fault_id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-faults--fault_id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-faults--fault_id-"
-                    onclick="tryItOut('GETapi-faults--fault_id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-faults--fault_id-"
-                    onclick="cancelTryOut('GETapi-faults--fault_id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-faults--fault_id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/faults/{fault_id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-faults--fault_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-faults--fault_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>fault_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="fault_id"                data-endpoint="GETapi-faults--fault_id-"
-               value="3"
-               data-component="url">
-    <br>
-<p>The ID of the fault. Example: <code>3</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-PATCHapi-faults--fault_id-">PATCH api/faults/{fault_id}</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-PATCHapi-faults--fault_id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PATCH \
-    "https://relay-api.blumilk.local.env/api/faults/3" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"status\": \"in_progress\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/faults/3"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "status": "in_progress"
-};
-
-fetch(url, {
-    method: "PATCH",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PATCHapi-faults--fault_id-">
-</span>
-<span id="execution-results-PATCHapi-faults--fault_id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PATCHapi-faults--fault_id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PATCHapi-faults--fault_id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-PATCHapi-faults--fault_id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PATCHapi-faults--fault_id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-PATCHapi-faults--fault_id-" data-method="PATCH"
-      data-path="api/faults/{fault_id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-faults--fault_id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PATCHapi-faults--fault_id-"
-                    onclick="tryItOut('PATCHapi-faults--fault_id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PATCHapi-faults--fault_id-"
-                    onclick="cancelTryOut('PATCHapi-faults--fault_id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PATCHapi-faults--fault_id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/faults/{fault_id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PATCHapi-faults--fault_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="PATCHapi-faults--fault_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>fault_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="fault_id"                data-endpoint="PATCHapi-faults--fault_id-"
-               value="3"
-               data-component="url">
-    <br>
-<p>The ID of the fault. Example: <code>3</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="status"                data-endpoint="PATCHapi-faults--fault_id-"
-               value="in_progress"
-               data-component="body">
-    <br>
-<p>Example: <code>in_progress</code></p>
-Must be one of:
-<ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>in_progress</code></li> <li><code>resolved</code></li></ul>
-        </div>
-        </form>
-
-                    <h2 id="endpoints-GETapi-devices--device_uuid--faults">GET api/devices/{device_uuid}/faults</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-devices--device_uuid--faults">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "https://relay-api.blumilk.local.env/api/devices/fc9ee2de-e9ba-36cb-8e18-b0472fdd1478/faults"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-devices--device_uuid--faults">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-devices--device_uuid--faults" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-devices--device_uuid--faults"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-devices--device_uuid--faults"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-devices--device_uuid--faults" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-devices--device_uuid--faults">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-devices--device_uuid--faults" data-method="GET"
-      data-path="api/devices/{device_uuid}/faults"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-devices--device_uuid--faults', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-devices--device_uuid--faults"
-                    onclick="tryItOut('GETapi-devices--device_uuid--faults');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-devices--device_uuid--faults"
-                    onclick="cancelTryOut('GETapi-devices--device_uuid--faults');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-devices--device_uuid--faults"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/devices/{device_uuid}/faults</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-devices--device_uuid--faults"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-devices--device_uuid--faults"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>device_uuid</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="device_uuid"                data-endpoint="GETapi-devices--device_uuid--faults"
-               value="fc9ee2de-e9ba-36cb-8e18-b0472fdd1478"
-               data-component="url">
-    <br>
-<p>Example: <code>fc9ee2de-e9ba-36cb-8e18-b0472fdd1478</code></p>
-            </div>
-                    </form>
 
                     <h2 id="endpoints-GETapi-hello">GET api/hello</h2>
 
@@ -4165,7 +4975,16 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 57
 access-control-allow-origin: *
+x-frame-options: DENY
+x-content-type-options: nosniff
+x-xss-protection: 1; mode=block
+referrer-policy: no-referrer-when-downgrade
+content-security-policy: default-src &#039;none&#039;; frame-ancestors &#039;none&#039;; sandbox
+strict-transport-security: max-age=31536000; includeSubDomains; preload
+permissions-policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
