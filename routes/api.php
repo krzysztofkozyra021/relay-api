@@ -57,6 +57,7 @@ Route::middleware("auth:api")->group(function (): void {
     });
 
     Route::post("/auth/2fa/setup", [TwoFactorSetupController::class, "store"]);
+    Route::post("/auth/2fa/disable", [TwoFactorDisableController::class, "disable"]);
 
     Route::apiResource("devices", DeviceController::class)->except(["show"]);
 
