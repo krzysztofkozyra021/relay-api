@@ -57,10 +57,30 @@ class DeviceEventController
             ->where("audit_logs.model_id", $device->id)
             ->where("audit_logs.action", "updated_device");
 
+        $faultReports = FaultReport::where("device_uuid", $device->uuid)->pluck("id");
+
+        $faultUpdateEvents = DB::table("audit_logs")
+            ->leftJoin("users", "audit_logs.user_id", "=", "users.id")
+            ->select([
+                "audit_logs.created_at as date",
+                DB::raw("'edit' as type"),
+                DB::raw("'Przyjęto usterkę' as title"),
+                "audit_logs.description",
+                DB::raw("COALESCE(users.email, 'Serwisant') as user"),
+            ])
+            ->where("audit_logs.model_type", FaultReport::class)
+            ->whereIn("audit_logs.model_id", $faultReports)
+            ->where("audit_logs.action", "updated_faultreport")
+            ->where(function ($query): void {
+                $query->where("audit_logs.payload", "like", '%"status":"in_progress"%')
+                      ->orWhere("audit_logs.payload", "like", '%"status": "in_progress"%');
+            });
+
         $events = $installationEvent
             ->unionAll($faultEvents)
             ->unionAll($fixedEvents)
             ->unionAll($updateEvents)
+            ->unionAll($faultUpdateEvents)
             ->orderBy("date", "desc")
             ->get();
 
