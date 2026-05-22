@@ -71,4 +71,11 @@ Route::middleware("auth:api")->group(function (): void {
     });
 });
 
+Route::get('/ping', function () {
+    return response()->json([
+        'status' => 'ok',
+        'message' => 'Backend is alive!'
+    ], 200);
+});
+
 Route::get("/hello", fn(): JsonResponse => new JsonResponse(["message" => "Hello, World!"]));
