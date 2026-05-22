@@ -12,6 +12,7 @@ use Relay\Http\Controllers\Auth\PasswordResetController;
 use Relay\Http\Controllers\Auth\PasswordUpdateController;
 use Relay\Http\Controllers\Auth\RegisterController;
 use Relay\Http\Controllers\Auth\TwoFactorSetupController;
+use Relay\Http\Controllers\Auth\TwoFactorDisableController;
 use Relay\Http\Controllers\Auth\TwoFactorVerifyController;
 use Relay\Http\Controllers\DeviceAssignmentController;
 use Relay\Http\Controllers\DeviceController;
@@ -58,6 +59,7 @@ Route::middleware("auth:api")->group(function (): void {
     });
 
     Route::post("/auth/2fa/setup", [TwoFactorSetupController::class, "store"]);
+    Route::post("/auth/2fa/disable", [TwoFactorDisableController::class, "disable"]);
 
     Route::apiResource("devices", DeviceController::class)->except(["show"]);
 
@@ -72,6 +74,13 @@ Route::middleware("auth:api")->group(function (): void {
 
         Route::get("/users", [UserController::class, "index"])->name("users.index");
     });
+});
+
+Route::get('/ping', function () {
+    return response()->json([
+        'status' => 'ok',
+        'message' => 'Backend is alive!'
+    ], 200);
 });
 
 Route::get("/hello", fn(): JsonResponse => new JsonResponse(["message" => "Hello, World!"]));

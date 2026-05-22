@@ -16,6 +16,11 @@ class TwoFactorSetupController extends Controller
 {
     public function store(Request $request): JsonResponse
     {
+    $user = $request->user("api");
+    
+    if (!$user->is_admin) {
+        return new JsonResponse(['message' => 'Unauthorized: Admin only.'], 403);
+    }
         $user = $request->user("api");
 
         $google2fa = new Google2FA();

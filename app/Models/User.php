@@ -57,6 +57,15 @@ class User extends Authenticatable implements JWTSubject
         "two_factor_recovery_codes",
     ];
 
+    protected $appends = [
+        'has_2fa_enabled'
+    ];
+
+    public function getHas2FaEnabledAttribute(): bool
+    {
+        return !is_null($this->two_factor_secret);
+    }
+
     public function devices(): BelongsToMany
     {
         return $this->belongsToMany(Device::class, "device_user", "user_id", "device_uuid", "id", "uuid");
