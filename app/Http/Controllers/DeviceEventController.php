@@ -44,9 +44,23 @@ class DeviceEventController
             ->where("device_uuid", $device->uuid)
             ->whereNotNull("resolved_at");
 
+        $updateEvents = DB::table("audit_logs")
+            ->leftJoin("users", "audit_logs.user_id", "=", "users.id")
+            ->select([
+                "audit_logs.created_at as date",
+                DB::raw("'edit' as type"),
+                DB::raw("'Edytowano dane urządzenia' as title"),
+                "audit_logs.description",
+                DB::raw("COALESCE(users.email, 'System') as user"),
+            ])
+            ->where("audit_logs.model_type", Device::class)
+            ->where("audit_logs.model_id", $device->id)
+            ->where("audit_logs.action", "updated_device");
+
         $events = $installationEvent
             ->unionAll($faultEvents)
             ->unionAll($fixedEvents)
+            ->unionAll($updateEvents)
             ->orderBy("date", "desc")
             ->get();
 
