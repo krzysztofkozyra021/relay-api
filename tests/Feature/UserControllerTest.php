@@ -71,4 +71,89 @@ class UserControllerTest extends TestCase
             ]);
         }
     }
+
+    public function testNonAdminUserCannotUpdateUser(): void
+    {
+        $user = User::factory()->create();
+        $targetUser = User::factory()->create();
+
+        $response = $this->actingAs($user, "api")
+            ->putJson("/api/users/{$targetUser->id}", [
+                "name" => "Updated Name",
+            ]);
+
+        $response->assertStatus(403);
+    }
+
+    public function testAdminWithTwoFactorCanUpdateUser(): void
+    {
+        $admin = User::factory()->admin()->create([
+            "two_factor_secret" => "some-secret-key",
+        ]);
+        $targetUser = User::factory()->create();
+
+        $response = $this->actingAs($admin, "api")
+            ->putJson("/api/users/{$targetUser->id}", [
+                "name" => "Updated Name",
+                "email" => "updated@example.com",
+                "is_admin" => true,
+            ]);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment([
+            "id" => $targetUser->id,
+            "name" => "Updated Name",
+            "email" => "updated@example.com",
+            "is_admin" => true,
+        ]);
+
+        $this->assertDatabaseHas("users", [
+            "id" => $targetUser->id,
+            "name" => "Updated Name",
+            "email" => "updated@example.com",
+            "is_admin" => 1,
+        ]);
+    }
+
+    public function testNonAdminUserCannotDeleteUser(): void
+    {
+        $user = User::factory()->create();
+        $targetUser = User::factory()->create();
+
+        $response = $this->actingAs($user, "api")
+            ->deleteJson("/api/users/{$targetUser->id}");
+
+        $response->assertStatus(403);
+    }
+
+    public function testAdminWithTwoFactorCanDeleteUser(): void
+    {
+        $admin = User::factory()->admin()->create([
+            "two_factor_secret" => "some-secret-key",
+        ]);
+        $targetUser = User::factory()->create();
+
+        $response = $this->actingAs($admin, "api")
+            ->deleteJson("/api/users/{$targetUser->id}");
+
+        $response->assertSuccessful();
+        $this->assertDatabaseMissing("users", [
+            "id" => $targetUser->id,
+        ]);
+    }
+
+    public function testAdminCannotDeleteThemselves(): void
+    {
+        $admin = User::factory()->admin()->create([
+            "two_factor_secret" => "some-secret-key",
+        ]);
+
+        $response = $this->actingAs($admin, "api")
+            ->deleteJson("/api/users/{$admin->id}");
+
+        $response->assertStatus(400);
+        $this->assertDatabaseHas("users", [
+            "id" => $admin->id,
+        ]);
+    }
 }

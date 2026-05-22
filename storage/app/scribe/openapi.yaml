@@ -568,7 +568,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: resolved
+                  example: in_progress
                   enum:
                     - pending
                     - in_progress
@@ -599,6 +599,16 @@ paths:
     post:
       summary: ''
       operationId: postApiAuth2faSetup
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/auth/2fa/disable:
+    post:
+      summary: ''
+      operationId: postApiAuth2faDisable
       description: ''
       parameters: []
       responses: {  }
@@ -677,7 +687,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-22T15:18:02'
+                  example: '2026-05-22T17:06:01'
                   nullable: true
                 notes:
                   type: string
@@ -735,7 +745,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-22T15:18:02'
+                  example: '2026-05-22T17:06:01'
                   nullable: true
                 notes:
                   type: string
@@ -812,7 +822,7 @@ paths:
                 installation_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-05-22T15:18:02'
+                  example: '2026-05-22T17:06:01'
                   nullable: true
                 notes:
                   type: string
@@ -995,6 +1005,92 @@ paths:
                   message:
                     type: string
                     example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/users/{id}':
+    put:
+      summary: ''
+      operationId: putApiUsersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: b
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: zbailey@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: null
+                  nullable: true
+                is_admin:
+                  type: boolean
+                  description: ''
+                  example: true
+                is_installer:
+                  type: boolean
+                  description: ''
+                  example: false
+                is_service:
+                  type: boolean
+                  description: ''
+                  example: false
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiUsersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/ping:
+    get:
+      summary: ''
+      operationId: getApiPing
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: ok
+                  message: 'Backend is alive!'
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  message:
+                    type: string
+                    example: 'Backend is alive!'
       tags:
         - Endpoints
       security: []

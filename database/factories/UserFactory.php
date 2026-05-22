@@ -21,6 +21,9 @@ class UserFactory extends Factory
             "email_verified_at" => now(),
             "password" => "password",
             "remember_token" => Str::random(10),
+            "is_admin" => false,
+            "is_installer" => false,
+            "is_service" => false,
         ];
     }
 

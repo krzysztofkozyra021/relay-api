@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "relay-api API Documentation",
-        "_postman_id": "f032c77e-5d7a-4abd-afba-7ccbedcae619",
+        "_postman_id": "3e92b0b1-7ce6-4a4f-add4-9c51b4f1f41f",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -815,7 +815,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"status\":\"resolved\"}"
+                            "raw": "{\"status\":\"in_progress\"}"
                         },
                         "description": "",
                         "auth": {
@@ -965,6 +965,34 @@
                     "response": []
                 },
                 {
+                    "name": "POST api\/auth\/2fa\/disable",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/2fa\/disable",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/2fa\/disable"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
                     "name": "GET api\/devices",
                     "request": {
                         "url": {
@@ -1062,7 +1090,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-22T15:18:02\",\"notes\":\"architecto\"}"
+                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-22T17:06:01\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1101,7 +1129,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"b\",\"type\":\"n\",\"model\":\"g\",\"brand\":\"z\",\"serial_number\":\"m\",\"location\":\"i\",\"installation_date\":\"2026-05-22T15:18:02\",\"notes\":\"architecto\"}"
+                            "raw": "{\"name\":\"b\",\"type\":\"n\",\"model\":\"g\",\"brand\":\"z\",\"serial_number\":\"m\",\"location\":\"i\",\"installation_date\":\"2026-05-22T17:06:01\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1168,7 +1196,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-22T15:18:02\",\"notes\":\"architecto\"}"
+                            "raw": "{\"uuid\":\"6ff8f7f6-1eb3-3525-be4a-3932c805afed\",\"name\":\"g\",\"type\":\"z\",\"model\":\"m\",\"brand\":\"i\",\"serial_number\":\"y\",\"location\":\"v\",\"installation_date\":\"2026-05-22T17:06:01\",\"notes\":\"architecto\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1587,6 +1615,165 @@
                     ]
                 },
                 {
+                    "name": "PUT api\/users\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"b\",\"email\":\"zbailey@example.net\",\"is_admin\":true,\"is_installer\":false,\"is_service\":false}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/users\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the user."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/ping",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/ping",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/ping"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "57"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "DENY"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "1; mode=block"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer-when-downgrade"
+                                },
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'none'; frame-ancestors 'none'; sandbox"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=31536000; includeSubDomains; preload"
+                                },
+                                {
+                                    "key": "permissions-policy",
+                                    "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"status\":\"ok\",\"message\":\"Backend is alive!\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "GET api\/hello",
                     "request": {
                         "url": {
@@ -1629,7 +1816,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "57"
+                                    "value": "56"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
