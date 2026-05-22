@@ -17,6 +17,7 @@ use Relay\Http\Controllers\DeviceAssignmentController;
 use Relay\Http\Controllers\DeviceController;
 use Relay\Http\Controllers\DeviceEventController;
 use Relay\Http\Controllers\FaultReportController;
+use Relay\Http\Controllers\UserController;
 
 Route::post("/register", [RegisterController::class, "register"]);
 Route::post("/login", [LoginController::class, "login"])->name("login");
@@ -68,6 +69,8 @@ Route::middleware("auth:api")->group(function (): void {
         Route::delete("/devices/{device}/assign/{user}", [DeviceAssignmentController::class, "unassign"])->name("devices.unassign");
         Route::get("/devices/{device}/users", [DeviceAssignmentController::class, "deviceUsers"])->name("devices.users");
         Route::get("/users/{user}/devices", [DeviceAssignmentController::class, "userDevices"])->name("users.devices");
+
+        Route::get("/users", [UserController::class, "index"])->name("users.index");
     });
 });
 
