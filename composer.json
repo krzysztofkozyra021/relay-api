@@ -18,7 +18,9 @@
         "php-open-source-saver/jwt-auth": "^2.9",
         "pragmarx/google2fa": "^9.0",
         "sentry/sentry-laravel": "^4.25",
-        "simplesoftwareio/simple-qrcode": "^4.2"
+        "simplesoftwareio/simple-qrcode": "^4.2",
+        "symfony/brevo-mailer": "^8.0",
+        "symfony/http-client": "^8.0"
     },
     "require-dev": {
         "blumilksoftware/codestyle": "^v5.1.1",
