@@ -12,6 +12,7 @@ use Relay\Http\Controllers\Auth\PasswordResetController;
 use Relay\Http\Controllers\Auth\PasswordUpdateController;
 use Relay\Http\Controllers\Auth\RegisterController;
 use Relay\Http\Controllers\Auth\TwoFactorSetupController;
+use Relay\Http\Controllers\Auth\TwoFactorDisableController;
 use Relay\Http\Controllers\Auth\TwoFactorVerifyController;
 use Relay\Http\Controllers\DeviceAssignmentController;
 use Relay\Http\Controllers\DeviceController;
